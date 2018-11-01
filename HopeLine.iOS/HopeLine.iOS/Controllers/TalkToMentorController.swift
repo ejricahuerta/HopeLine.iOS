@@ -1,5 +1,5 @@
 //
-//  HomeController.swift
+//  TalkToMentorController.swift
 //  HopeLine.iOS
 //
 //  Created by Edmel John Ricahuerta on 2018-11-01.
@@ -8,25 +8,7 @@
 
 import UIKit
 
-class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    let  reuseIdentifier = "HomeCell"
-    //Collection View
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
-        cell.backgroundColor = .black
-        return cell
-        
-    }
-    
+class TalkToMentorController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

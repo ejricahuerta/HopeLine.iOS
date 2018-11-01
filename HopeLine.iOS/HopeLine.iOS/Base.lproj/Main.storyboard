@@ -47,35 +47,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iah-yr-s5D">
-                                <rect key="frame" x="0.0" y="164" width="375" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Community"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLN-Qb-jxQ">
-                                <rect key="frame" x="0.0" y="476" width="375" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Resources"/>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-HB-db7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ynp-pw-JZH">
+                                    <size key="itemSize" width="377" height="168"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="Ozj-kd-O1c">
+                                        <rect key="frame" x="-1" y="0.0" width="377" height="168"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="168"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9oT-bH-KAD" id="ADR-Wa-H3U"/>
+                                    <outlet property="delegate" destination="9oT-bH-KAD" id="u5k-K3-BIO"/>
+                                    <outlet property="prefetchDataSource" destination="9oT-bH-KAD" id="5lE-zR-Yoi"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.18907924849999999" green="0.2093067508" blue="0.50756962439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iah-yr-s5D" firstAttribute="top" secondItem="K3W-IR-LEe" secondAttribute="top" constant="100" id="ArC-aJ-eZn"/>
-                            <constraint firstItem="K3W-IR-LEe" firstAttribute="trailing" secondItem="mLN-Qb-jxQ" secondAttribute="trailing" id="Gy3-lW-nBD"/>
-                            <constraint firstItem="mLN-Qb-jxQ" firstAttribute="leading" secondItem="K3W-IR-LEe" secondAttribute="leading" id="Qdr-nq-bg7"/>
-                            <constraint firstItem="K3W-IR-LEe" firstAttribute="trailing" secondItem="iah-yr-s5D" secondAttribute="trailing" id="QeW-xe-Dmw"/>
-                            <constraint firstItem="K3W-IR-LEe" firstAttribute="bottom" secondItem="mLN-Qb-jxQ" secondAttribute="bottom" constant="100" id="ghN-YK-Zch"/>
-                            <constraint firstItem="iah-yr-s5D" firstAttribute="leading" secondItem="K3W-IR-LEe" secondAttribute="leading" id="uM0-qK-H46"/>
+                            <constraint firstItem="Xwa-HB-db7" firstAttribute="top" secondItem="K3W-IR-LEe" secondAttribute="top" id="0rQ-J3-szl"/>
+                            <constraint firstItem="Xwa-HB-db7" firstAttribute="leading" secondItem="K3W-IR-LEe" secondAttribute="leading" id="3rk-fZ-rHJ"/>
+                            <constraint firstItem="K3W-IR-LEe" firstAttribute="bottom" secondItem="Xwa-HB-db7" secondAttribute="bottom" id="7fr-rI-WXe"/>
+                            <constraint firstItem="K3W-IR-LEe" firstAttribute="trailing" secondItem="Xwa-HB-db7" secondAttribute="trailing" id="ZKW-T6-6Cy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K3W-IR-LEe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="mmQ-ph-5wh">
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="mmQ-ph-5wh">
                         <barButtonItem key="backBarButtonItem" title="Back" id="GSm-YR-B1k"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvj-Yi-zbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429.60000000000002" y="139.880059970015"/>
+            <point key="canvasLocation" x="401" y="125"/>
         </scene>
         <!--Authenticate Controller-->
         <scene sceneID="2Gm-9d-x2s">
@@ -90,7 +103,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="SeO-hW-qRL" kind="push" id="1TP-I0-It3"/>
+                                    <segue destination="SeO-hW-qRL" kind="show" id="rZS-ky-ADo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,7 +120,105 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imt-j0-vJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1708" y="-644.52773613193403"/>
+            <point key="canvasLocation" x="-583" y="-1420"/>
+        </scene>
+        <!--Call-->
+        <scene sceneID="EPj-mh-uMh">
+            <objects>
+                <viewController id="IsH-3y-Sgm" customClass="CallController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="686-b4-tpl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="36M-iH-xUa"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Call" id="Nur-aG-ptB">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GDt-H9-5lC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9N-Vm-ce2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-562" y="861"/>
+        </scene>
+        <!--Talk To Mentor-->
+        <scene sceneID="p6f-cz-UTA">
+            <objects>
+                <viewController id="3tr-6x-yrI" customClass="TalkToMentorController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DfX-ZQ-qkE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgZ-4I-957">
+                                <rect key="frame" x="0.0" y="164" width="375" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Call"/>
+                                <connections>
+                                    <segue destination="IsH-3y-Sgm" kind="show" id="Pjy-eA-sfp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXE-cp-2a7">
+                                <rect key="frame" x="0.0" y="223" width="375" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Chat"/>
+                                <connections>
+                                    <segue destination="EhD-GE-Ae0" kind="show" id="CzF-jZ-mfR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JgZ-4I-957" firstAttribute="leading" secondItem="Ipq-Bm-EmU" secondAttribute="leading" id="7Xm-Kq-y4d"/>
+                            <constraint firstItem="SXE-cp-2a7" firstAttribute="top" secondItem="JgZ-4I-957" secondAttribute="bottom" constant="10" id="8pE-VH-eSl"/>
+                            <constraint firstItem="SXE-cp-2a7" firstAttribute="leading" secondItem="Ipq-Bm-EmU" secondAttribute="leading" id="X4M-FU-sNc"/>
+                            <constraint firstItem="Ipq-Bm-EmU" firstAttribute="trailing" secondItem="JgZ-4I-957" secondAttribute="trailing" id="hbi-La-vNH"/>
+                            <constraint firstItem="Ipq-Bm-EmU" firstAttribute="trailing" secondItem="SXE-cp-2a7" secondAttribute="trailing" id="vie-WS-0d2"/>
+                            <constraint firstItem="JgZ-4I-957" firstAttribute="top" secondItem="Ipq-Bm-EmU" secondAttribute="top" constant="100" id="ztH-My-KwI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ipq-Bm-EmU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Talk To Mentor" id="WGN-EG-uOv">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SL3-HJ-q8p"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cT-ud-hQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1375" y="862"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="Qfa-lM-doo">
+            <objects>
+                <viewController id="EhD-GE-Ae0" customClass="ChatController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zkR-b9-31l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="WzB-D6-Edi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="zzi-6M-hXP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GVT-La-xwx"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibI-iJ-GwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1375" y="1638"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="yDS-hm-jmP">
+            <objects>
+                <viewController id="JF9-n7-0nf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2z-KW-TMn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="ga3-R7-2om"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="user" id="rpV-50-ZvB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0K-TE-xOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2094" y="125"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="v3q-ur-eaL">
@@ -118,21 +229,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.55754128886010368" blue="0.39496449891959001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="1nL-9J-DkE" kind="relationship" relationship="viewControllers" id="biy-VC-Wwa"/>
                         <segue destination="eBM-PL-ngr" kind="relationship" relationship="viewControllers" id="SRr-Si-Rhx"/>
+                        <segue destination="DNQ-CF-EbG" kind="relationship" relationship="viewControllers" id="J0R-8f-NBJ"/>
+                        <segue destination="JF9-n7-0nf" kind="relationship" relationship="viewControllers" id="kyq-Fg-dLD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIA-0h-XV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-582" y="-642"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="2S7-dp-v2A">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1nL-9J-DkE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" springLoaded="YES" systemItem="more" id="SdO-Yy-tqQ"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" landscapeImage="home" largeContentSizeImage="home" selectedImage="home" springLoaded="YES" id="SdO-Yy-tqQ">
+                        <color key="badgeColor" red="0.80571903089999997" green="1" blue="0.90927225830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YXh-R5-RPK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -145,13 +261,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTM-eY-tGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="140"/>
+            <point key="canvasLocation" x="-583" y="125"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Map-->
         <scene sceneID="eWv-Sz-hUV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eBM-PL-ngr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="IKO-l2-k2n">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="IKO-l2-k2n">
                         <color key="badgeColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -168,5 +284,30 @@
             </objects>
             <point key="canvasLocation" x="401.60000000000002" y="-643.17841079460277"/>
         </scene>
+        <!--Talk to Mentor-->
+        <scene sceneID="wn5-b2-yaE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DNQ-CF-EbG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Talk to Mentor" image="convo" id="Mei-rp-9Rw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uNu-40-erN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3tr-6x-yrI" kind="relationship" relationship="rootViewController" id="EO7-bS-T5K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Dp-TR-iar" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1375" y="125"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="convo" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
+        <image name="user" width="25" height="25"/>
+    </resources>
 </document>

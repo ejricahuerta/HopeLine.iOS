@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,17 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I6u-EK-Ovk">
-                                <rect key="frame" x="0.0" y="64" width="375" height="454"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="398"/>
                                 <connections>
                                     <outlet property="delegate" destination="EHD-Mv-W0p" id="lag-ye-an5"/>
                                 </connections>
                             </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-o9-U10">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXG-Cc-PEC">
+                                <rect key="frame" x="309" y="538" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZXG-Cc-PEC" secondAttribute="height" multiplier="23:15" id="OcX-Je-1nt"/>
+                                </constraints>
+                                <state key="normal" title="Clear"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IqZ-o9-U10" firstAttribute="top" secondItem="9rK-AC-Vfe" secondAttribute="top" id="RP0-h7-TkV"/>
+                            <constraint firstItem="IqZ-o9-U10" firstAttribute="leading" secondItem="9rK-AC-Vfe" secondAttribute="leading" id="TVK-cw-uXx"/>
+                            <constraint firstItem="9rK-AC-Vfe" firstAttribute="trailing" secondItem="ZXG-Cc-PEC" secondAttribute="trailing" constant="20" id="aWy-Wd-ylE"/>
                             <constraint firstItem="9rK-AC-Vfe" firstAttribute="bottom" secondItem="I6u-EK-Ovk" secondAttribute="bottom" constant="100" id="hVa-t3-f1D"/>
                             <constraint firstItem="9rK-AC-Vfe" firstAttribute="trailing" secondItem="I6u-EK-Ovk" secondAttribute="trailing" id="lsI-W5-3eb"/>
-                            <constraint firstItem="I6u-EK-Ovk" firstAttribute="top" secondItem="9rK-AC-Vfe" secondAttribute="top" id="vbR-Nt-qDW"/>
+                            <constraint firstItem="ZXG-Cc-PEC" firstAttribute="top" secondItem="I6u-EK-Ovk" secondAttribute="bottom" constant="20" id="mzs-p6-rv7"/>
+                            <constraint firstItem="I6u-EK-Ovk" firstAttribute="top" secondItem="IqZ-o9-U10" secondAttribute="bottom" id="qj2-ou-FGN"/>
+                            <constraint firstItem="IqZ-o9-U10" firstAttribute="trailing" secondItem="9rK-AC-Vfe" secondAttribute="trailing" id="vn9-g8-V0j"/>
                             <constraint firstItem="I6u-EK-Ovk" firstAttribute="leading" secondItem="9rK-AC-Vfe" secondAttribute="leading" id="y0V-cp-0SK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9rK-AC-Vfe"/>
@@ -37,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAn-nV-pKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="-644"/>
+            <point key="canvasLocation" x="1200.8" y="-644.52773613193403"/>
         </scene>
         <!--Home-->
         <scene sceneID="n7d-ai-86E">

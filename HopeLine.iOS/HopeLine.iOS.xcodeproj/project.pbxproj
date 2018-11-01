@@ -12,6 +12,10 @@
 		4EDEC9E6218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9E4218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld */; };
 		4EDEC9E8218B898F00C2D2F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDEC9E7218B898F00C2D2F2 /* Assets.xcassets */; };
 		4EDEC9EB218B898F00C2D2F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDEC9E9218B898F00C2D2F2 /* LaunchScreen.storyboard */; };
+		4EDEC9F8218B8ABD00C2D2F2 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9F7218B8ABD00C2D2F2 /* MainController.swift */; };
+		4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9F9218B8DB200C2D2F2 /* AuthenticateController.swift */; };
+		4EDEC9FC218B8F2400C2D2F2 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9FB218B8F2400C2D2F2 /* HomeController.swift */; };
+		4EDEC9FE218B8F8000C2D2F2 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9FD218B8F8000C2D2F2 /* MapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		4EDEC9E7218B898F00C2D2F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EDEC9EA218B898F00C2D2F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EDEC9EC218B898F00C2D2F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EDEC9F7218B8ABD00C2D2F2 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		4EDEC9F9218B8DB200C2D2F2 /* AuthenticateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateController.swift; sourceTree = "<group>"; };
+		4EDEC9FB218B8F2400C2D2F2 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		4EDEC9FD218B8F8000C2D2F2 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4EDEC9DD218B898F00C2D2F2 /* AppDelegate.swift */,
 				4EDEC9E1218B898F00C2D2F2 /* Main.storyboard */,
+				4EDEC9F6218B8A8500C2D2F2 /* Main */,
+				4EDEC9F5218B8A7E00C2D2F2 /* Models */,
+				4EDEC9F4218B8A7200C2D2F2 /* ViewModels */,
+				4EDEC9F3218B8A5D00C2D2F2 /* Controllers */,
 				4EDEC9E7218B898F00C2D2F2 /* Assets.xcassets */,
 				4EDEC9E9218B898F00C2D2F2 /* LaunchScreen.storyboard */,
 				4EDEC9EC218B898F00C2D2F2 /* Info.plist */,
 				4EDEC9E4218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld */,
 			);
 			path = HopeLine.iOS;
+			sourceTree = "<group>";
+		};
+		4EDEC9F3218B8A5D00C2D2F2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4EDEC9F7218B8ABD00C2D2F2 /* MainController.swift */,
+				4EDEC9F9218B8DB200C2D2F2 /* AuthenticateController.swift */,
+				4EDEC9FB218B8F2400C2D2F2 /* HomeController.swift */,
+				4EDEC9FD218B8F8000C2D2F2 /* MapController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4EDEC9F4218B8A7200C2D2F2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4EDEC9F5218B8A7E00C2D2F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4EDEC9F6218B8A8500C2D2F2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4EDEC9DD218B898F00C2D2F2 /* AppDelegate.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +181,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EDEC9E6218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld in Sources */,
+				4EDEC9F8218B8ABD00C2D2F2 /* MainController.swift in Sources */,
+				4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */,
 				4EDEC9DE218B898F00C2D2F2 /* AppDelegate.swift in Sources */,
+				4EDEC9FE218B8F8000C2D2F2 /* MapController.swift in Sources */,
+				4EDEC9FC218B8F2400C2D2F2 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

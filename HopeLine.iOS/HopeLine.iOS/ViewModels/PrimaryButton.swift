@@ -9,13 +9,14 @@
 import UIKit
 
 class PrimaryButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        // Drawing code
+        let primarybg = UIColor(red: CGFloat(40)/255, green: CGFloat(37)/255, blue: CGFloat(117)/255, alpha: CGFloat(1))
+        let primarytxt  = UIColor(red: CGFloat(178)/255, green: CGFloat(176)/255, blue: CGFloat(222)/255, alpha: CGFloat(1))
+        super.draw(rect)
+        self.layer.borderWidth = 5
+        self.layer.borderColor = primarybg.cgColor
+        self.layer.cornerRadius = 10
+        self.layer.backgroundColor = primarybg.cgColor
+        self.setTitleColor(primarytxt, for: .normal)
     }
-    */
-
 }

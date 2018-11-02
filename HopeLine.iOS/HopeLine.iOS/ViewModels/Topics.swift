@@ -8,6 +8,14 @@
 
 import UIKit
 
-class Topics: NSObject {
-
+class Topics: Decodable {
+    
+    var Name: String
+    var Desc : String
+    
+    init?(name : String , desc: String)
+    {
+        Name = name
+        Desc = desc
+    }
 }

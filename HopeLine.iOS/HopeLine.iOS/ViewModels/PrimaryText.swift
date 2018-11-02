@@ -8,14 +8,17 @@
 
 import UIKit
 
-class PrimaryText: UITextField {
+class PrimaryText: UITextField, UITextFieldDelegate {
+    
+    
+    //Move to own file
+     private let bordercolor  = UIColor(red: CGFloat(178)/255, green: CGFloat(176)/255, blue: CGFloat(222)/255, alpha: CGFloat(1))
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = self.bordercolor.cgColor
     }
-    */
-
 }

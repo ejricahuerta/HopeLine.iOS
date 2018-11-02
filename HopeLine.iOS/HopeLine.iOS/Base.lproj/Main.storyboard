@@ -46,6 +46,7 @@
                             <constraint firstItem="ZXG-Cc-PEC" firstAttribute="top" secondItem="I6u-EK-Ovk" secondAttribute="bottom" constant="20" id="mzs-p6-rv7"/>
                             <constraint firstItem="I6u-EK-Ovk" firstAttribute="top" secondItem="IqZ-o9-U10" secondAttribute="bottom" id="qj2-ou-FGN"/>
                             <constraint firstItem="IqZ-o9-U10" firstAttribute="trailing" secondItem="9rK-AC-Vfe" secondAttribute="trailing" id="vn9-g8-V0j"/>
+                            <constraint firstItem="ZXG-Cc-PEC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Uft-Ae-KA0" secondAttribute="leading" constant="20" symbolic="YES" id="vwd-M3-Rx2"/>
                             <constraint firstItem="I6u-EK-Ovk" firstAttribute="leading" secondItem="9rK-AC-Vfe" secondAttribute="leading" id="y0V-cp-0SK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9rK-AC-Vfe"/>
@@ -115,29 +116,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obU-UT-0IQ">
-                                <rect key="frame" x="132" y="479" width="111" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Login"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoV-2u-wwc" customClass="PrimaryText" customModule="HopeLine_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="265" width="343" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.697524488" green="0.68625408409999999" blue="0.8768265247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="NTH-cK-XbR"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="nyY-DO-FG9" eventType="editingChanged" id="rxf-qv-d9L"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HopeLine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-iQ-u8q">
+                                <rect key="frame" x="103" y="32" width="169" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <color key="textColor" red="0.33290556073188782" green="0.59375172853469849" blue="0.044128365814685822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9P-gS-7Hn">
+                                <rect key="frame" x="16" y="233" width="343" height="24"/>
+                                <color key="tintColor" red="0.697524488" green="0.68625408409999999" blue="0.8768265247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.697524488" green="0.68625408409999999" blue="0.8768265247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obU-UT-0IQ" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="318" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="NOF-Xu-IVd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="SeO-hW-qRL" kind="show" id="rZS-ky-ADo"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.8057190308815857" green="1" blue="0.90927225825567337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.18907924853298291" green="0.2093067508493921" blue="0.50756962435233155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="obU-UT-0IQ" firstAttribute="top" secondItem="LMq-7f-dkP" secondAttribute="top" constant="459" id="ayX-kH-4Qh"/>
-                            <constraint firstItem="LMq-7f-dkP" firstAttribute="bottom" secondItem="obU-UT-0IQ" secondAttribute="bottom" constant="166" id="fje-Pr-ExV"/>
-                            <constraint firstItem="obU-UT-0IQ" firstAttribute="centerX" secondItem="a1u-Hg-hdS" secondAttribute="centerX" id="lZc-BR-RjU"/>
-                            <constraint firstItem="obU-UT-0IQ" firstAttribute="leading" secondItem="LMq-7f-dkP" secondAttribute="leading" constant="132" id="xSQ-ym-sEa"/>
+                            <constraint firstItem="LMq-7f-dkP" firstAttribute="trailing" secondItem="obU-UT-0IQ" secondAttribute="trailing" constant="16" id="3sW-84-f81"/>
+                            <constraint firstItem="BoV-2u-wwc" firstAttribute="top" secondItem="p9P-gS-7Hn" secondAttribute="bottom" constant="8" id="49d-O1-NWO"/>
+                            <constraint firstItem="obU-UT-0IQ" firstAttribute="top" secondItem="BoV-2u-wwc" secondAttribute="bottom" constant="8" id="BeV-eL-gIN"/>
+                            <constraint firstItem="obU-UT-0IQ" firstAttribute="top" secondItem="BoV-2u-wwc" secondAttribute="bottom" constant="8" id="EDc-Om-EoG"/>
+                            <constraint firstItem="p9P-gS-7Hn" firstAttribute="top" secondItem="T2C-iQ-u8q" secondAttribute="bottom" constant="165" id="FTj-2k-GCt"/>
+                            <constraint firstItem="p9P-gS-7Hn" firstAttribute="leading" secondItem="BoV-2u-wwc" secondAttribute="leading" id="Nd7-dI-K4e"/>
+                            <constraint firstItem="LMq-7f-dkP" firstAttribute="trailing" secondItem="BoV-2u-wwc" secondAttribute="trailing" constant="16" id="Ngd-VA-kcE"/>
+                            <constraint firstItem="BoV-2u-wwc" firstAttribute="leading" secondItem="LMq-7f-dkP" secondAttribute="leading" constant="16" id="ULg-6f-2pH"/>
+                            <constraint firstItem="T2C-iQ-u8q" firstAttribute="top" secondItem="LMq-7f-dkP" secondAttribute="top" constant="12" id="Zo1-oh-TRp"/>
+                            <constraint firstItem="obU-UT-0IQ" firstAttribute="leading" secondItem="LMq-7f-dkP" secondAttribute="leading" constant="16" id="cNa-OD-834"/>
+                            <constraint firstItem="T2C-iQ-u8q" firstAttribute="leading" secondItem="LMq-7f-dkP" secondAttribute="leading" constant="103" id="e99-Qc-Vkd"/>
+                            <constraint firstItem="LMq-7f-dkP" firstAttribute="trailing" secondItem="T2C-iQ-u8q" secondAttribute="trailing" constant="103" id="lGr-7x-cQW"/>
+                            <constraint firstItem="p9P-gS-7Hn" firstAttribute="trailing" secondItem="BoV-2u-wwc" secondAttribute="trailing" id="oKD-r0-4pp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LMq-7f-dkP"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imt-j0-vJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="-1420"/>
+            <point key="canvasLocation" x="-583.20000000000005" y="-1420.8395802098951"/>
         </scene>
         <!--Call-->
         <scene sceneID="EPj-mh-uMh">

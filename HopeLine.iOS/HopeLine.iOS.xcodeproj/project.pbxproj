@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115A218CF26E00867B3F /* PrimaryText.swift */; };
+		4E4B115D218D079F00867B3F /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115C218D079F00867B3F /* Topics.swift */; };
+		4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */; };
 		4ECD5F48218B91D300F7F75D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F47218B91D300F7F75D /* HomeCell.swift */; };
 		4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F49218B924300F7F75D /* HomeCollectionView.swift */; };
 		4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F4B218B940600F7F75D /* TemplateCollectionViewController.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E4B115A218CF26E00867B3F /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
+		4E4B115C218D079F00867B3F /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Topics.swift; path = HopeLine.iOS/ViewModels/Topics.swift; sourceTree = SOURCE_ROOT; };
+		4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		4ECD5F47218B91D300F7F75D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		4ECD5F49218B924300F7F75D /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		4ECD5F4B218B940600F7F75D /* TemplateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 			children = (
 				4ECD5F47218B91D300F7F75D /* HomeCell.swift */,
 				4ECD5F49218B924300F7F75D /* HomeCollectionView.swift */,
+				4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */,
+				4E4B115A218CF26E00867B3F /* PrimaryText.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 		4EDEC9F5218B8A7E00C2D2F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E4B115C218D079F00867B3F /* Topics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,11 +212,14 @@
 				4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */,
 				4ECD5F52218B9F6400F7F75D /* CallController.swift in Sources */,
 				4ECD5F4E218B9EE000F7F75D /* ChatController.swift in Sources */,
+				4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */,
+				4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */,
 				4EDEC9F8218B8ABD00C2D2F2 /* MainController.swift in Sources */,
 				4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */,
 				4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */,
 				4EDEC9DE218B898F00C2D2F2 /* AppDelegate.swift in Sources */,
 				4ECD5F50218B9F3A00F7F75D /* TalkToMentorController.swift in Sources */,
+				4E4B115D218D079F00867B3F /* Topics.swift in Sources */,
 				4EDEC9FE218B8F8000C2D2F2 /* MapController.swift in Sources */,
 				4EDEC9FC218B8F2400C2D2F2 /* HomeController.swift in Sources */,
 			);

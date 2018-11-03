@@ -12,7 +12,11 @@ class ChatController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var chatHubConnection: HubConnection?
+        chatHubConnection =  HubConnectionBuilder(url: URL(string:"http://localhost:5000/chat")!)
+            .withLogging(minLogLevel: .debug)
+            .build()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +25,5 @@ class ChatController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

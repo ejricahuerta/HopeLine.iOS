@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E116F15218E364E0018C57D /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E116F13218E35AF0018C57D /* SignalRClient */; };
 		4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115A218CF26E00867B3F /* PrimaryText.swift */; };
 		4E4B115D218D079F00867B3F /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115C218D079F00867B3F /* Topics.swift */; };
 		4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E116F13218E35AF0018C57D /* SignalRClient */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignalRClient; sourceTree = "<group>"; };
 		4E4B115A218CF26E00867B3F /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
 		4E4B115C218D079F00867B3F /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Topics.swift; path = HopeLine.iOS/ViewModels/Topics.swift; sourceTree = SOURCE_ROOT; };
 		4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
@@ -55,17 +57,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E116F15218E364E0018C57D /* SignalRClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E116F14218E364E0018C57D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4EDEC9D1218B898F00C2D2F2 = {
 			isa = PBXGroup;
 			children = (
 				4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */,
 				4EDEC9DB218B898F00C2D2F2 /* Products */,
+				4E116F14218E364E0018C57D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +91,7 @@
 		4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4E116F13218E35AF0018C57D /* SignalRClient */,
 				4EDEC9E1218B898F00C2D2F2 /* Main.storyboard */,
 				4EDEC9F6218B8A8500C2D2F2 /* Main */,
 				4EDEC9F5218B8A7E00C2D2F2 /* Models */,

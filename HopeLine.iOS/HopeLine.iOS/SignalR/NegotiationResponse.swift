@@ -99,7 +99,7 @@ internal class NegotiationPayloadParser {
         }
 
         let transferFormats = try transferFormatsJSON.map { (transferFormatName) -> TransferFormat in
-            guard let transferFormat = TransferFormat.init(rawValue: transferFormatName) else {
+            guard let transferFormat = TransferFormat(rawValue: transferFormatName) else {
                 throw SignalRError.invalidNegotiationResponse(message: "invalid transfer format '\(transferFormatName)'")
             }
             return transferFormat

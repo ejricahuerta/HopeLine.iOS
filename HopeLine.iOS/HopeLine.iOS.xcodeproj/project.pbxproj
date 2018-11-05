@@ -7,10 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E116F15218E364E0018C57D /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E116F13218E35AF0018C57D /* SignalRClient */; };
 		4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115A218CF26E00867B3F /* PrimaryText.swift */; };
-		4E4B115D218D079F00867B3F /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115C218D079F00867B3F /* Topics.swift */; };
 		4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */; };
+		4EB822C0219109B00035C262 /* SignalRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A5219109A90035C262 /* SignalRError.swift */; };
+		4EB822C1219109B00035C262 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A6219109A90035C262 /* Connection.swift */; };
+		4EB822C2219109B00035C262 /* HubConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A7219109AA0035C262 /* HubConnectionDelegate.swift */; };
+		4EB822C3219109B00035C262 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A8219109AB0035C262 /* HttpConnection.swift */; };
+		4EB822C4219109B00035C262 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A9219109AB0035C262 /* Util.swift */; };
+		4EB822C5219109B00035C262 /* HttpClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822AA219109AB0035C262 /* HttpClientProtocol.swift */; };
+		4EB822C6219109B00035C262 /* ServerInvocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822AB219109AC0035C262 /* ServerInvocationHandler.swift */; };
+		4EB822C7219109B00035C262 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822AC219109AC0035C262 /* Transport.swift */; };
+		4EB822C8219109B00035C262 /* HandshakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822AD219109AC0035C262 /* HandshakeProtocol.swift */; };
+		4EB822C9219109B00035C262 /* TypeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822AE219109AC0035C262 /* TypeConverter.swift */; };
+		4EB822CA219109B00035C262 /* DefaultHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822AF219109AC0035C262 /* DefaultHttpClient.swift */; };
+		4EB822CB219109B00035C262 /* WebsocketsTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B0219109AD0035C262 /* WebsocketsTransport.swift */; };
+		4EB822CC219109B00035C262 /* HubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B1219109AD0035C262 /* HubProtocol.swift */; };
+		4EB822CD219109B00035C262 /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B2219109AD0035C262 /* ConnectionDelegate.swift */; };
+		4EB822CE219109B00035C262 /* StreamHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B3219109AD0035C262 /* StreamHandle.swift */; };
+		4EB822CF219109B00035C262 /* NegotiationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B4219109AD0035C262 /* NegotiationResponse.swift */; };
+		4EB822D0219109B00035C262 /* HubConnectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B5219109AE0035C262 /* HubConnectionBuilder.swift */; };
+		4EB822D1219109B00035C262 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B6219109AE0035C262 /* TransportType.swift */; };
+		4EB822D2219109B00035C262 /* HttpConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B7219109AE0035C262 /* HttpConnectionOptions.swift */; };
+		4EB822D3219109B00035C262 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B8219109AE0035C262 /* WebSocket.swift */; };
+		4EB822D4219109B00035C262 /* HubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822B9219109AF0035C262 /* HubConnection.swift */; };
+		4EB822D5219109B00035C262 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BA219109AF0035C262 /* Logger.swift */; };
+		4EB822D6219109B00035C262 /* DefaultTransportFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BB219109AF0035C262 /* DefaultTransportFactory.swift */; };
+		4EB822D7219109B00035C262 /* JSONHubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BC219109AF0035C262 /* JSONHubProtocol.swift */; };
+		4EB822D8219109B00035C262 /* TransferFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BD219109AF0035C262 /* TransferFormat.swift */; };
+		4EB822D9219109B00035C262 /* TransportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BE219109B00035C262 /* TransportDelegate.swift */; };
+		4EB822DA219109B00035C262 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BF219109B00035C262 /* HttpResponse.swift */; };
 		4ECD5F48218B91D300F7F75D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F47218B91D300F7F75D /* HomeCell.swift */; };
 		4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F49218B924300F7F75D /* HomeCollectionView.swift */; };
 		4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F4B218B940600F7F75D /* TemplateCollectionViewController.swift */; };
@@ -29,10 +54,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E116F13218E35AF0018C57D /* SignalRClient */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignalRClient; sourceTree = "<group>"; };
 		4E4B115A218CF26E00867B3F /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
-		4E4B115C218D079F00867B3F /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Topics.swift; path = HopeLine.iOS/ViewModels/Topics.swift; sourceTree = SOURCE_ROOT; };
 		4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		4EB822A5219109A90035C262 /* SignalRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRError.swift; sourceTree = "<group>"; };
+		4EB822A6219109A90035C262 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		4EB822A7219109AA0035C262 /* HubConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubConnectionDelegate.swift; sourceTree = "<group>"; };
+		4EB822A8219109AB0035C262 /* HttpConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConnection.swift; sourceTree = "<group>"; };
+		4EB822A9219109AB0035C262 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		4EB822AA219109AB0035C262 /* HttpClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientProtocol.swift; sourceTree = "<group>"; };
+		4EB822AB219109AC0035C262 /* ServerInvocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInvocationHandler.swift; sourceTree = "<group>"; };
+		4EB822AC219109AC0035C262 /* Transport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
+		4EB822AD219109AC0035C262 /* HandshakeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeProtocol.swift; sourceTree = "<group>"; };
+		4EB822AE219109AC0035C262 /* TypeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeConverter.swift; sourceTree = "<group>"; };
+		4EB822AF219109AC0035C262 /* DefaultHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHttpClient.swift; sourceTree = "<group>"; };
+		4EB822B0219109AD0035C262 /* WebsocketsTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketsTransport.swift; sourceTree = "<group>"; };
+		4EB822B1219109AD0035C262 /* HubProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubProtocol.swift; sourceTree = "<group>"; };
+		4EB822B2219109AD0035C262 /* ConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDelegate.swift; sourceTree = "<group>"; };
+		4EB822B3219109AD0035C262 /* StreamHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamHandle.swift; sourceTree = "<group>"; };
+		4EB822B4219109AD0035C262 /* NegotiationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegotiationResponse.swift; sourceTree = "<group>"; };
+		4EB822B5219109AE0035C262 /* HubConnectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubConnectionBuilder.swift; sourceTree = "<group>"; };
+		4EB822B6219109AE0035C262 /* TransportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
+		4EB822B7219109AE0035C262 /* HttpConnectionOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConnectionOptions.swift; sourceTree = "<group>"; };
+		4EB822B8219109AE0035C262 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		4EB822B9219109AF0035C262 /* HubConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubConnection.swift; sourceTree = "<group>"; };
+		4EB822BA219109AF0035C262 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4EB822BB219109AF0035C262 /* DefaultTransportFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransportFactory.swift; sourceTree = "<group>"; };
+		4EB822BC219109AF0035C262 /* JSONHubProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHubProtocol.swift; sourceTree = "<group>"; };
+		4EB822BD219109AF0035C262 /* TransferFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormat.swift; sourceTree = "<group>"; };
+		4EB822BE219109B00035C262 /* TransportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDelegate.swift; sourceTree = "<group>"; };
+		4EB822BF219109B00035C262 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
 		4ECD5F47218B91D300F7F75D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		4ECD5F49218B924300F7F75D /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		4ECD5F4B218B940600F7F75D /* TemplateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E116F15218E364E0018C57D /* SignalRClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +118,40 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EB822DB21910A230035C262 /* SignalR */ = {
+			isa = PBXGroup;
+			children = (
+				4EB822A6219109A90035C262 /* Connection.swift */,
+				4EB822B2219109AD0035C262 /* ConnectionDelegate.swift */,
+				4EB822AF219109AC0035C262 /* DefaultHttpClient.swift */,
+				4EB822BB219109AF0035C262 /* DefaultTransportFactory.swift */,
+				4EB822AD219109AC0035C262 /* HandshakeProtocol.swift */,
+				4EB822AA219109AB0035C262 /* HttpClientProtocol.swift */,
+				4EB822A8219109AB0035C262 /* HttpConnection.swift */,
+				4EB822B7219109AE0035C262 /* HttpConnectionOptions.swift */,
+				4EB822BF219109B00035C262 /* HttpResponse.swift */,
+				4EB822B9219109AF0035C262 /* HubConnection.swift */,
+				4EB822B5219109AE0035C262 /* HubConnectionBuilder.swift */,
+				4EB822A7219109AA0035C262 /* HubConnectionDelegate.swift */,
+				4EB822B1219109AD0035C262 /* HubProtocol.swift */,
+				4EB822BC219109AF0035C262 /* JSONHubProtocol.swift */,
+				4EB822BA219109AF0035C262 /* Logger.swift */,
+				4EB822B4219109AD0035C262 /* NegotiationResponse.swift */,
+				4EB822AB219109AC0035C262 /* ServerInvocationHandler.swift */,
+				4EB822A5219109A90035C262 /* SignalRError.swift */,
+				4EB822B3219109AD0035C262 /* StreamHandle.swift */,
+				4EB822BD219109AF0035C262 /* TransferFormat.swift */,
+				4EB822AC219109AC0035C262 /* Transport.swift */,
+				4EB822BE219109B00035C262 /* TransportDelegate.swift */,
+				4EB822B6219109AE0035C262 /* TransportType.swift */,
+				4EB822AE219109AC0035C262 /* TypeConverter.swift */,
+				4EB822A9219109AB0035C262 /* Util.swift */,
+				4EB822B8219109AE0035C262 /* WebSocket.swift */,
+				4EB822B0219109AD0035C262 /* WebsocketsTransport.swift */,
+			);
+			path = SignalR;
 			sourceTree = "<group>";
 		};
 		4EDEC9D1218B898F00C2D2F2 = {
@@ -91,10 +174,9 @@
 		4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4E116F13218E35AF0018C57D /* SignalRClient */,
+				4EB822DB21910A230035C262 /* SignalR */,
 				4EDEC9E1218B898F00C2D2F2 /* Main.storyboard */,
 				4EDEC9F6218B8A8500C2D2F2 /* Main */,
-				4EDEC9F5218B8A7E00C2D2F2 /* Models */,
 				4EDEC9F4218B8A7200C2D2F2 /* ViewModels */,
 				4EDEC9F3218B8A5D00C2D2F2 /* Controllers */,
 				4EDEC9E7218B898F00C2D2F2 /* Assets.xcassets */,
@@ -129,14 +211,6 @@
 				4E4B115A218CF26E00867B3F /* PrimaryText.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		4EDEC9F5218B8A7E00C2D2F2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4E4B115C218D079F00867B3F /* Topics.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		4EDEC9F6218B8A8500C2D2F2 /* Main */ = {
@@ -219,21 +293,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB822CC219109B00035C262 /* HubProtocol.swift in Sources */,
+				4EB822C1219109B00035C262 /* Connection.swift in Sources */,
 				4EDEC9E6218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld in Sources */,
+				4EB822CF219109B00035C262 /* NegotiationResponse.swift in Sources */,
+				4EB822C0219109B00035C262 /* SignalRError.swift in Sources */,
+				4EB822D0219109B00035C262 /* HubConnectionBuilder.swift in Sources */,
+				4EB822C4219109B00035C262 /* Util.swift in Sources */,
+				4EB822CD219109B00035C262 /* ConnectionDelegate.swift in Sources */,
 				4ECD5F48218B91D300F7F75D /* HomeCell.swift in Sources */,
+				4EB822D2219109B00035C262 /* HttpConnectionOptions.swift in Sources */,
+				4EB822CA219109B00035C262 /* DefaultHttpClient.swift in Sources */,
+				4EB822CB219109B00035C262 /* WebsocketsTransport.swift in Sources */,
 				4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */,
+				4EB822D9219109B00035C262 /* TransportDelegate.swift in Sources */,
+				4EB822C8219109B00035C262 /* HandshakeProtocol.swift in Sources */,
+				4EB822C7219109B00035C262 /* Transport.swift in Sources */,
 				4ECD5F52218B9F6400F7F75D /* CallController.swift in Sources */,
 				4ECD5F4E218B9EE000F7F75D /* ChatController.swift in Sources */,
 				4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */,
+				4EB822DA219109B00035C262 /* HttpResponse.swift in Sources */,
+				4EB822D7219109B00035C262 /* JSONHubProtocol.swift in Sources */,
+				4EB822D6219109B00035C262 /* DefaultTransportFactory.swift in Sources */,
+				4EB822D8219109B00035C262 /* TransferFormat.swift in Sources */,
+				4EB822D5219109B00035C262 /* Logger.swift in Sources */,
+				4EB822D4219109B00035C262 /* HubConnection.swift in Sources */,
 				4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */,
+				4EB822D1219109B00035C262 /* TransportType.swift in Sources */,
+				4EB822C6219109B00035C262 /* ServerInvocationHandler.swift in Sources */,
+				4EB822CE219109B00035C262 /* StreamHandle.swift in Sources */,
 				4EDEC9F8218B8ABD00C2D2F2 /* MainController.swift in Sources */,
 				4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */,
+				4EB822D3219109B00035C262 /* WebSocket.swift in Sources */,
 				4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */,
+				4EB822C2219109B00035C262 /* HubConnectionDelegate.swift in Sources */,
+				4EB822C9219109B00035C262 /* TypeConverter.swift in Sources */,
 				4EDEC9DE218B898F00C2D2F2 /* AppDelegate.swift in Sources */,
+				4EB822C5219109B00035C262 /* HttpClientProtocol.swift in Sources */,
 				4ECD5F50218B9F3A00F7F75D /* TalkToMentorController.swift in Sources */,
-				4E4B115D218D079F00867B3F /* Topics.swift in Sources */,
 				4EDEC9FE218B8F8000C2D2F2 /* MapController.swift in Sources */,
 				4EDEC9FC218B8F2400C2D2F2 /* HomeController.swift in Sources */,
+				4EB822C3219109B00035C262 /* HttpConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HopeLine.iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "-6607.HopeLine-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -387,6 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HopeLine.iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "-6607.HopeLine-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

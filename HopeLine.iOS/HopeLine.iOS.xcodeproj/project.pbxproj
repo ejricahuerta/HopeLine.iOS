@@ -36,6 +36,8 @@
 		4EB822D8219109B00035C262 /* TransferFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BD219109AF0035C262 /* TransferFormat.swift */; };
 		4EB822D9219109B00035C262 /* TransportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BE219109B00035C262 /* TransportDelegate.swift */; };
 		4EB822DA219109B00035C262 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822BF219109B00035C262 /* HttpResponse.swift */; };
+		4EB822DF21910BAA0035C262 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822DE21910BAA0035C262 /* DataFetcher.swift */; };
+		4EB822E221910BDF0035C262 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822E121910BDF0035C262 /* APIConstants.swift */; };
 		4ECD5F48218B91D300F7F75D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F47218B91D300F7F75D /* HomeCell.swift */; };
 		4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F49218B924300F7F75D /* HomeCollectionView.swift */; };
 		4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD5F4B218B940600F7F75D /* TemplateCollectionViewController.swift */; };
@@ -83,6 +85,8 @@
 		4EB822BD219109AF0035C262 /* TransferFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFormat.swift; sourceTree = "<group>"; };
 		4EB822BE219109B00035C262 /* TransportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportDelegate.swift; sourceTree = "<group>"; };
 		4EB822BF219109B00035C262 /* HttpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		4EB822DE21910BAA0035C262 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		4EB822E121910BDF0035C262 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		4ECD5F47218B91D300F7F75D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		4ECD5F49218B924300F7F75D /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		4ECD5F4B218B940600F7F75D /* TemplateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,22 @@
 			path = SignalR;
 			sourceTree = "<group>";
 		};
+		4EB822DD21910B7D0035C262 /* DataFetch */ = {
+			isa = PBXGroup;
+			children = (
+				4EB822DE21910BAA0035C262 /* DataFetcher.swift */,
+			);
+			path = DataFetch;
+			sourceTree = "<group>";
+		};
+		4EB822E021910BCC0035C262 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4EB822E121910BDF0035C262 /* APIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		4EDEC9D1218B898F00C2D2F2 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +194,8 @@
 		4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4EB822E021910BCC0035C262 /* Constants */,
+				4EB822DD21910B7D0035C262 /* DataFetch */,
 				4EB822DB21910A230035C262 /* SignalR */,
 				4EDEC9E1218B898F00C2D2F2 /* Main.storyboard */,
 				4EDEC9F6218B8A8500C2D2F2 /* Main */,
@@ -308,6 +330,8 @@
 				4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */,
 				4EB822D9219109B00035C262 /* TransportDelegate.swift in Sources */,
 				4EB822C8219109B00035C262 /* HandshakeProtocol.swift in Sources */,
+				4EB822DF21910BAA0035C262 /* DataFetcher.swift in Sources */,
+				4EB822E221910BDF0035C262 /* APIConstants.swift in Sources */,
 				4EB822C7219109B00035C262 /* Transport.swift in Sources */,
 				4ECD5F52218B9F6400F7F75D /* CallController.swift in Sources */,
 				4ECD5F4E218B9EE000F7F75D /* ChatController.swift in Sources */,

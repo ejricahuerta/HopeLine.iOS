@@ -75,13 +75,25 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="Ozj-kd-O1c">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="Ozj-kd-O1c" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
                                         <rect key="frame" x="-1" y="0.0" width="377" height="168"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="377" height="168"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BoN-MU-2om">
+                                                    <rect key="frame" x="68" y="27" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="textView" destination="BoN-MU-2om" id="N66-jp-gGM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -103,6 +115,9 @@
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="mmQ-ph-5wh">
                         <barButtonItem key="backBarButtonItem" title="Back" id="GSm-YR-B1k"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collection" destination="Xwa-HB-db7" id="gRa-Is-AfJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvj-Yi-zbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

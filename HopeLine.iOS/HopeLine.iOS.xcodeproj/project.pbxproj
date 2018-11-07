@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		4E08C242219369E4004594E5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08C241219369E4004594E5 /* SecondaryButton.swift */; };
 		4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115A218CF26E00867B3F /* PrimaryText.swift */; };
-		4E708B6E21937818003283BD /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B6D21937818003283BD /* CommunityView.swift */; };
+		4E708B7221938409003283BD /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7121938409003283BD /* CommonCell.swift */; };
+		4E708B7421938422003283BD /* CommonResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7321938422003283BD /* CommonResourcesView.swift */; };
+		4E708B7621938A4B003283BD /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7521938A4B003283BD /* Resource.swift */; };
+		4E708B7921938BA4003283BD /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7821938BA4003283BD /* Community.swift */; };
+		4E708B7B21938C35003283BD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7A21938C35003283BD /* Topic.swift */; };
 		4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */; };
 		4EB822C0219109B00035C262 /* SignalRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A5219109A90035C262 /* SignalRError.swift */; };
 		4EB822C1219109B00035C262 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A6219109A90035C262 /* Connection.swift */; };
@@ -60,7 +64,11 @@
 /* Begin PBXFileReference section */
 		4E08C241219369E4004594E5 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		4E4B115A218CF26E00867B3F /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
-		4E708B6D21937818003283BD /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		4E708B7121938409003283BD /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
+		4E708B7321938422003283BD /* CommonResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResourcesView.swift; sourceTree = "<group>"; };
+		4E708B7521938A4B003283BD /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		4E708B7821938BA4003283BD /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
+		4E708B7A21938C35003283BD /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		4EB822A5219109A90035C262 /* SignalRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRError.swift; sourceTree = "<group>"; };
 		4EB822A6219109A90035C262 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -126,6 +134,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E708B7721938B93003283BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E708B7521938A4B003283BD /* Resource.swift */,
+				4E708B7821938BA4003283BD /* Community.swift */,
+				4E708B7A21938C35003283BD /* Topic.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4EB822DB21910A230035C262 /* SignalR */ = {
@@ -198,6 +216,7 @@
 		4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4E708B7721938B93003283BD /* Models */,
 				4EB822E021910BCC0035C262 /* Constants */,
 				4EB822DD21910B7D0035C262 /* DataFetch */,
 				4EB822DB21910A230035C262 /* SignalR */,
@@ -224,7 +243,7 @@
 				4ECD5F4D218B9EE000F7F75D /* ChatController.swift */,
 				4ECD5F4F218B9F3A00F7F75D /* TalkToMentorController.swift */,
 				4ECD5F51218B9F6400F7F75D /* CallController.swift */,
-				4E708B6D21937818003283BD /* CommunityView.swift */,
+				4E708B7321938422003283BD /* CommonResourcesView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +256,7 @@
 				4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */,
 				4E4B115A218CF26E00867B3F /* PrimaryText.swift */,
 				4E08C241219369E4004594E5 /* SecondaryButton.swift */,
+				4E708B7121938409003283BD /* CommonCell.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -325,6 +345,7 @@
 				4EB822CC219109B00035C262 /* HubProtocol.swift in Sources */,
 				4EB822C1219109B00035C262 /* Connection.swift in Sources */,
 				4EDEC9E6218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld in Sources */,
+				4E708B7221938409003283BD /* CommonCell.swift in Sources */,
 				4EB822CF219109B00035C262 /* NegotiationResponse.swift in Sources */,
 				4EB822C0219109B00035C262 /* SignalRError.swift in Sources */,
 				4EB822D0219109B00035C262 /* HubConnectionBuilder.swift in Sources */,
@@ -335,16 +356,17 @@
 				4EB822CA219109B00035C262 /* DefaultHttpClient.swift in Sources */,
 				4EB822CB219109B00035C262 /* WebsocketsTransport.swift in Sources */,
 				4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */,
+				4E708B7921938BA4003283BD /* Community.swift in Sources */,
 				4EB822D9219109B00035C262 /* TransportDelegate.swift in Sources */,
 				4EB822C8219109B00035C262 /* HandshakeProtocol.swift in Sources */,
 				4EB822DF21910BAA0035C262 /* DataFetcher.swift in Sources */,
 				4EB822E221910BDF0035C262 /* APIConstants.swift in Sources */,
+				4E708B7621938A4B003283BD /* Resource.swift in Sources */,
 				4EB822C7219109B00035C262 /* Transport.swift in Sources */,
 				4ECD5F52218B9F6400F7F75D /* CallController.swift in Sources */,
 				4ECD5F4E218B9EE000F7F75D /* ChatController.swift in Sources */,
 				4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */,
 				4EB822DA219109B00035C262 /* HttpResponse.swift in Sources */,
-				4E708B6E21937818003283BD /* CommunityView.swift in Sources */,
 				4EB822D7219109B00035C262 /* JSONHubProtocol.swift in Sources */,
 				4EB822D6219109B00035C262 /* DefaultTransportFactory.swift in Sources */,
 				4EB822D8219109B00035C262 /* TransferFormat.swift in Sources */,
@@ -353,11 +375,13 @@
 				4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */,
 				4EB822D1219109B00035C262 /* TransportType.swift in Sources */,
 				4EB822C6219109B00035C262 /* ServerInvocationHandler.swift in Sources */,
+				4E708B7B21938C35003283BD /* Topic.swift in Sources */,
 				4EB822CE219109B00035C262 /* StreamHandle.swift in Sources */,
 				4EDEC9F8218B8ABD00C2D2F2 /* MainController.swift in Sources */,
 				4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */,
 				4EB822D3219109B00035C262 /* WebSocket.swift in Sources */,
 				4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */,
+				4E708B7421938422003283BD /* CommonResourcesView.swift in Sources */,
 				4EB822C2219109B00035C262 /* HubConnectionDelegate.swift in Sources */,
 				4EB822C9219109B00035C262 /* TypeConverter.swift in Sources */,
 				4EDEC9DE218B898F00C2D2F2 /* AppDelegate.swift in Sources */,

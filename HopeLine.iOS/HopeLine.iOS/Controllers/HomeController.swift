@@ -14,27 +14,59 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     let  reuseIdentifier = "HomeCell"
     //Collection View
     var stringData = Array<String>()
+    let community = "communitySegue"
+    let resources = "resourcesSegue"
+    
+    let homeData = ["We're here to help you. Click the button below to speak to a mentor", " Our map page is a customized google map that provides geolocation,search functionality, and a custom search filter that would show the nearest hospitals, pharmacies, medical institutions, and doctors. ", " Community page is a collection of links to other organizations that provide a similar cause to ours which includes suicide hotlines, mental health awareness foundations, and other applications that are dedicated to imporving peoples lives. ", " Resources page is a collection of links to topics related to mental health or other life issues. If you want to learn more about the different types of information related about mental health and suicide then you can visit our resources page. "]
+    
+    let homeImages = [#imageLiteral(resourceName: "homechat"),#imageLiteral(resourceName: "homemap"),#imageLiteral(resourceName: "homecommunity"),#imageLiteral(resourceName: "homeweb")]
+    let titles = ["Talk to Mentor Now", "Use our Map", "Join Commnunity", "Go to Resources"]
     
     @IBOutlet weak var collection: UICollectionView!
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stringData.count
+        return homeData.count
     }
-    
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeCell
         
-        cell.backgroundColor = .black
-        cell.textView.text = self.stringData[indexPath.row]
+        cell.backgroundColor = UIColor(red: 111, green: 331, blue: 20, alpha: 1)
+        cell.textView.text = self.homeData[indexPath.row]
+        cell.homeImage.image = homeImages[indexPath.row]
+        cell.cellButton.titleLabel?.text = titles[indexPath.row]
+        cell.cellButton.tag = indexPath.row
         return cell
         
     }
     
+    
+    @IBAction func cellButtonClicked(_ sender: SecondaryButton) {
+        switch sender.titleLabel?.text {
+        case titles[0]?:
+            self.tabBarController?.selectedIndex = 2
+            break
+        case titles[1]?:
+            self.tabBarController?.selectedIndex = 1
+            break
+        case titles[2]?:
+            break
+        default:
+            print("nothing here...")
+            break
+        }
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        var uuid = NSUUID().uuidString
+        uuid = String(uuid.prefix(8))
+        print("ID:  \(uuid)" )
         let url = URL(string: APIConstants.url)
         
         URLSession.shared.dataTask(with:url!) { (data, response, error) in

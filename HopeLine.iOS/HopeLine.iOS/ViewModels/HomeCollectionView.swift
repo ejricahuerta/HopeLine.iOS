@@ -8,8 +8,11 @@
 
 import UIKit
 
-class HomeCollectionView: UICollectionView {
+class HomeCollectionView: UICollectionView ,UICollectionViewDelegateFlowLayout{
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -17,5 +20,13 @@ class HomeCollectionView: UICollectionView {
         // Drawing code
     }
     */
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 
 }

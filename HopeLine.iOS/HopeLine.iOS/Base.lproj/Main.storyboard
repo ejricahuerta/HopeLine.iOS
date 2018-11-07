@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,38 +61,66 @@
         <!--Home-->
         <scene sceneID="n7d-ai-86E">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dvj-Yi-zbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="9oT-bH-KAD" customClass="HomeController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTy-FI-Mvz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-HB-db7">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xwa-HB-db7">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ynp-pw-JZH">
-                                    <size key="itemSize" width="377" height="168"/>
+                                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ynp-pw-JZH">
+                                    <size key="itemSize" width="375.5" height="555"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="Ozj-kd-O1c" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="-1" y="0.0" width="377" height="168"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeCell" id="Ozj-kd-O1c" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="-0.5" y="0.0" width="375.5" height="555"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="377" height="168"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375.5" height="555"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BoN-MU-2om">
-                                                    <rect key="frame" x="68" y="27" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BoN-MU-2om">
+                                                    <rect key="frame" x="10" y="307.5" width="356" height="237.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ks-Xf-HWa">
+                                                    <rect key="frame" x="130" y="159" width="116" height="89"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="89" id="6Bh-bM-Egd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lzr-o8-1PD" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="257.5" width="345.5" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="sOz-ig-CKj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="lzr-o8-1PD" secondAttribute="trailing" constant="15" id="6Gv-73-wpQ"/>
+                                            <constraint firstItem="lzr-o8-1PD" firstAttribute="centerY" secondItem="Ozj-kd-O1c" secondAttribute="centerY" id="Gx0-PI-Hox"/>
+                                            <constraint firstAttribute="bottom" secondItem="BoN-MU-2om" secondAttribute="bottom" constant="10" id="Kdw-fd-zT0"/>
+                                            <constraint firstItem="BoN-MU-2om" firstAttribute="top" secondItem="lzr-o8-1PD" secondAttribute="bottom" constant="10" id="YGT-Yf-Qa2"/>
+                                            <constraint firstItem="lzr-o8-1PD" firstAttribute="top" secondItem="5ks-Xf-HWa" secondAttribute="bottom" constant="10" id="ZGy-ro-2uq"/>
+                                            <constraint firstItem="lzr-o8-1PD" firstAttribute="leading" secondItem="Ozj-kd-O1c" secondAttribute="leadingMargin" constant="15" id="jdP-ja-uw1"/>
+                                            <constraint firstAttribute="trailing" secondItem="BoN-MU-2om" secondAttribute="trailing" constant="10" id="uId-qj-KMv"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="5ks-Xf-HWa" secondAttribute="trailing" constant="121.5" id="v52-bu-3LO"/>
+                                            <constraint firstItem="5ks-Xf-HWa" firstAttribute="leading" secondItem="Ozj-kd-O1c" secondAttribute="leadingMargin" constant="122" id="yVI-xy-HGv"/>
+                                            <constraint firstItem="BoN-MU-2om" firstAttribute="leading" secondItem="Ozj-kd-O1c" secondAttribute="leading" constant="10" id="zhW-Ir-kwY"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="cellButton" destination="lzr-o8-1PD" id="gIT-88-tND"/>
+                                            <outlet property="homeImage" destination="5ks-Xf-HWa" id="dI2-c2-G70"/>
                                             <outlet property="textView" destination="BoN-MU-2om" id="N66-jp-gGM"/>
                                         </connections>
                                     </collectionViewCell>
@@ -105,23 +134,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.18907924849999999" green="0.2093067508" blue="0.50756962439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Xwa-HB-db7" firstAttribute="top" secondItem="K3W-IR-LEe" secondAttribute="top" id="0rQ-J3-szl"/>
-                            <constraint firstItem="Xwa-HB-db7" firstAttribute="leading" secondItem="K3W-IR-LEe" secondAttribute="leading" id="3rk-fZ-rHJ"/>
-                            <constraint firstItem="K3W-IR-LEe" firstAttribute="bottom" secondItem="Xwa-HB-db7" secondAttribute="bottom" id="7fr-rI-WXe"/>
-                            <constraint firstItem="K3W-IR-LEe" firstAttribute="trailing" secondItem="Xwa-HB-db7" secondAttribute="trailing" id="ZKW-T6-6Cy"/>
+                            <constraint firstItem="Xwa-HB-db7" firstAttribute="bottom" secondItem="K3W-IR-LEe" secondAttribute="bottom" id="4Cx-Je-oTY"/>
+                            <constraint firstItem="Xwa-HB-db7" firstAttribute="top" secondItem="K3W-IR-LEe" secondAttribute="top" id="XBo-DY-Ggd"/>
+                            <constraint firstItem="Xwa-HB-db7" firstAttribute="trailing" secondItem="K3W-IR-LEe" secondAttribute="trailing" id="jKo-Nw-v8C"/>
+                            <constraint firstItem="Xwa-HB-db7" firstAttribute="leading" secondItem="K3W-IR-LEe" secondAttribute="leading" id="ogA-Rw-shd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K3W-IR-LEe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="mmQ-ph-5wh">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="GSm-YR-B1k"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="GSm-YR-B1k"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collection" destination="Xwa-HB-db7" id="gRa-Is-AfJ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dvj-Yi-zbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="401" y="125"/>
+            <point key="canvasLocation" x="400.80000000000001" y="124.58770614692655"/>
         </scene>
         <!--Authenticate Controller-->
         <scene sceneID="2Gm-9d-x2s">
@@ -141,9 +169,8 @@
                                 <color key="textColor" red="0.33290556073188782" green="0.59375172853469849" blue="0.044128365814685822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obU-UT-0IQ" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                <rect key="frame" x="16" y="313" width="343" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obU-UT-0IQ" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="310" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Sign In as Guest">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -156,8 +183,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.18907924853298291" green="0.2093067508493921" blue="0.50756962435233155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="obU-UT-0IQ" firstAttribute="centerY" secondItem="a1u-Hg-hdS" secondAttribute="centerY" id="5tr-md-g7L"/>
                             <constraint firstItem="T2C-iQ-u8q" firstAttribute="leading" secondItem="LMq-7f-dkP" secondAttribute="leading" id="RFX-MB-jaf"/>
+                            <constraint firstItem="LMq-7f-dkP" firstAttribute="trailing" secondItem="obU-UT-0IQ" secondAttribute="trailing" constant="16" id="UX0-2I-TZ4"/>
                             <constraint firstItem="T2C-iQ-u8q" firstAttribute="trailing" secondItem="LMq-7f-dkP" secondAttribute="trailing" id="WTy-Yv-0IT"/>
+                            <constraint firstItem="obU-UT-0IQ" firstAttribute="leading" secondItem="LMq-7f-dkP" secondAttribute="leading" constant="16" id="XTe-Ka-UFL"/>
                             <constraint firstItem="T2C-iQ-u8q" firstAttribute="top" secondItem="LMq-7f-dkP" secondAttribute="top" id="nG1-k0-OMI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LMq-7f-dkP"/>

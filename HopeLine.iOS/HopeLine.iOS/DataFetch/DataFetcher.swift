@@ -16,7 +16,7 @@ enum JSonResult<Value> {
 
 class DataFetcher {
  
-    func GetData(for: String, handler: ((JSonResult<Any>)->Void)?) {
+    func GetData(forAction: String, handler: ((JSonResult<Any>)->Void)?) {
         
         let url = URL(string: APIConstants.url)
         let task  = URLSession.shared.dataTask(with: url!) { (data, response, error) in

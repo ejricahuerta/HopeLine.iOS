@@ -59,7 +59,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
             self.tabBarController?.selectedIndex = 1
             break
         case titles[2]?:
-            viewTitle = "community"
+            viewTitle = "communities"
             break
         case titles[3]?:
             viewTitle = "resources"

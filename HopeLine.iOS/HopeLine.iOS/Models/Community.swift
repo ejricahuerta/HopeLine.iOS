@@ -9,17 +9,17 @@
 import UIKit
 
 class Community: NSObject {
-    var id : String?
+    var id : Int?
     var name : String?
     var desc : String?
     var url : String?
-    var imageUrl : String?
+
     
-    init(id: String , name: String, desc : String, url : String , imageUrl :String) {
+    init(id: Int? , name: String, desc : String, url : String) {
         self.id = id
         self.name = name
         self.desc = desc
         self.url = url
-        self.imageUrl = imageUrl
+
     }
 }

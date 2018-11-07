@@ -10,37 +10,58 @@ import UIKit
 
 class CommonResourcesView: UITableViewController {
     
-    var comonItems :  NSMutableArray?
+    var comonItems =  NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: APIConstants.url)
+        
+        tableView.estimatedRowHeight = 200.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        
+        let stringUrl = "\(APIConstants.url)/\(String(describing: title!))"
+        print(stringUrl)
+        let url = URL(string: stringUrl )
         
         URLSession.shared.dataTask(with:url!) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
             } else {
                 do {
-                    
                     let parsedData = try JSONSerialization.jsonObject(with: data!) as! [NSDictionary]
                     print(parsedData)
                     DispatchQueue.main.async {
                         for item in parsedData
                         {
-                            self.comonItems?.add(item.value(forKey: "name") as! String)
+                            if self.title!.contains("resources") {
+                                let newres = Resource(id: item.value(forKey: "id") as! Int, name: item.value(forKey: "name") as! String,desc: item.value(forKey: "description") as! String, url: item.value(forKey: "url") as! String)
+                                print("\(newres.name!)")
+                                self.comonItems.add(newres)
+                            }
+                            else {
+                                let newCom = Community(id: item.value(forKey: "id") as! Int, name: item.value(forKey: "name") as! String,desc: item.value(forKey: "description") as! String, url: item.value(forKey: "url") as! String)
+                                print("\(newCom.name!)")
+                                self.comonItems.add(newCom)
+                            }
                         }
-                        self.tableView.reloadData();
+                    self.tableView.reloadData()
                     }
+        
+
                 } catch let error as NSError {
                     print(error.localizedDescription)
                 }
             }
-            }.resume()
+            
+
+        }.resume()
+   
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+
     }
 
     // MARK: - Table view data source
@@ -51,29 +72,46 @@ class CommonResourcesView: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (comonItems?.count)!
+        return comonItems.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! CommonCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commonCell", for: indexPath) as! CommonCell
         
         if title == "resources"{
             var obj: Resource?
-            obj = comonItems?.object(at: indexPath.row) as? Resource
+            obj = comonItems.object(at: indexPath.row) as? Resource
+            print(obj!)
             cell.commonTitle.text = obj?.name
             cell.commonImage.image = #imageLiteral(resourceName: "commonimg")
-            cell.url = obj?.url
+            cell.commonDescription.text = obj?.desc
+            cell.commonLink.text = obj?.url
+            cell.backgroundColor = UIColor(red: 111, green: 331, blue: 20, alpha: 1)
         }
         else {
-            
+            var obj: Community?
+            obj = comonItems.object(at: indexPath.row) as? Community
+            print(obj!)
+            cell.commonTitle.text = obj?.name
+            cell.commonImage.image = #imageLiteral(resourceName: "commonimg")
+            cell.commonDescription.text = obj?.desc
+            cell.commonLink.text = obj?.url
+            cell.backgroundColor = UIColor(red: 111, green: 331, blue: 20, alpha: 1)
         }
-        
-
         return cell
     }
+    
+    override  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
+    }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let url = (comonItems.object(at: indexPath.row) as! Resource).url
+        
+        UIApplication.shared.open(URL(string: url!)!, options: [:], completionHandler: nil)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

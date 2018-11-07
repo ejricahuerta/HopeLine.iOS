@@ -1,5 +1,5 @@
 //
-//  CommonCell.swift
+//  ChatCell.swift
 //  HopeLine.iOS
 //
 //  Created by Edmel John Ricahuerta on 2018-11-07.
@@ -8,24 +8,24 @@
 
 import UIKit
 
-class CommonCell: UITableViewCell {
+class ChatCell: UITableViewCell {
 
-    @IBOutlet weak var commonTitle: UILabel!
-    @IBOutlet weak var commonLink: UILabel!
-    @IBOutlet weak var commonDescription: UITextView!
-    @IBOutlet weak var commonImage: UIImageView!
     
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var msgBox: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+    }
+    
+    func setUp(name : String , msg : String){
+        userName.text = name
+        msgBox.text = msg
     }
 
 }

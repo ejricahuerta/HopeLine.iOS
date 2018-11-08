@@ -61,6 +61,7 @@
 		4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9F9218B8DB200C2D2F2 /* AuthenticateController.swift */; };
 		4EDEC9FC218B8F2400C2D2F2 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9FB218B8F2400C2D2F2 /* HomeController.swift */; };
 		4EDEC9FE218B8F8000C2D2F2 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEC9FD218B8F8000C2D2F2 /* MapController.swift */; };
+		4EF695D32194C33500B074A4 /* NameGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF695D22194C33500B074A4 /* NameGeneratorService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		4EDEC9F9218B8DB200C2D2F2 /* AuthenticateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateController.swift; sourceTree = "<group>"; };
 		4EDEC9FB218B8F2400C2D2F2 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		4EDEC9FD218B8F8000C2D2F2 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		4EF695D22194C33500B074A4 /* NameGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGeneratorService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 		4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4EF695D12194C30C00B074A4 /* Services */,
 				4E708B7721938B93003283BD /* Models */,
 				4EB822E021910BCC0035C262 /* Constants */,
 				4EB822DD21910B7D0035C262 /* DataFetch */,
@@ -273,6 +276,14 @@
 				4EDEC9DD218B898F00C2D2F2 /* AppDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4EF695D12194C30C00B074A4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4EF695D22194C33500B074A4 /* NameGeneratorService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +400,7 @@
 				4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */,
 				4EB822D3219109B00035C262 /* WebSocket.swift in Sources */,
 				4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */,
+				4EF695D32194C33500B074A4 /* NameGeneratorService.swift in Sources */,
 				4E708B7421938422003283BD /* CommonResourcesView.swift in Sources */,
 				4EB822C2219109B00035C262 /* HubConnectionDelegate.swift in Sources */,
 				4EB822C9219109B00035C262 /* TypeConverter.swift in Sources */,

@@ -312,7 +312,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Call"/>
                                 <connections>
-                                    <segue destination="IsH-3y-Sgm" kind="show" id="Pjy-eA-sfp"/>
+                                    <segue destination="IsH-3y-Sgm" kind="show" identifier="callSegue" id="Pjy-eA-sfp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXE-cp-2a7" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
@@ -320,7 +320,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Chat"/>
                                 <connections>
-                                    <segue destination="EhD-GE-Ae0" kind="show" id="CzF-jZ-mfR"/>
+                                    <segue destination="EhD-GE-Ae0" kind="show" identifier="chatSegue" id="CzF-jZ-mfR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -352,49 +352,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDU-EX-kG7" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                <rect key="frame" x="313" y="582" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send"/>
-                                <connections>
-                                    <action selector="Send:" destination="EhD-GE-Ae0" eventType="touchUpInside" id="3mc-e8-upH"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-iA-e9b">
-                                <rect key="frame" x="16" y="582" width="289" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-iA-e9b">
+                                <rect key="frame" x="10" y="567" width="285" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FKP-cR-nr9"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-9O-C5m">
-                                <rect key="frame" x="16" y="76" width="343" height="498"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-9O-C5m">
+                                <rect key="frame" x="0.0" y="64" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="76" id="7vq-Ue-Bqc" customClass="ChatCell" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="76"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="100" id="7vq-Ue-Bqc" customClass="ChatCell" customModule="HopeLine_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vq-Ue-Bqc" id="SrY-3g-5HE">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-oN-3ft">
-                                                    <rect key="frame" x="8" y="8" width="327" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-oN-3ft">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-eI-uIu">
-                                                    <rect key="frame" x="8" y="24" width="327" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-eI-uIu">
+                                                    <rect key="frame" x="8" y="24" width="359" height="67"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="trailing" secondItem="lEH-eI-uIu" secondAttribute="trailing" id="0Qv-Cy-8Ag"/>
+                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="leading" secondItem="lEH-eI-uIu" secondAttribute="leading" id="A5v-e3-l4a"/>
+                                                <constraint firstItem="lEH-eI-uIu" firstAttribute="top" secondItem="SrY-3g-5HE" secondAttribute="topMargin" constant="16" id="MoW-Wm-kRI"/>
+                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="leading" secondItem="SrY-3g-5HE" secondAttribute="leadingMargin" id="WeT-V8-Mbg"/>
+                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="top" secondItem="SrY-3g-5HE" secondAttribute="topMargin" id="XGI-4e-0Mw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lEH-eI-uIu" secondAttribute="bottom" constant="0.5" id="ewR-C3-NLb"/>
+                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="trailing" secondItem="SrY-3g-5HE" secondAttribute="trailingMargin" id="l5j-ux-twX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="msgBox" destination="lEH-eI-uIu" id="DdJ-Hr-zKb"/>
@@ -408,16 +408,39 @@
                                     <outlet property="prefetchDataSource" destination="EhD-GE-Ae0" id="of5-Gj-mLK"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDU-EX-kG7" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
+                                <rect key="frame" x="305" y="567" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IDq-Zq-KRt"/>
+                                    <constraint firstAttribute="width" constant="60" id="T3D-0l-nAE"/>
+                                </constraints>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sentMesagae:" destination="EhD-GE-Ae0" eventType="touchUpInside" id="CfU-8x-fZa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WzB-D6-Edi" firstAttribute="trailing" secondItem="uFN-9O-C5m" secondAttribute="trailing" id="4mN-bw-hvX"/>
+                            <constraint firstItem="bDU-EX-kG7" firstAttribute="leading" secondItem="gC9-iA-e9b" secondAttribute="trailing" constant="10" id="7L9-9g-eCP"/>
+                            <constraint firstItem="bDU-EX-kG7" firstAttribute="top" secondItem="uFN-9O-C5m" secondAttribute="bottom" constant="10" id="Des-CM-B62"/>
+                            <constraint firstAttribute="trailing" secondItem="bDU-EX-kG7" secondAttribute="trailing" constant="10" id="E1T-Mp-a5Y"/>
+                            <constraint firstItem="gC9-iA-e9b" firstAttribute="leading" secondItem="zkR-b9-31l" secondAttribute="leading" constant="10" id="Irj-iT-LkZ"/>
+                            <constraint firstItem="gC9-iA-e9b" firstAttribute="top" secondItem="uFN-9O-C5m" secondAttribute="bottom" constant="10" id="Kni-vF-xTY"/>
+                            <constraint firstAttribute="bottom" secondItem="gC9-iA-e9b" secondAttribute="bottom" constant="60" id="OUV-EW-rxl"/>
+                            <constraint firstItem="uFN-9O-C5m" firstAttribute="leading" secondItem="WzB-D6-Edi" secondAttribute="leading" id="PI9-nF-aer"/>
+                            <constraint firstAttribute="bottom" secondItem="bDU-EX-kG7" secondAttribute="bottom" constant="60" id="aSm-Le-TpO"/>
+                            <constraint firstItem="uFN-9O-C5m" firstAttribute="top" secondItem="WzB-D6-Edi" secondAttribute="top" id="hEs-X5-UO2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WzB-D6-Edi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="zzi-6M-hXP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="GVT-La-xwx"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="sendButton" destination="bDU-EX-kG7" id="Z52-bh-UfC"/>
                         <outlet property="tableView" destination="uFN-9O-C5m" id="vvq-vs-fsD"/>
+                        <outlet property="textMessage" destination="gC9-iA-e9b" id="f6e-pk-zoO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibI-iJ-GwO" userLabel="First Responder" sceneMemberID="firstResponder"/>

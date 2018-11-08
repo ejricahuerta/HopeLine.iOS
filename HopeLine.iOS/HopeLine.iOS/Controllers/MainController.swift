@@ -10,9 +10,11 @@ import UIKit
 
 class MainController: UITabBarController {
     var datafetcher : DataFetcher?
+    let nameService  = NameGeneratorService()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameService.returnedGuestName()
         
         // Do any additional setup after loading the view.
     }
@@ -22,7 +24,7 @@ class MainController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 

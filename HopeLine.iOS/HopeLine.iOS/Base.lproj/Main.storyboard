@@ -356,6 +356,9 @@
                                 <rect key="frame" x="313" y="582" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="Send:" destination="EhD-GE-Ae0" eventType="touchUpInside" id="3mc-e8-upH"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-iA-e9b">
                                 <rect key="frame" x="16" y="582" width="289" height="30"/>
@@ -369,7 +372,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="76" id="7vq-Ue-Bqc" customClass="ChatCell" customModule="HopeLine_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="76" id="7vq-Ue-Bqc" customClass="ChatCell" customModule="HopeLine_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vq-Ue-Bqc" id="SrY-3g-5HE">
@@ -413,6 +416,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="GVT-La-xwx"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="sendButton" destination="bDU-EX-kG7" id="Z52-bh-UfC"/>
                         <outlet property="tableView" destination="uFN-9O-C5m" id="vvq-vs-fsD"/>
                     </connections>
                 </viewController>

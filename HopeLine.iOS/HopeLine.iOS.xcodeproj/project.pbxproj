@@ -15,6 +15,7 @@
 		4E708B7921938BA4003283BD /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7821938BA4003283BD /* Community.swift */; };
 		4E708B7B21938C35003283BD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7A21938C35003283BD /* Topic.swift */; };
 		4E708B7D2193A500003283BD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7C2193A500003283BD /* ChatCell.swift */; };
+		4E708B7F2193AE1A003283BD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7E2193AE19003283BD /* Message.swift */; };
 		4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */; };
 		4EB822C0219109B00035C262 /* SignalRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A5219109A90035C262 /* SignalRError.swift */; };
 		4EB822C1219109B00035C262 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB822A6219109A90035C262 /* Connection.swift */; };
@@ -71,6 +72,7 @@
 		4E708B7821938BA4003283BD /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		4E708B7A21938C35003283BD /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		4E708B7C2193A500003283BD /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		4E708B7E2193AE19003283BD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		4EB822A5219109A90035C262 /* SignalRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRError.swift; sourceTree = "<group>"; };
 		4EB822A6219109A90035C262 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				4E708B7521938A4B003283BD /* Resource.swift */,
 				4E708B7821938BA4003283BD /* Community.swift */,
 				4E708B7A21938C35003283BD /* Topic.swift */,
+				4E708B7E2193AE19003283BD /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				4E08C242219369E4004594E5 /* SecondaryButton.swift in Sources */,
 				4EB822CC219109B00035C262 /* HubProtocol.swift in Sources */,
 				4EB822C1219109B00035C262 /* Connection.swift in Sources */,
+				4E708B7F2193AE1A003283BD /* Message.swift in Sources */,
 				4E708B7D2193A500003283BD /* ChatCell.swift in Sources */,
 				4EDEC9E6218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld in Sources */,
 				4E708B7221938409003283BD /* CommonCell.swift in Sources */,

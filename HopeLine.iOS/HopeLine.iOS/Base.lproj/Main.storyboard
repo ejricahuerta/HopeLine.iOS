@@ -77,10 +77,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeCell" id="Ozj-kd-O1c" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375.5" height="555"/>
+                                        <rect key="frame" x="-1" y="0.0" width="376" height="555"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375.5" height="555"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="555"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BoN-MU-2om">
@@ -96,7 +96,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lzr-o8-1PD" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="257.5" width="346" height="40"/>
+                                                    <rect key="frame" x="15" y="257.5" width="345.5" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="sOz-ig-CKj"/>
                                                     </constraints>
@@ -179,7 +179,7 @@
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="desc" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBK-r9-4RC">
                                             <rect key="frame" x="158" y="34" width="171" height="121"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.9760093092918396" green="1" blue="0.90192955732345581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -216,6 +216,7 @@
                                         <constraint firstItem="bA3-Or-1NO" firstAttribute="leading" secondItem="eqW-9R-r8d" secondAttribute="leadingMargin" constant="5" id="jJg-Uu-kaf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.97512459938892604" green="1" blue="0.90303421821729168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <viewLayoutGuide key="safeArea" id="heu-K8-urW"/>
                                 <connections>
                                     <outlet property="commonDescription" destination="aBK-r9-4RC" id="3gk-3T-V9M"/>
@@ -361,44 +362,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-9O-C5m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-9O-C5m">
                                 <rect key="frame" x="0.0" y="64" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="100" id="7vq-Ue-Bqc" customClass="ChatCell" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="143" id="7vq-Ue-Bqc" customClass="ChatCell" customModule="HopeLine_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vq-Ue-Bqc" id="SrY-3g-5HE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-oN-3ft">
-                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-5B-GDb" customClass="ChatText" customModule="HopeLine_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="28" width="359" height="103"/>
+                                                    <attributedString key="attributedText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lEH-eI-uIu">
-                                                    <rect key="frame" x="8" y="24" width="359" height="67"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fey-7t-f3V">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                    <color key="backgroundColor" red="0.52737639986173779" green="0.499431752542976" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <attributedString key="attributedText"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="trailing" secondItem="lEH-eI-uIu" secondAttribute="trailing" id="0Qv-Cy-8Ag"/>
-                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="leading" secondItem="lEH-eI-uIu" secondAttribute="leading" id="A5v-e3-l4a"/>
-                                                <constraint firstItem="lEH-eI-uIu" firstAttribute="top" secondItem="SrY-3g-5HE" secondAttribute="topMargin" constant="16" id="MoW-Wm-kRI"/>
-                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="leading" secondItem="SrY-3g-5HE" secondAttribute="leadingMargin" id="WeT-V8-Mbg"/>
-                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="top" secondItem="SrY-3g-5HE" secondAttribute="topMargin" id="XGI-4e-0Mw"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="lEH-eI-uIu" secondAttribute="bottom" constant="0.5" id="ewR-C3-NLb"/>
-                                                <constraint firstItem="Gf4-oN-3ft" firstAttribute="trailing" secondItem="SrY-3g-5HE" secondAttribute="trailingMargin" id="l5j-ux-twX"/>
+                                                <constraint firstItem="fey-7t-f3V" firstAttribute="leading" secondItem="SrY-3g-5HE" secondAttribute="leadingMargin" id="0fk-v8-vVN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fey-7t-f3V" secondAttribute="trailing" id="G3A-Q1-ml0"/>
+                                                <constraint firstItem="fey-7t-f3V" firstAttribute="top" secondItem="SrY-3g-5HE" secondAttribute="topMargin" id="LNP-oL-WFF"/>
+                                                <constraint firstItem="vAW-5B-GDb" firstAttribute="leading" secondItem="SrY-3g-5HE" secondAttribute="leadingMargin" id="WuT-W5-eZG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vAW-5B-GDb" secondAttribute="trailing" id="c7R-zd-NlW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vAW-5B-GDb" secondAttribute="bottom" id="j8M-ha-euk"/>
+                                                <constraint firstItem="vAW-5B-GDb" firstAttribute="top" secondItem="fey-7t-f3V" secondAttribute="bottom" id="sju-P1-n75"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="msgBox" destination="lEH-eI-uIu" id="DdJ-Hr-zKb"/>
-                                            <outlet property="userName" destination="Gf4-oN-3ft" id="Nft-TY-KFE"/>
+                                            <outlet property="msgBox" destination="vAW-5B-GDb" id="s1A-ON-mia"/>
+                                            <outlet property="userName" destination="fey-7t-f3V" id="5Bs-nd-zU4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

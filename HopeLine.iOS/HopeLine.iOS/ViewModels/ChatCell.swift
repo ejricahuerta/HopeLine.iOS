@@ -10,17 +10,25 @@ import UIKit
 
 class ChatCell: UITableViewCell {
 
+    //     (220,241,230)
+
+
+    @IBOutlet weak var msgBox: ChatText!
     
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var msgBox: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 8
+        self.layer.backgroundColor  = UIColor(red: 220, green: 241, blue: 230, alpha: 1.0).cgColor
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

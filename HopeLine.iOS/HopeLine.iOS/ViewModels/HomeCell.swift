@@ -12,4 +12,9 @@ class HomeCell: UICollectionViewCell {
     @IBOutlet weak var cellButton: SecondaryButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var homeImage: UIImageView!
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }

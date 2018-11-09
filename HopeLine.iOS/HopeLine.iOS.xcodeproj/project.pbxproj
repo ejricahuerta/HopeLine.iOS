@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E08C242219369E4004594E5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08C241219369E4004594E5 /* SecondaryButton.swift */; };
+		4E0D48EF2196245B001FCE13 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D48EE2196245B001FCE13 /* ChatService.swift */; };
 		4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115A218CF26E00867B3F /* PrimaryText.swift */; };
 		4E708B7221938409003283BD /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7121938409003283BD /* CommonCell.swift */; };
 		4E708B7421938422003283BD /* CommonResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7321938422003283BD /* CommonResourcesView.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		4E08C241219369E4004594E5 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		4E0D48EE2196245B001FCE13 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		4E4B115A218CF26E00867B3F /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
 		4E708B7121938409003283BD /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
 		4E708B7321938422003283BD /* CommonResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResourcesView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF695D22194C33500B074A4 /* NameGeneratorService.swift */,
+				4E0D48EE2196245B001FCE13 /* ChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				4EB822CE219109B00035C262 /* StreamHandle.swift in Sources */,
 				4EDEC9F8218B8ABD00C2D2F2 /* MainController.swift in Sources */,
 				4ECD5F4A218B924300F7F75D /* HomeCollectionView.swift in Sources */,
+				4E0D48EF2196245B001FCE13 /* ChatService.swift in Sources */,
 				4EB822D3219109B00035C262 /* WebSocket.swift in Sources */,
 				4EDEC9FA218B8DB200C2D2F2 /* AuthenticateController.swift in Sources */,
 				4EF695D32194C33500B074A4 /* NameGeneratorService.swift in Sources */,

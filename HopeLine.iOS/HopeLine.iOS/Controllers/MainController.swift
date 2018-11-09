@@ -14,7 +14,7 @@ class MainController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameService.returnedGuestName()
+        
         
         // Do any additional setup after loading the view.
     }

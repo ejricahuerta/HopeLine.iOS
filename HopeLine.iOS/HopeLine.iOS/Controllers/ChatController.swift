@@ -24,6 +24,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
 
     var alert  : UIAlertController?
     
+    @IBOutlet weak var chatText: PrimaryText!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textMessage: UITextField!
     @IBOutlet weak var sendButton: PrimaryButton!
@@ -36,7 +37,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         //components
         self.sendButton.isHidden = true
-
+        self.chatText.isHidden = true
         //table
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
@@ -63,13 +64,13 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
             print(" MESSAGE : \(String(describing: newmsg))")
             print(" ROOM : \(room)")
             
-            
             chatHubConnection?.invoke(method:"SendMessage", arguments: [currentUser!,newmsg!, room], invocationDidComplete: { (err) in
                 if let resperr = err {
                     print("Error on sending ... :\(String(describing: resperr.localizedDescription)) ")
                 }
             })
         }
+        self.chatText.text = ""
     }
     
     
@@ -122,11 +123,14 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         chatHubConnection?.on(method: "NotifyUser",  callback: {args, typeConverter in
             let message = try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self)
-            self.alert = UIAlertController(title: "Matching Mentor", message: message, preferredStyle: UIAlertControllerStyle.alert)
-            self.alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (act) in
-                self.navigationController?.popToRootViewController(animated: true)
-            }))
-            self.present(self.alert!, animated: true, completion: nil)
+            if message != "Connected" {
+                self.alert = UIAlertController(title: "Matching Mentor", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                self.alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (act) in
+                    self.navigationController?.popToRootViewController(animated: true)
+                }))
+                self.present(self.alert!, animated: true, completion: nil)
+            }
+
         })
         
         self.chatHubConnection?.on(method: "ReceiveMessage", callback: { args, typeConverter in
@@ -135,9 +139,12 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.chatHubConnection?.on(method: "Room", callback: { args, typeConverter in
             self.room = (try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self))!
-            self.alert?.dismiss(animated: true, completion: nil)
+            if self.alert!.isViewLoaded {
+                self.alert?.dismiss(animated: true, completion: nil)
+            }
             print("ROOM : \(self.room)")
             self.sendButton.isHidden = false
+            self.chatText.isHidden = false
             self.title = "You are now connected!"
             self.chatHubConnection?.invoke(method: "LoadMessage", arguments: [self.room], invocationDidComplete: { (err) in
                 if let resperr = err {

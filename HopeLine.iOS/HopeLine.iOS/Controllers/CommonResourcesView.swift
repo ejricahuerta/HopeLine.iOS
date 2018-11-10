@@ -49,6 +49,10 @@ class CommonResourcesView: UITableViewController {
         
 
                 } catch let error as NSError {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popToRootViewController(animated: false)
+                    }
+
                     print(error.localizedDescription)
                 }
             }

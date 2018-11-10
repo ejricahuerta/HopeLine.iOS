@@ -47,7 +47,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
             view.title = viewTitle
         }
     }
-    
+
     
     @IBAction func cellButtonClicked(_ sender: SecondaryButton) {
         

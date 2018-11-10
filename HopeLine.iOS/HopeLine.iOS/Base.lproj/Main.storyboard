@@ -353,7 +353,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-iA-e9b">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-iA-e9b" customClass="PrimaryText" customModule="HopeLine_iOS" customModuleProvider="target">
                                 <rect key="frame" x="10" y="567" width="285" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FKP-cR-nr9"/>
@@ -437,6 +437,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="GVT-La-xwx"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="chatText" destination="gC9-iA-e9b" id="SV8-rN-Ptu"/>
                         <outlet property="sendButton" destination="bDU-EX-kG7" id="lQE-tG-csS"/>
                         <outlet property="tableView" destination="uFN-9O-C5m" id="vvq-vs-fsD"/>
                         <outlet property="textMessage" destination="gC9-iA-e9b" id="f6e-pk-zoO"/>

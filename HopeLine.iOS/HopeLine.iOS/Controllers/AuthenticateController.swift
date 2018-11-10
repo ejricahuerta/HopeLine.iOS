@@ -10,23 +10,14 @@ import UIKit
 
 class AuthenticateController: UIViewController, UITextViewDelegate {
     
-    @IBOutlet weak var guestTextField: PrimaryText!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func textChanged(_ sender: PrimaryText) {
-        if sender.text!.characters.count > 15 {
-            sender.text!.characters.removeLast()
-        }
     }
     
 }

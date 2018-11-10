@@ -41,6 +41,9 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
 
+    @IBAction func homeButtonTapped(_ sender: PrimaryButton) {
+        self.tabBarController?.selectedIndex = 2
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 

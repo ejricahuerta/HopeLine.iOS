@@ -307,6 +307,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Talk To a Mentor"/>
+                                        <connections>
+                                            <action selector="homeButtonTapped:" destination="2Sz-He-xJz" eventType="touchUpInside" id="1sx-P7-bEj"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylX-0E-3EY">
                                         <rect key="frame" x="8" y="20" width="358" height="54.333333333333343"/>

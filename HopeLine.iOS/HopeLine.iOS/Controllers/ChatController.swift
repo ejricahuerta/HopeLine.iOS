@@ -17,15 +17,26 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     var chatHubConnection: HubConnection?
     var room : String  = ""
     var currentUser : String?
-    
+    var isConnected : Bool?
+    var timer : Timer?
+    var counter = 0
+    var notif : String?
 
+    var alert  : UIAlertController?
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textMessage: UITextField!
+    @IBOutlet weak var sendButton: PrimaryButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CURRENT USER: \(currentUser!)")
-    
+        
+
+        
+        //components
+        self.sendButton.isHidden = true
+
         //table
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
@@ -34,6 +45,8 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.registerMethods()
         
+  
+        //timer = Timer.init(timeInterval: 0.5, target: self, selector: #selector(connectionRequest), userInfo: nil, repeats: true)
         self.chatHubConnection?.invoke(method: "RequestToTalk", arguments: [currentUser], invocationDidComplete: { err in
             if let resp = err {
                 print("Error...\(String(describing: resp))")
@@ -41,12 +54,16 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         })
     }
     
+ 
+    
     @IBAction func sentMesage(_ sender: PrimaryButton) {
         if textMessage.text?.isEmpty  == false {
             let newmsg = textMessage.text
             print(" USER : \(String(describing: currentUser))")
             print(" MESSAGE : \(String(describing: newmsg))")
             print(" ROOM : \(room)")
+            
+            
             chatHubConnection?.invoke(method:"SendMessage", arguments: [currentUser!,newmsg!, room], invocationDidComplete: { (err) in
                 if let resperr = err {
                     print("Error on sending ... :\(String(describing: resperr.localizedDescription)) ")
@@ -86,6 +103,8 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
     
     func connectionDidClose(error: Error?) {
+        
+        
         let user  = "system"
         let message = "User left the chat."
         self.chatHubConnection?.invoke(method: "SendMessage", arguments: [user,message], invocationDidComplete: { (err) in
@@ -101,18 +120,31 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     //register all methods from hub server
     func registerMethods(){
         
+        chatHubConnection?.on(method: "NotifyUser",  callback: {args, typeConverter in
+            let message = try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self)
+            self.alert = UIAlertController(title: "Matching Mentor", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            self.alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (act) in
+                self.navigationController?.popToRootViewController(animated: true)
+            }))
+            self.present(self.alert!, animated: true, completion: nil)
+        })
+        
         self.chatHubConnection?.on(method: "ReceiveMessage", callback: { args, typeConverter in
             self.didGetMessage(args: args, converter: typeConverter)
         })
         
         self.chatHubConnection?.on(method: "Room", callback: { args, typeConverter in
             self.room = (try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self))!
+            self.alert?.dismiss(animated: true, completion: nil)
             print("ROOM : \(self.room)")
+            self.sendButton.isHidden = false
+            self.title = "You are now connected!"
             self.chatHubConnection?.invoke(method: "LoadMessage", arguments: [self.room], invocationDidComplete: { (err) in
                 if let resperr = err {
                     print(resperr)
                 }
             })
+
         })
         
         self.chatHubConnection?.on(method: "Load", callback: { args, typeConverter in
@@ -130,6 +162,19 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         self.tableView.reloadData()
     }
     
+    
+    //Request Time
+    @objc func connectionRequest(){
+        print("Attempting to Connect to a Mentor - attempt: \(counter)")
+        self.chatHubConnection?.invoke(method: "RequestToTalk", arguments: [currentUser], invocationDidComplete: { err in
+            if let resp = err {
+                print("Error...\(String(describing: resp))")
+            }
+        })
+        counter += 1
+        print("Attempting to Connect to a Mentor - attempt: \(counter)")
+    }
+
 }
 
 

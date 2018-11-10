@@ -15,18 +15,14 @@ class TalkToMentorController: UIViewController {
     var chatHubConnection : HubConnection?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.tabBarItem.badgeValue = "1"
+        
         user = "Guest" + String.random(length: 12)
         chatHubConnection =   HubConnectionBuilder(url: URL(string:"https://hopelineapi.azurewebsites.net/v2/chatHub")!)
                 .withLogging(minLogLevel: .debug)
                 .build()
-        
-        chatHubConnection?.on(method: "NotifyUser",  callback: {args, typeConverter in
-            let message = try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self)
-            if (message?.contains("Connected."))! {
-                print("You are connected... ")
-            }
-        })
-        
+
         self.chatHubConnection!.start()
     }
     override func didReceiveMemoryWarning() {
@@ -39,7 +35,6 @@ class TalkToMentorController: UIViewController {
             let view = segue.destination as! ChatController
             view.chatHubConnection = self.chatHubConnection
             view.currentUser = user
-
         }
     }
     

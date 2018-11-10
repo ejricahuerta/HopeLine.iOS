@@ -23,8 +23,8 @@ class ChatCell: UITableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.layoutMargins = UIEdgeInsetsMake(8, 0, 8, 0)
         self.layer.masksToBounds = true
+        self.layoutMargins = UIEdgeInsetsMake(8, 0, 8, 0)
         self.layer.cornerRadius = 8
         self.layer.backgroundColor  = UIColor(red: 220, green: 241, blue: 230, alpha: 1.0).cgColor
     }

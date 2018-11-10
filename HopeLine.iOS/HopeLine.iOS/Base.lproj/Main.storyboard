@@ -433,10 +433,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WzB-D6-Edi"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="zzi-6M-hXP">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="GVT-La-xwx"/>
+                    <navigationItem key="navigationItem" title="Chat" largeTitleDisplayMode="always" id="zzi-6M-hXP">
+                        <barButtonItem key="backBarButtonItem" title=" " id="GVT-La-xwx"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="sendButton" destination="bDU-EX-kG7" id="lQE-tG-csS"/>
                         <outlet property="tableView" destination="uFN-9O-C5m" id="vvq-vs-fsD"/>
                         <outlet property="textMessage" destination="gC9-iA-e9b" id="f6e-pk-zoO"/>
                     </connections>
@@ -444,23 +445,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibI-iJ-GwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1375.2" y="1637.6311844077961"/>
-        </scene>
-        <!--Account-->
-        <scene sceneID="yDS-hm-jmP">
-            <objects>
-                <viewController id="JF9-n7-0nf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="g2z-KW-TMn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="ga3-R7-2om"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="user" id="rpV-50-ZvB"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h0K-TE-xOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2094" y="125"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="v3q-ur-eaL">
@@ -477,7 +461,6 @@
                         <segue destination="1nL-9J-DkE" kind="relationship" relationship="viewControllers" id="biy-VC-Wwa"/>
                         <segue destination="eBM-PL-ngr" kind="relationship" relationship="viewControllers" id="SRr-Si-Rhx"/>
                         <segue destination="DNQ-CF-EbG" kind="relationship" relationship="viewControllers" id="J0R-8f-NBJ"/>
-                        <segue destination="JF9-n7-0nf" kind="relationship" relationship="viewControllers" id="kyq-Fg-dLD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIA-0h-XV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,6 +533,5 @@
         <image name="convo" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
-        <image name="user" width="25" height="25"/>
     </resources>
 </document>

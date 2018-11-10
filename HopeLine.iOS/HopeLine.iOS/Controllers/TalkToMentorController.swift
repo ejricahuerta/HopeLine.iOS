@@ -16,6 +16,7 @@ class TalkToMentorController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.prefersLargeTitles = true
         self.tabBarController?.tabBarItem.badgeValue = "1"
         
         user = "Guest" + String.random(length: 12)

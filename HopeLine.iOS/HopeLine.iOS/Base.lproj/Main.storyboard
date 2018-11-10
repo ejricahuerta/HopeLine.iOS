@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SeO-hW-qRL">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,21 +16,21 @@
             <objects>
                 <viewController id="EHD-Mv-W0p" customClass="MapController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uft-Ae-KA0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I6u-EK-Ovk">
-                                <rect key="frame" x="0.0" y="120" width="375" height="398"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="467"/>
                                 <connections>
                                     <outlet property="delegate" destination="EHD-Mv-W0p" id="lag-ye-an5"/>
                                 </connections>
                             </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-o9-U10">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXG-Cc-PEC">
-                                <rect key="frame" x="309" y="538" width="46" height="30"/>
+                                <rect key="frame" x="348" y="607" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZXG-Cc-PEC" secondAttribute="height" multiplier="23:15" id="OcX-Je-1nt"/>
                                 </constraints>
@@ -63,7 +63,7 @@
             <objects>
                 <viewController id="IsH-3y-Sgm" customClass="CallController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="686-b4-tpl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="36M-iH-xUa"/>
@@ -81,11 +81,11 @@
             <objects>
                 <viewController id="3tr-6x-yrI" customClass="TalkToMentorController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DfX-ZQ-qkE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgZ-4I-957" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="164" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="164" width="414" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Call"/>
                                 <connections>
@@ -93,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXE-cp-2a7" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="223" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="223" width="414" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Chat"/>
                                 <connections>
@@ -126,11 +126,11 @@
             <objects>
                 <viewController id="EhD-GE-Ae0" customClass="ChatController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zkR-b9-31l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gC9-iA-e9b" customClass="PrimaryText" customModule="HopeLine_iOS" customModuleProvider="target">
-                                <rect key="frame" x="10" y="567" width="285" height="40"/>
+                                <rect key="frame" x="10" y="636" width="324" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FKP-cR-nr9"/>
                                 </constraints>
@@ -139,18 +139,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-9O-C5m">
-                                <rect key="frame" x="0.0" y="64" width="375" height="493"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="562"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="143" id="7vq-Ue-Bqc" customClass="ChatCell" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="143"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="143"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vq-Ue-Bqc" id="SrY-3g-5HE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fey-7t-f3V">
-                                                    <rect key="frame" x="5" y="5" width="365" height="30"/>
+                                                    <rect key="frame" x="5" y="5" width="404" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="1yO-Sr-BZC"/>
                                                     </constraints>
@@ -158,7 +158,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-5B-GDb" customClass="ChatText" customModule="HopeLine_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="0.0" width="365" height="138"/>
+                                                    <rect key="frame" x="5" y="0.0" width="404" height="138"/>
                                                     <attributedString key="attributedText"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -186,7 +186,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDU-EX-kG7" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                <rect key="frame" x="305" y="567" width="60" height="40"/>
+                                <rect key="frame" x="344" y="636" width="60" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IDq-Zq-KRt"/>
                                     <constraint firstAttribute="width" constant="60" id="T3D-0l-nAE"/>
@@ -199,16 +199,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WzB-D6-Edi" firstAttribute="bottom" secondItem="bDU-EX-kG7" secondAttribute="bottom" constant="11" id="0qc-gT-QNS"/>
                             <constraint firstItem="WzB-D6-Edi" firstAttribute="trailing" secondItem="uFN-9O-C5m" secondAttribute="trailing" id="4mN-bw-hvX"/>
                             <constraint firstItem="bDU-EX-kG7" firstAttribute="leading" secondItem="gC9-iA-e9b" secondAttribute="trailing" constant="10" id="7L9-9g-eCP"/>
                             <constraint firstItem="bDU-EX-kG7" firstAttribute="top" secondItem="uFN-9O-C5m" secondAttribute="bottom" constant="10" id="Des-CM-B62"/>
                             <constraint firstAttribute="trailing" secondItem="bDU-EX-kG7" secondAttribute="trailing" constant="10" id="E1T-Mp-a5Y"/>
                             <constraint firstItem="gC9-iA-e9b" firstAttribute="leading" secondItem="zkR-b9-31l" secondAttribute="leading" constant="10" id="Irj-iT-LkZ"/>
                             <constraint firstItem="gC9-iA-e9b" firstAttribute="top" secondItem="uFN-9O-C5m" secondAttribute="bottom" constant="10" id="Kni-vF-xTY"/>
-                            <constraint firstAttribute="bottom" secondItem="gC9-iA-e9b" secondAttribute="bottom" constant="60" id="OUV-EW-rxl"/>
                             <constraint firstItem="uFN-9O-C5m" firstAttribute="leading" secondItem="WzB-D6-Edi" secondAttribute="leading" id="PI9-nF-aer"/>
-                            <constraint firstAttribute="bottom" secondItem="bDU-EX-kG7" secondAttribute="bottom" constant="60" id="aSm-Le-TpO"/>
                             <constraint firstItem="uFN-9O-C5m" firstAttribute="top" secondItem="WzB-D6-Edi" secondAttribute="top" id="hEs-X5-UO2"/>
+                            <constraint firstItem="WzB-D6-Edi" firstAttribute="bottom" secondItem="gC9-iA-e9b" secondAttribute="bottom" constant="11" id="k9w-Pj-C79"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WzB-D6-Edi"/>
                     </view>
@@ -256,7 +256,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YXh-R5-RPK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -277,7 +277,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G7l-qg-DYd">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -289,25 +289,19 @@
             </objects>
             <point key="canvasLocation" x="401.60000000000002" y="-643.17841079460277"/>
         </scene>
-        <!--Home Controller-->
+        <!--HopeLine-->
         <scene sceneID="qf7-0D-V7h">
             <objects>
                 <viewController id="2Sz-He-xJz" customClass="HomeController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZS-WA-61R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfo-y0-TgZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <rect key="frame" x="20" y="84.000000000000014" width="374" height="134.33333333333337"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WS2-HH-GW0">
-                                        <rect key="frame" x="8" y="8" width="146" height="136"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="WS2-HH-GW0" secondAttribute="height" multiplier="73:68" id="q1q-yg-W69"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT9-wl-qKK" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="152" width="359" height="40"/>
+                                        <rect key="frame" x="10" y="84.333333333333343" width="354" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="obv-dW-waI"/>
                                         </constraints>
@@ -315,12 +309,12 @@
                                         <state key="normal" title="Talk To a Mentor"/>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylX-0E-3EY">
-                                        <rect key="frame" x="162" y="8" width="205" height="136"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="8" y="20" width="358" height="54.333333333333343"/>
+                                        <color key="backgroundColor" red="0.73547011613845825" green="0.7869257926940918" blue="0.87010079622268677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="We're here to help you.                                           Click the button below to speak to a mentor.">
+                                            <fragment content="Hello! We're here to help you.                                           Click the button below to speak to a mentor.">
                                                 <attributes>
-                                                    <font key="NSFont" size="19" name=".AppleSystemUIFont"/>
+                                                    <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -328,30 +322,26 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.73547011610000002" green="0.78692579269999996" blue="0.87010079620000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="WS2-HH-GW0" firstAttribute="top" secondItem="vfo-y0-TgZ" secondAttribute="top" constant="8" id="0ue-y7-N1v"/>
-                                    <constraint firstItem="WS2-HH-GW0" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="8" id="CoB-6J-3Na"/>
-                                    <constraint firstItem="ylX-0E-3EY" firstAttribute="leading" secondItem="WS2-HH-GW0" secondAttribute="trailing" constant="8" id="Csm-dK-TTV"/>
-                                    <constraint firstItem="ylX-0E-3EY" firstAttribute="top" secondItem="vfo-y0-TgZ" secondAttribute="top" constant="8" id="DeX-ym-dHw"/>
-                                    <constraint firstItem="NT9-wl-qKK" firstAttribute="top" secondItem="ylX-0E-3EY" secondAttribute="bottom" constant="8" id="F1A-h4-xrE"/>
-                                    <constraint firstItem="NT9-wl-qKK" firstAttribute="top" secondItem="WS2-HH-GW0" secondAttribute="bottom" constant="8" id="HCs-cf-vBL"/>
-                                    <constraint firstItem="NT9-wl-qKK" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="8" id="QsR-ue-oT9"/>
-                                    <constraint firstAttribute="height" constant="200" id="Zxy-Cq-kFn"/>
+                                    <constraint firstItem="ylX-0E-3EY" firstAttribute="top" secondItem="vfo-y0-TgZ" secondAttribute="top" constant="20" id="DeX-ym-dHw"/>
+                                    <constraint firstItem="NT9-wl-qKK" firstAttribute="top" secondItem="ylX-0E-3EY" secondAttribute="bottom" constant="10" id="F1A-h4-xrE"/>
+                                    <constraint firstItem="NT9-wl-qKK" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="10" id="QsR-ue-oT9"/>
                                     <constraint firstAttribute="trailing" secondItem="ylX-0E-3EY" secondAttribute="trailing" constant="8" id="cAh-Xp-nKh"/>
-                                    <constraint firstAttribute="trailing" secondItem="NT9-wl-qKK" secondAttribute="trailing" constant="8" id="cwG-zG-dJS"/>
-                                    <constraint firstAttribute="bottom" secondItem="NT9-wl-qKK" secondAttribute="bottom" constant="8" id="q6l-OM-POj"/>
+                                    <constraint firstAttribute="trailing" secondItem="NT9-wl-qKK" secondAttribute="trailing" constant="10" id="cwG-zG-dJS"/>
+                                    <constraint firstAttribute="bottom" secondItem="NT9-wl-qKK" secondAttribute="bottom" constant="10" id="q6l-OM-POj"/>
+                                    <constraint firstItem="ylX-0E-3EY" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="8" id="zV5-1t-4Vo"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vsr-eh-bDd">
-                                <rect key="frame" x="10" y="284" width="355" height="334"/>
+                                <rect key="frame" x="10" y="238.33333333333331" width="394" height="448.66666666666669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="358" id="Piw-GB-g5x" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="365" height="358"/>
+                                        <rect key="frame" x="0.0" y="28" width="394" height="358"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Piw-GB-g5x" id="uFz-g9-PIo">
-                                            <rect key="frame" x="0.0" y="0.0" width="365" height="357.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="357.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeU-SG-okE">
@@ -370,7 +360,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au0-33-nZ4">
-                                                    <rect key="frame" x="30" y="78" width="305" height="264.5"/>
+                                                    <rect key="frame" x="30" y="78" width="334" height="264.66666666666669"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -401,18 +391,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" id="BdL-LC-dVl"/>
                             <constraint firstItem="9wz-Ay-jfx" firstAttribute="bottom" secondItem="Vsr-eh-bDd" secondAttribute="bottom" id="KRw-Y3-qoh"/>
                             <constraint firstItem="Vsr-eh-bDd" firstAttribute="top" secondItem="vfo-y0-TgZ" secondAttribute="bottom" constant="20" id="Lm5-2L-6N1"/>
-                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="trailing" secondItem="9wz-Ay-jfx" secondAttribute="trailing" id="Uup-LK-VxG"/>
                             <constraint firstItem="9wz-Ay-jfx" firstAttribute="trailing" secondItem="Vsr-eh-bDd" secondAttribute="trailing" constant="10" id="Yha-ZW-2eY"/>
-                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="top" secondItem="9wz-Ay-jfx" secondAttribute="top" id="eS9-E0-upl"/>
+                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" constant="20" id="aFT-ky-ycY"/>
+                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="top" secondItem="9wz-Ay-jfx" secondAttribute="top" constant="20" id="cnW-xr-Adk"/>
                             <constraint firstItem="Vsr-eh-bDd" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" constant="10" id="jUc-Wj-i6g"/>
+                            <constraint firstAttribute="trailing" secondItem="vfo-y0-TgZ" secondAttribute="trailing" constant="20" id="uyJ-vA-Myr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9wz-Ay-jfx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Leb-pp-iSq"/>
+                    <navigationItem key="navigationItem" title="HopeLine" id="Leb-pp-iSq"/>
                     <connections>
+                        <outlet property="headerView" destination="vfo-y0-TgZ" id="QCe-7d-Qmv"/>
                         <outlet property="tableView" destination="Vsr-eh-bDd" id="OO2-NP-hp7"/>
                         <outlet property="talkToMentorView" destination="vfo-y0-TgZ" id="Whf-Ll-9Xh"/>
                     </connections>
@@ -428,7 +419,7 @@
                     <tabBarItem key="tabBarItem" title="Talk to Mentor" image="convo" id="Mei-rp-9Rw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uNu-40-erN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

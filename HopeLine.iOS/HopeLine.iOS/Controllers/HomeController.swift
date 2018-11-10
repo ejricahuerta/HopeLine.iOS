@@ -10,6 +10,7 @@ import UIKit
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var headerView: UIView!
     let titles = ["Communities", "Resources"]
     var communities = NSMutableArray()
     var resources = NSMutableArray()
@@ -20,7 +21,11 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.headerView.layer.cornerRadius = 8
+        self.headerView.layer.shadowColor  = UIColor.black.cgColor
+        self.headerView.layer.shadowOffset = CGSize(width: 1, height: 0.4)
+        self.headerView.layer.shadowOpacity = 1
+
         datafetcher = DataFetcher()
         
         for title in titles {
@@ -61,11 +66,12 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let title = titles[indexPath.section]
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeCell
         
-        cell.layer.backgroundColor = UIColor.darkGray.cgColor
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
-    
-        
+        if indexPath.row % 2 == 0 {
+            cell.layer.backgroundColor = UIColor(red: 164, green: 216, blue: 178, alpha: 1).cgColor
+        }
+        else{
+            cell.layer.backgroundColor = UIColor(red: 171, green: 180, blue: 206, alpha: 1).cgColor
+        }
 
         if title == titles[0] {
             let community = communities[indexPath.row] as! Community

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommonResourcesView: UITableViewController {
+class CommonResourcesController: UITableViewController {
     
     var comonItems =  NSMutableArray()
     
@@ -19,7 +19,7 @@ class CommonResourcesView: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension;
         
         
-        let stringUrl = "\(APIConstants.url)/\(String(describing: title!))"
+        let stringUrl = "\(APIConstants.url)\(String(describing: title!))"
         print(stringUrl)
         let url = URL(string: stringUrl )
         

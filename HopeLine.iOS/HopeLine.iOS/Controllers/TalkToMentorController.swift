@@ -22,7 +22,6 @@ class TalkToMentorController: UIViewController {
         chatHubConnection =   HubConnectionBuilder(url: URL(string:"https://hopelineapi.azurewebsites.net/v2/chatHub")!)
                 .withLogging(minLogLevel: .debug)
                 .build()
-
         self.chatHubConnection!.start()
     }
     override func didReceiveMemoryWarning() {

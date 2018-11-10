@@ -9,6 +9,6 @@
 import UIKit
 
 class APIConstants {
-    static let url = "https://hopelineapi.azurewebsites.net/api/allresources"
+    static let url = "https://hopelineapi.azurewebsites.net/api/allresources/"
 }
 

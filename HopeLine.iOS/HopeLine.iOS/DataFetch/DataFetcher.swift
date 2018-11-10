@@ -17,15 +17,15 @@ enum JSonResult<Value> {
 class DataFetcher {
  
     func GetData(forAction: String, handler: ((JSonResult<Any>)->Void)?) {
-        
-        let url = URL(string: APIConstants.url)
+        let strUrl = "\(APIConstants.url)\(forAction)"
+        let url = URL(string: strUrl)
         let task  = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if let resperr = error {
                 handler?(.failure(resperr))
             }
             else {
                 do {
-                    let  jsondata = try JSONSerialization.jsonObject(with: data!, options: []) as! NSMutableArray
+                    let  jsondata = try JSONSerialization.jsonObject(with: data!) as! [NSDictionary]
                     print(jsondata)
                     handler?(.success(jsondata))
                 }

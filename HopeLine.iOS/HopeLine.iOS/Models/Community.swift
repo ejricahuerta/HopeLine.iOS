@@ -14,12 +14,10 @@ class Community: NSObject {
     var desc : String?
     var url : String?
 
-    
     init(id: Int? , name: String, desc : String, url : String) {
         self.id = id
         self.name = name
         self.desc = desc
         self.url = url
-
     }
 }

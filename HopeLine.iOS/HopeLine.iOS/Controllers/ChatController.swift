@@ -32,12 +32,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CURRENT USER: \(currentUser!)")
-        
-
-        
-        //components
-        self.sendButton.isHidden = true
-        self.chatText.isHidden = true
         //table
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
@@ -90,7 +84,8 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let cell  = self.tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath) as! ChatCell
         
         let message = messages.object(at: indexPath.row) as! Message
-        cell.setUp(name: message.user!, msg: message.message!)
+        let msgcolor = getColorFor(username : message.user!)
+        cell.setUp(name: message.user!, msg: message.message!,color: msgcolor)
         return cell
     }
     
@@ -157,9 +152,9 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         self.chatHubConnection?.on(method: "Room", callback: { args, typeConverter in
             self.room = (try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self))!
             self.alert?.dismiss(animated: true, completion: nil)
-
+            self.sendButton.isHidden = false
+            self.chatText.isHidden = false
             print("ROOM : \(self.room)")
-
             self.chatHubConnection?.invoke(method: "LoadMessage", arguments: [self.room], invocationDidComplete: { (err) in
                 if let resperr = err {
                     print(resperr)
@@ -195,9 +190,18 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         counter += 1
         print("Attempting to Connect to a Mentor - attempt: \(counter)")
     }
-
+    
+    func getColorFor(username : String) -> UIColor{
+        switch username{
+        case currentUser!:
+            return usercolor
+        case "System":
+            return syscolor
+        default:
+            return mentorcolor
+        }
+    }
 }
-
 
 
 

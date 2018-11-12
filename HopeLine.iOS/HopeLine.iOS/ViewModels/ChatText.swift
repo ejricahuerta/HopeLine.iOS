@@ -12,7 +12,7 @@ class ChatText: UILabel {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 5
+        self.padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
     }
     
 

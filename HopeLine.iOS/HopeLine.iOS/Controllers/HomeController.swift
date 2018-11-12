@@ -8,24 +8,22 @@
 
 import UIKit
 
-class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var headerView: UIView!
+class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    let colors = [color1, color2, color3, color4, color5]
     let titles = ["Communities", "Resources"]
     var communities = NSMutableArray()
     var resources = NSMutableArray()
     var datafetcher : DataFetcher?
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var talkToMentorView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.headerView.layer.cornerRadius = 8
-        self.headerView.layer.shadowColor  = UIColor.black.cgColor
-        self.headerView.layer.shadowOffset = CGSize(width: 1, height: 0.4)
-        self.headerView.layer.shadowOpacity = 1
-
+        
+        
+        
         datafetcher = DataFetcher()
         
         for title in titles {
@@ -49,51 +47,58 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return titles.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        //1
+//        switch kind {
+//        //2
+//        case UICollectionElementKindSectionHeader:
+//            //3
+//            var headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+//                                                                             withReuseIdentifier: "homeHeader",
+//                                                                             for: indexPath)
+//            headerView = titles[(indexPath as NSIndexPath).section]
+//            return headerView
+//        default:
+//            //4
+//            assert(false, "Unexpected element kind")
+//        }
+//    }
+
+    
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var row = 0
         if section == 0 {
             row =  communities.count
         }
-        
         if section == 1 {
-            row =  resources.count
-        }
-        return row
+                 row =  resources.count
+      }
+       return row
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let title = titles[indexPath.section]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeCell
+    
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                let title = titles[indexPath.section]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCell
         
-        if indexPath.row % 2 == 0 {
-            cell.layer.backgroundColor = UIColor(red: 164, green: 216, blue: 178, alpha: 1).cgColor
-        }
-        else{
-            cell.layer.backgroundColor = UIColor(red: 171, green: 180, blue: 206, alpha: 1).cgColor
-        }
+                let color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
+                if title == titles[0] {
+                    let community = communities[indexPath.row] as! Community
+                    cell.setUp(title: community.name!, desc: community.desc!,url: community.imgUrl!, color : color)
+                }
+                else {
+                    let resource = resources[indexPath.row] as! Resource
+                    cell.setUp(title: resource.name!, desc: resource.desc!, url : resource.imgUrl!, color: color)
+                    }
+                return cell
 
-        if title == titles[0] {
-            let community = communities[indexPath.row] as! Community
-            cell.titleLabel.text = community.name
-            cell.descLabel.text = community.desc
-        }
-        else {
-            let resource = resources[indexPath.row] as! Resource
-            cell.titleLabel.text = resource.name
-            cell.descLabel.text = resource.desc
-        }
-        return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titles[section]
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let community = communities.object(at: indexPath.row) as! Community
             let url = URL(string: community.url!)
@@ -106,23 +111,75 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+
     
     func populateList(forlist : String ,data : [NSDictionary]){
         for item in data {
             if forlist == titles[0] {
-                let community = Community(id: item.value(forKey: "id") as? Int, name: item.value(forKey: "name") as! String, desc: item.value(forKey:"description") as! String, url: item.value(forKey: "url") as! String)
+                let community = Community(id: item.value(forKey: "id") as? Int, name: item.value(forKey: "name") as! String, desc: item.value(forKey:"description") as! String, url: item.value(forKey: "url") as! String, img: item.value(forKey: "imageURL") as! String)
                 print(community.name!)
                 communities.add(community)
             }
             else {
-                let resource = Resource(id: item.value(forKey: "id") as! Int, name: item.value(forKey: "name") as! String, desc: item.value(forKey:"description") as! String, url: item.value(forKey: "url") as! String)
+                let resource = Resource(id: item.value(forKey: "id") as! Int, name: item.value(forKey: "name") as! String, desc: item.value(forKey:"description") as! String, url: item.value(forKey: "url") as! String, img: item.value(forKey: "imageURL") as! String)
                 print(resource.name!)
                 resources.add(resource)
             }
         }
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
 
     }
 }
+
+
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return titles.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        var row = 0
+//        if section == 0 {
+//            row =  communities.count
+//        }
+//
+//        if section == 1 {
+//            row =  resources.count
+//        }
+//        return row
+//    }
+
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let title = titles[indexPath.section]
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeCell
+//
+//        let color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
+//        if title == titles[0] {
+//            let community = communities[indexPath.row] as! Community
+//            cell.setUp(title: community.name!, desc: community.desc!, color : color)
+//        }
+//        else {
+//            let resource = resources[indexPath.row] as! Resource
+//            cell.setUp(title: resource.name!, desc: resource.desc!, color: color)
+//            }
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return titles[section]
+//    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.section == 0 {
+//            let community = communities.object(at: indexPath.row) as! Community
+//            let url = URL(string: community.url!)
+//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+//        }
+//        else {
+//            let resource = resources.object(at: indexPath.row) as! Resource
+//            let url = URL(string: resource.url!)
+//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+//        }
+//    }
+//

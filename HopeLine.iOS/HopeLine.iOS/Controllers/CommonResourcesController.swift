@@ -34,12 +34,12 @@ class CommonResourcesController: UITableViewController {
                         for item in parsedData
                         {
                             if self.title!.contains("resources") {
-                                let newres = Resource(id: item.value(forKey: "id") as! Int, name: item.value(forKey: "name") as! String,desc: item.value(forKey: "description") as! String, url: item.value(forKey: "url") as! String)
+                                let newres = Resource(id: item.value(forKey: "id") as! Int, name: item.value(forKey: "name") as! String,desc: item.value(forKey: "description") as! String, url: item.value(forKey: "url") as! String, img: item.value(forKey: "imageurl") as! String)
                                 print("\(newres.name!)")
                                 self.comonItems.add(newres)
                             }
                             else {
-                                let newCom = Community(id: item.value(forKey: "id") as? Int, name: item.value(forKey: "name") as! String,desc: item.value(forKey: "description") as! String, url: item.value(forKey: "url") as! String)
+                                let newCom = Community(id: item.value(forKey: "id") as? Int, name: item.value(forKey: "name") as! String,desc: item.value(forKey: "description") as! String, url: item.value(forKey: "url") as! String, img: item.value(forKey: "imageurl") as! String)
                                 print("\(newCom.name!)")
                                 self.comonItems.add(newCom)
                             }

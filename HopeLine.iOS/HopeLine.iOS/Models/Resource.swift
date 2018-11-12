@@ -13,11 +13,13 @@ class Resource: NSObject {
     var name : String?
     var url : String?
     var desc : String?
+    var imgUrl : String?
     
-    init(id: Int, name : String,desc : String, url: String) {
+    init(id: Int, name : String,desc : String, url: String, img : String) {
         self.id = id
         self.name = name
         self.desc = desc
         self.url = url
+        self.imgUrl = img
     }
 }

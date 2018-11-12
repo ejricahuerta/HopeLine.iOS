@@ -110,7 +110,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let message = "User left the chat."
         self.chatHubConnection?.invoke(method: "SendMessage", arguments: [user,message], invocationDidComplete: { (err) in
             if let resp = err {
-                print("Error on : \(err)")
+                print("Error on : \(String(describing: resp))")
             }
         })
     }
@@ -120,17 +120,34 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     //register all methods from hub server
     func registerMethods(){
-        
+    
         chatHubConnection?.on(method: "NotifyUser",  callback: {args, typeConverter in
-            let message = try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self)
-            if message != "Connected" {
-                self.alert = UIAlertController(title: "Matching Mentor", message: message, preferredStyle: UIAlertControllerStyle.alert)
-                self.alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (act) in
-                    self.navigationController?.popToRootViewController(animated: true)
-                }))
-                self.present(self.alert!, animated: true, completion: nil)
+            let id = try! typeConverter.convertFromWireType(obj: args[0], targetType: Int.self)
+            print("ID: \(id!)")
+            switch id! {
+                case ChatConnection.Connected.rawValue:
+                    self.sendButton.isHidden = false
+                    self.chatText.isHidden = false
+                    break
+                case ChatConnection.Error.rawValue:
+                    self.alert = UIAlertController(title: nil, message: "Error while Matching Mentor", preferredStyle: UIAlertControllerStyle.alert)
+                    self.alert?.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: { (act) in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }))
+                    
+                    self.present(self.alert!, animated: true, completion: nil)
+                    break
+                case ChatConnection.MatchingMentor.rawValue:
+                    self.alert = UIAlertController(title: nil, message: "Matching Mentor", preferredStyle: UIAlertControllerStyle.alert)
+                    self.alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (act) in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }))
+                    self.present(self.alert!, animated: true, completion: nil)
+                    break
+                default:
+                    break
             }
-
+            
         })
         
         self.chatHubConnection?.on(method: "ReceiveMessage", callback: { args, typeConverter in
@@ -139,13 +156,10 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.chatHubConnection?.on(method: "Room", callback: { args, typeConverter in
             self.room = (try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self))!
-            if self.alert!.isViewLoaded {
-                self.alert?.dismiss(animated: true, completion: nil)
-            }
+            self.alert?.dismiss(animated: true, completion: nil)
+
             print("ROOM : \(self.room)")
-            self.sendButton.isHidden = false
-            self.chatText.isHidden = false
-            self.title = "You are now connected!"
+
             self.chatHubConnection?.invoke(method: "LoadMessage", arguments: [self.room], invocationDidComplete: { (err) in
                 if let resperr = err {
                     print(resperr)

@@ -15,7 +15,7 @@ enum JSonResult<Value> {
 }
 
 class DataFetcher {
- 
+
     func GetData(forAction: String, handler: ((JSonResult<Any>)->Void)?) {
         let strUrl = "\(APIConstants.url)\(forAction)"
         let url = URL(string: strUrl)

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E08C242219369E4004594E5 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08C241219369E4004594E5 /* SecondaryButton.swift */; };
 		4E0D48EF2196245B001FCE13 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D48EE2196245B001FCE13 /* ChatService.swift */; };
+		4E2762232199FD3C004ECC99 /* ChatConnection..swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2762222199FD3C004ECC99 /* ChatConnection..swift */; };
+		4E276225219A036C004ECC99 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E276224219A036C004ECC99 /* Colors.swift */; };
 		4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115A218CF26E00867B3F /* PrimaryText.swift */; };
 		4E708B7221938409003283BD /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7121938409003283BD /* CommonCell.swift */; };
 		4E708B7421938422003283BD /* CommonResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7321938422003283BD /* CommonResourcesController.swift */; };
@@ -17,7 +19,6 @@
 		4E708B7B21938C35003283BD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7A21938C35003283BD /* Topic.swift */; };
 		4E708B7D2193A500003283BD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7C2193A500003283BD /* ChatCell.swift */; };
 		4E708B7F2193AE1A003283BD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7E2193AE19003283BD /* Message.swift */; };
-		4E85832021975B1900D14F52 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E85831F21975B1900D14F52 /* HomeTableView.swift */; };
 		4E85832421975C7500D14F52 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E85832321975C7500D14F52 /* HomeController.swift */; };
 		4E858326219766A600D14F52 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E858325219766A600D14F52 /* HomeCell.swift */; };
 		4EB63D96218CEFB7003E6033 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */; };
@@ -68,6 +69,8 @@
 /* Begin PBXFileReference section */
 		4E08C241219369E4004594E5 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		4E0D48EE2196245B001FCE13 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		4E2762222199FD3C004ECC99 /* ChatConnection..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConnection..swift; sourceTree = "<group>"; };
+		4E276224219A036C004ECC99 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4E4B115A218CF26E00867B3F /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
 		4E708B7121938409003283BD /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
 		4E708B7321938422003283BD /* CommonResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResourcesController.swift; sourceTree = "<group>"; };
@@ -76,7 +79,6 @@
 		4E708B7A21938C35003283BD /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		4E708B7C2193A500003283BD /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		4E708B7E2193AE19003283BD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		4E85831F21975B1900D14F52 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		4E85832321975C7500D14F52 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		4E858325219766A600D14F52 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		4EB63D95218CEFB7003E6033 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				4E708B7821938BA4003283BD /* Community.swift */,
 				4E708B7A21938C35003283BD /* Topic.swift */,
 				4E708B7E2193AE19003283BD /* Message.swift */,
+				4E2762222199FD3C004ECC99 /* ChatConnection..swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,8 +269,8 @@
 				4E708B7121938409003283BD /* CommonCell.swift */,
 				4E708B7C2193A500003283BD /* ChatCell.swift */,
 				4EBE059221952173009A9DA2 /* ChatText.swift */,
-				4E85831F21975B1900D14F52 /* HomeTableView.swift */,
 				4E858325219766A600D14F52 /* HomeCell.swift */,
+				4E276224219A036C004ECC99 /* Colors.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -362,9 +365,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E08C242219369E4004594E5 /* SecondaryButton.swift in Sources */,
+				4E276225219A036C004ECC99 /* Colors.swift in Sources */,
 				4EB822CC219109B00035C262 /* HubProtocol.swift in Sources */,
 				4EB822C1219109B00035C262 /* Connection.swift in Sources */,
 				4EBE059321952173009A9DA2 /* ChatText.swift in Sources */,
+				4E2762232199FD3C004ECC99 /* ChatConnection..swift in Sources */,
 				4E708B7F2193AE1A003283BD /* Message.swift in Sources */,
 				4E708B7D2193A500003283BD /* ChatCell.swift in Sources */,
 				4EDEC9E6218B898F00C2D2F2 /* HopeLine_iOS.xcdatamodeld in Sources */,
@@ -408,7 +413,6 @@
 				4E708B7421938422003283BD /* CommonResourcesController.swift in Sources */,
 				4EB822C2219109B00035C262 /* HubConnectionDelegate.swift in Sources */,
 				4EB822C9219109B00035C262 /* TypeConverter.swift in Sources */,
-				4E85832021975B1900D14F52 /* HomeTableView.swift in Sources */,
 				4EDEC9DE218B898F00C2D2F2 /* AppDelegate.swift in Sources */,
 				4EB822C5219109B00035C262 /* HttpClientProtocol.swift in Sources */,
 				4ECD5F50218B9F3A00F7F75D /* TalkToMentorController.swift in Sources */,

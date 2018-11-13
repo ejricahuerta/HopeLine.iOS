@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Verdana.ttf">
+            <string>Verdana</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Map-->
         <scene sceneID="bN6-Ur-HbA">
@@ -216,6 +221,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Chat" largeTitleDisplayMode="always" id="zzi-6M-hXP">
                         <barButtonItem key="backBarButtonItem" title=" " id="GVT-La-xwx"/>
+                        <barButtonItem key="rightBarButtonItem" title="End" id="uAD-5d-CbK">
+                            <connections>
+                                <segue destination="EFA-dd-LAk" kind="presentation" modalPresentationStyle="overCurrentContext" id="SaS-RS-32S"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="chatText" destination="gC9-iA-e9b" id="SV8-rN-Ptu"/>
@@ -227,6 +237,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibI-iJ-GwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1375.3623188405797" y="1636.9565217391305"/>
+        </scene>
+        <!--Rate Controller-->
+        <scene sceneID="AH5-Uv-Fgy">
+            <objects>
+                <viewController id="EFA-dd-LAk" customClass="RateController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="baE-et-R8P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How was the Conversation?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjQ-PG-OTE">
+                                <rect key="frame" x="20" y="210" width="374" height="20"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C01-Cx-tPN">
+                                <rect key="frame" x="20" y="238" width="374" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeY-Lz-4Wy">
+                                        <rect key="frame" x="8" y="40" width="170" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JeY-Lz-4Wy" secondAttribute="height" multiplier="1:1" id="Ab4-U8-iQT"/>
+                                        </constraints>
+                                        <state key="normal" image="happy-1"/>
+                                        <connections>
+                                            <action selector="imgTapped:" destination="EFA-dd-LAk" eventType="touchUpInside" id="B0Q-Vh-TwP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKz-oW-TuH">
+                                        <rect key="frame" x="186" y="40" width="180" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lKz-oW-TuH" secondAttribute="height" multiplier="18:17" id="aga-xk-ilV"/>
+                                        </constraints>
+                                        <state key="normal" image="sad"/>
+                                        <connections>
+                                            <action selector="imgTapped:" destination="EFA-dd-LAk" eventType="touchUpInside" id="r7q-aW-Rfq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="49O-HN-3ei"/>
+                                    <constraint firstAttribute="trailing" secondItem="lKz-oW-TuH" secondAttribute="trailing" constant="8" id="P0o-69-eg0"/>
+                                    <constraint firstItem="JeY-Lz-4Wy" firstAttribute="centerY" secondItem="C01-Cx-tPN" secondAttribute="centerY" id="QtX-ly-hse"/>
+                                    <constraint firstItem="lKz-oW-TuH" firstAttribute="centerY" secondItem="C01-Cx-tPN" secondAttribute="centerY" id="TPx-SR-jik"/>
+                                    <constraint firstItem="JeY-Lz-4Wy" firstAttribute="leading" secondItem="C01-Cx-tPN" secondAttribute="leading" constant="8" id="W0H-qG-ZMU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-Ql-s8m">
+                                <rect key="frame" x="318" y="508" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Q3R-Q6-keI"/>
+                                    <constraint firstAttribute="height" constant="30" id="hIm-47-CHk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <state key="normal" title="skip"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="czF-rx-nq2" firstAttribute="trailing" secondItem="dyJ-Ql-s8m" secondAttribute="trailing" constant="50" id="8qv-0a-lNZ"/>
+                            <constraint firstItem="czF-rx-nq2" firstAttribute="trailing" secondItem="C01-Cx-tPN" secondAttribute="trailing" constant="20" id="N9V-7s-3ys"/>
+                            <constraint firstItem="czF-rx-nq2" firstAttribute="trailing" secondItem="xjQ-PG-OTE" secondAttribute="trailing" constant="20" id="SNn-1P-wI8"/>
+                            <constraint firstItem="xjQ-PG-OTE" firstAttribute="leading" secondItem="czF-rx-nq2" secondAttribute="leading" constant="20" id="ZoV-Vp-OpD"/>
+                            <constraint firstItem="xjQ-PG-OTE" firstAttribute="top" secondItem="czF-rx-nq2" secondAttribute="top" constant="190" id="dQk-4K-Zpi"/>
+                            <constraint firstItem="C01-Cx-tPN" firstAttribute="leading" secondItem="czF-rx-nq2" secondAttribute="leading" constant="20" id="ehL-f8-QCW"/>
+                            <constraint firstItem="dyJ-Ql-s8m" firstAttribute="top" secondItem="C01-Cx-tPN" secondAttribute="bottom" constant="20" id="jU6-yo-rkk"/>
+                            <constraint firstItem="C01-Cx-tPN" firstAttribute="top" secondItem="xjQ-PG-OTE" secondAttribute="bottom" constant="8" id="tWP-EF-Eq3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="czF-rx-nq2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHF-mk-6Xt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-562.31884057971024" y="1636.9565217391305"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="v3q-ur-eaL">
@@ -414,6 +499,9 @@
                             <constraint firstItem="9wz-Ay-jfx" firstAttribute="bottom" secondItem="W1J-Do-F34" secondAttribute="bottom" constant="10" id="ybw-oJ-AGe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9wz-Ay-jfx"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="NO"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="HopeLine" id="Leb-pp-iSq"/>
                     <connections>
@@ -448,7 +536,9 @@
     </scenes>
     <resources>
         <image name="convo" width="25" height="25"/>
+        <image name="happy-1" width="170" height="170"/>
         <image name="home" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
+        <image name="sad" width="170" height="170"/>
     </resources>
 </document>

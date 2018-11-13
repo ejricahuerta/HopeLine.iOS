@@ -12,6 +12,8 @@
 		4E2762232199FD3C004ECC99 /* ChatConnection..swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2762222199FD3C004ECC99 /* ChatConnection..swift */; };
 		4E276225219A036C004ECC99 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E276224219A036C004ECC99 /* Colors.swift */; };
 		4E4B115B218CF26E00867B3F /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B115A218CF26E00867B3F /* PrimaryText.swift */; };
+		4E5A7C18219A637000B0FD03 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A7C17219A637000B0FD03 /* Extensions.swift */; };
+		4E5A7C1A219A67A800B0FD03 /* RateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5A7C19219A67A800B0FD03 /* RateController.swift */; };
 		4E708B7221938409003283BD /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7121938409003283BD /* CommonCell.swift */; };
 		4E708B7421938422003283BD /* CommonResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7321938422003283BD /* CommonResourcesController.swift */; };
 		4E708B7621938A4B003283BD /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E708B7521938A4B003283BD /* Resource.swift */; };
@@ -72,6 +74,8 @@
 		4E2762222199FD3C004ECC99 /* ChatConnection..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConnection..swift; sourceTree = "<group>"; };
 		4E276224219A036C004ECC99 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4E4B115A218CF26E00867B3F /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
+		4E5A7C17219A637000B0FD03 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4E5A7C19219A67A800B0FD03 /* RateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateController.swift; sourceTree = "<group>"; };
 		4E708B7121938409003283BD /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
 		4E708B7321938422003283BD /* CommonResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResourcesController.swift; sourceTree = "<group>"; };
 		4E708B7521938A4B003283BD /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -144,6 +148,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E5A7C16219A635800B0FD03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E5A7C17219A637000B0FD03 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4E708B7721938B93003283BD /* Models */ = {
@@ -228,6 +240,7 @@
 		4EDEC9DC218B898F00C2D2F2 /* HopeLine.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4E5A7C16219A635800B0FD03 /* Extensions */,
 				4EF695D12194C30C00B074A4 /* Services */,
 				4E708B7721938B93003283BD /* Models */,
 				4EB822E021910BCC0035C262 /* Constants */,
@@ -256,6 +269,7 @@
 				4ECD5F51218B9F6400F7F75D /* CallController.swift */,
 				4E708B7321938422003283BD /* CommonResourcesController.swift */,
 				4E85832321975C7500D14F52 /* HomeController.swift */,
+				4E5A7C19219A67A800B0FD03 /* RateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -379,11 +393,13 @@
 				4EB822D0219109B00035C262 /* HubConnectionBuilder.swift in Sources */,
 				4EB822C4219109B00035C262 /* Util.swift in Sources */,
 				4EB822CD219109B00035C262 /* ConnectionDelegate.swift in Sources */,
+				4E5A7C1A219A67A800B0FD03 /* RateController.swift in Sources */,
 				4EB822D2219109B00035C262 /* HttpConnectionOptions.swift in Sources */,
 				4EB822CA219109B00035C262 /* DefaultHttpClient.swift in Sources */,
 				4E85832421975C7500D14F52 /* HomeController.swift in Sources */,
 				4EB822CB219109B00035C262 /* WebsocketsTransport.swift in Sources */,
 				4ECD5F4C218B940600F7F75D /* TemplateCollectionViewController.swift in Sources */,
+				4E5A7C18219A637000B0FD03 /* Extensions.swift in Sources */,
 				4E708B7921938BA4003283BD /* Community.swift in Sources */,
 				4EB822D9219109B00035C262 /* TransportDelegate.swift in Sources */,
 				4EB822C8219109B00035C262 /* HandshakeProtocol.swift in Sources */,

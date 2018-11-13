@@ -113,6 +113,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     
     
+    
     //register all methods from hub server
     func registerMethods(){
     

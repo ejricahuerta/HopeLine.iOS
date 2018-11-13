@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSource, HubConnectionDelegate {
-    
+class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSource, HubConnectionDelegate , ViewDismiss{
     
     
     
@@ -34,10 +33,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         print("CURRENT USER: \(currentUser!)")
         //table
         self.tableView.rowHeight = UITableViewAutomaticDimension;
-        self.tableView.estimatedRowHeight = 100.0;
-        
         //signalr
-        
         self.registerMethods()
         
   
@@ -47,6 +43,8 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                 print("Error...\(String(describing: resp))")
             }
         })
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
  
@@ -65,6 +63,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
             })
         }
         self.chatText.text = ""
+
     }
     
     
@@ -73,7 +72,22 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "rateSegue" {
+            let view = segue.destination as! RateController
+            view.dismissDelegate = self
+        }
+    }
+    
+    
+    func didRate(isDone: Bool) {
+        self.navigationController?.popToRootViewController(animated: true)
+
+        //self.navigationController?.popToRootViewController(animated: false)
+    }
+    
     //TABLE VIEW
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
@@ -86,8 +100,11 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let message = messages.object(at: indexPath.row) as! Message
         let msgcolor = getColorFor(username : message.user!)
         cell.setUp(name: message.user!, msg: message.message!,color: msgcolor)
+        
         return cell
     }
+    
+    
     
     //SignalR Swift
  
@@ -99,8 +116,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
     
     func connectionDidClose(error: Error?) {
-        
-        
         let user  = "system"
         let message = "User left the chat."
         self.chatHubConnection?.invoke(method: "SendMessage", arguments: [user,message], invocationDidComplete: { (err) in
@@ -109,14 +124,9 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
             }
         })
     }
-    
-    
-    
-    
-    
+   
     //register all methods from hub server
     func registerMethods(){
-    
         chatHubConnection?.on(method: "NotifyUser",  callback: {args, typeConverter in
             let id = try! typeConverter.convertFromWireType(obj: args[0], targetType: Int.self)
             print("ID: \(id!)")
@@ -130,7 +140,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                     self.alert?.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: { (act) in
                         self.navigationController?.popToRootViewController(animated: true)
                     }))
-                    
                     self.present(self.alert!, animated: true, completion: nil)
                     break
                 case ChatConnection.MatchingMentor.rawValue:
@@ -159,6 +168,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
             self.chatHubConnection?.invoke(method: "LoadMessage", arguments: [self.room], invocationDidComplete: { (err) in
                 if let resperr = err {
                     print(resperr)
+                    
                 }
             })
 
@@ -170,6 +180,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
 
     }
     
+    
     //Get Data and reload Table
     private func didGetMessage(args :[Any?], converter: TypeConverter) {
         let user = (try! converter.convertFromWireType(obj: args[0], targetType: String.self))!
@@ -177,8 +188,10 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let newMessage = Message(user: user, message: message)
         self.messages.add(newMessage)
         self.tableView.reloadData()
+        let indexPath = IndexPath(row: messages.count - 1, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
+
     }
-    
     
     //Request Time
     @objc func connectionRequest(){
@@ -192,14 +205,34 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         print("Attempting to Connect to a Mentor - attempt: \(counter)")
     }
     
-    func getColorFor(username : String) -> UIColor{
-        switch username{
-        case currentUser!:
+    func getColorFor(username : String?) -> UIColor{
+        print(username!)
+        if username! == currentUser! {
             return usercolor
-        case "System":
+        }
+        else if username == "system" {
             return syscolor
-        default:
+        }
+        else {
             return mentorcolor
+        }
+    }
+    
+    
+    //keyboard
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
         }
     }
 }

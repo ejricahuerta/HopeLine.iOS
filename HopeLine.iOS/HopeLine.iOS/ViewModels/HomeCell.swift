@@ -18,13 +18,10 @@ class HomeCell: UICollectionViewCell {
     }
 
     func setUp(title : String , desc : String, url : String ,color : UIColor)  {
-        let img : UIImage?
         titleLabel.text = title
         descLabel.text = desc
         self.layer.masksToBounds = true
-        descLabel.backgroundColor = color
-        //self.layer.backgroundColor = color.cgColor
-            //color.cgColor
+        self.backgroundColor = color
         self.layer.cornerRadius = 8
         
         

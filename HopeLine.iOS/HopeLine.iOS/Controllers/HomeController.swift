@@ -10,6 +10,8 @@ import UIKit
 
 class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     let colors = [color1, color2, color3, color4, color5]
+    @IBOutlet weak var header: UIView!
+    let bgImages = [#imageLiteral(resourceName: "lemur-760502-unsplash"),#imageLiteral(resourceName: "nick-tree-726418-unsplash"),#imageLiteral(resourceName: "chuttersnap-648746-unsplash"),#imageLiteral(resourceName: "cesar-couto-420982-unsplash"),#imageLiteral(resourceName: "malte-wingen-1074787-unsplash"),#imageLiteral(resourceName: "john-westrock-657181-unsplash")]
     let titles = ["Communities", "Resources"]
     var communities = NSMutableArray()
     var resources = NSMutableArray()
@@ -20,10 +22,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var talkToMentorView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
+        headerView.layer.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "sebastian-muller-52-unsplash")).cgColor
         datafetcher = DataFetcher()
         
         for title in titles {
@@ -85,7 +84,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
                 let title = titles[indexPath.section]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCell
         
-                let color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
+                let color = UIColor(patternImage: bgImages[Int(arc4random_uniform(UInt32(bgImages.count)))])
                 if title == titles[0] {
                     let community = communities[indexPath.row] as! Community
                     cell.setUp(title: community.name!, desc: community.desc!,url: community.imgUrl!, color : color)

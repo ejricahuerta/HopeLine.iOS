@@ -8,28 +8,29 @@
 
 import UIKit
 
+protocol ViewDismiss : class{
+    func didRate(isDone : Bool) -> Void
+}
+
 class RateController: UIViewController {
 
-    @IBOutlet weak var happyImg: UIImageView!
-    @IBOutlet weak var sadImg: UIImageView!
-    
+     var  dismissDelegate : ViewDismiss?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
-
     @IBAction func imgTapped(_ sender: UIButton) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true) {
+            self.dismissDelegate?.didRate(isDone: true)
+        }
+
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+   
     /*
     // MARK: - Navigation
 

@@ -20,10 +20,16 @@ class HomeCell: UICollectionViewCell {
     func setUp(title : String , desc : String, url : String ,color : UIColor)  {
         titleLabel.text = title
         descLabel.text = desc
-        self.layer.masksToBounds = true
+
         self.backgroundColor = color
         self.layer.cornerRadius = 8
         
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOffset = CGSize(width:0,height: 2.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.masksToBounds = false;
+
         
     }
 }

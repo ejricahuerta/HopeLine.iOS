@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TalkToMentorController: UIViewController {
-    
+class TalkToMentorController: UIViewController , HubConnectionDelegate{
+
     var user : String?
     
     var chatHubConnection : HubConnection?
@@ -22,7 +22,7 @@ class TalkToMentorController: UIViewController {
         user = "Guest" + String.random(length: 12)
         chatHubConnection =   HubConnectionBuilder(url: URL(string:"https://hopelineapi.azurewebsites.net/v2/chatHub")!)
                 .withLogging(minLogLevel: .debug)
-                .build()
+            .build()
         self.chatHubConnection!.start()
     }
     override func didReceiveMemoryWarning() {
@@ -36,6 +36,21 @@ class TalkToMentorController: UIViewController {
             view.chatHubConnection = self.chatHubConnection
             view.currentUser = user
         }
+    }
+    
+    
+    
+    func connectionDidOpen(hubConnection: HubConnection!) {
+        
+    }
+    
+    func connectionDidFailToOpen(error: Error) {
+        print(error.localizedDescription)
+        chatHubConnection?.start()
+    }
+    
+    func connectionDidClose(error: Error?) {
+        
     }
     
 }

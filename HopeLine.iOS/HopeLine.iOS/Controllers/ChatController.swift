@@ -111,6 +111,11 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
     
     func connectionDidFailToOpen(error: Error) {
+        self.alert = UIAlertController(title: nil, message: "Error while Matching Mentor", preferredStyle: UIAlertControllerStyle.alert)
+        self.alert?.addAction(UIAlertAction(title: "Retry", style: UIAlertActionStyle.cancel, handler: { (act) in
+            self.chatHubConnection?.start()
+        }))
+        self.present(self.alert!, animated: true, completion: nil)
     }
     
     func connectionDidClose(error: Error?) {
@@ -172,7 +177,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                     
                 }
             })
-
         })
         
         self.chatHubConnection?.on(method: "Load", callback: { args, typeConverter in

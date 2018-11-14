@@ -17,12 +17,19 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     var resources = NSMutableArray()
     var datafetcher : DataFetcher?
     
+
+    @IBOutlet weak var talktoMentorButton: PrimaryButton!
+    @IBOutlet weak var connectionInfo: UILabel!
+    @IBOutlet weak var loadingInfo: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var talkToMentorView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerView.layer.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "sebastian-muller-52-unsplash")).cgColor
+        self.loadingInfo.startAnimating()
+        self.loadingInfo.hidesWhenStopped = true
+        //headerView.layer.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "sebastian-muller-52-unsplash")).cgColor
+        headerView.layer.cornerRadius = 8
         datafetcher = DataFetcher()
         
         for title in titles {
@@ -30,12 +37,23 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
                 switch response {
                 case .failure(let error):
                     print(error.localizedDescription)
+                    DispatchQueue.main.async {
+                        self.tabBarController?.tabBar.items?.forEach({ (item) in
+                            item.isEnabled = false
+                        })
+                        self.talktoMentorButton.isEnabled = false
+                        self.connectionInfo.backgroundColor = UIColor.red
+                        self.connectionInfo.text = "Unable to Connect to HopeLine."
+                        self.loadingInfo.stopAnimating()
+
+                    }
+
                 case .success(let data):
+                    self.loadingInfo.isHidden = true
                     self.populateList(forlist: title ,data: data  as! [NSDictionary])
                 }
             })
         }
-        
     }
 
     @IBAction func homeButtonTapped(_ sender: PrimaryButton) {
@@ -84,16 +102,17 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
                 let title = titles[indexPath.section]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCell
         
-                let color = UIColor(patternImage: bgImages[Int(arc4random_uniform(UInt32(bgImages.count)))])
-                if title == titles[0] {
-                    let community = communities[indexPath.row] as! Community
-                    cell.setUp(title: community.name!, desc: community.desc!,url: community.imgUrl!, color : color)
-                }
-                else {
-                    let resource = resources[indexPath.row] as! Resource
-                    cell.setUp(title: resource.name!, desc: resource.desc!, url : resource.imgUrl!, color: color)
-                    }
-                return cell
+                //let color = UIColor(patternImage: bgImages[Int(arc4random_uniform(UInt32(bgImages.count)))])
+        let color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
+        if title == titles[0] {
+                let community = communities[indexPath.row] as! Community
+                cell.setUp(title: community.name!, desc: community.desc!,url: community.imgUrl!, color : color)
+            }
+        else {
+            let resource = resources[indexPath.row] as! Resource
+            cell.setUp(title: resource.name!, desc: resource.desc!, url : resource.imgUrl!, color: color)
+        }
+        return cell
 
     }
     

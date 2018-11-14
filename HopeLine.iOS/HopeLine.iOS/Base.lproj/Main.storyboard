@@ -73,8 +73,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="36M-iH-xUa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Call" id="Nur-aG-ptB">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="GDt-H9-5lC"/>
+                    <navigationItem key="navigationItem" title="Call" largeTitleDisplayMode="never" id="Nur-aG-ptB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="GDt-H9-5lC"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9N-Vm-ce2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,8 +139,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ipq-Bm-EmU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Talk To Mentor" id="WGN-EG-uOv">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="SL3-HJ-q8p"/>
+                    <navigationItem key="navigationItem" title="Talk To Mentor" largeTitleDisplayMode="never" id="WGN-EG-uOv">
+                        <barButtonItem key="backBarButtonItem" title=" " id="SL3-HJ-q8p"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -413,10 +413,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfo-y0-TgZ">
-                                <rect key="frame" x="0.0" y="64" width="414" height="180"/>
+                                <rect key="frame" x="10" y="74" width="394" height="132"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT9-wl-qKK" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="130" width="394" height="40"/>
+                                        <rect key="frame" x="10" y="82" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="obv-dW-waI"/>
                                         </constraints>
@@ -427,9 +427,9 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" scrollEnabled="NO" editable="NO" text="Hello! We're here to help you.                                           Click the button below to speak to a mentor." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylX-0E-3EY">
-                                        <rect key="frame" x="8" y="20" width="398" height="100"/>
+                                        <rect key="frame" x="8" y="20" width="378" height="52"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="23"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -444,8 +444,8 @@
                                     <constraint firstItem="ylX-0E-3EY" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="8" id="zV5-1t-4Vo"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" pagingEnabled="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Do-F34">
-                                <rect key="frame" x="10" y="264" width="394" height="413"/>
+                            <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Do-F34">
+                                <rect key="frame" x="10" y="226" width="394" height="451"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oCg-KC-Tcf">
                                     <size key="itemSize" width="336" height="206"/>
@@ -453,6 +453,11 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" id="d37-2Q-aV2">
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="451"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="tH8-jh-GfW" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
                                         <rect key="frame" x="29" y="0.0" width="336" height="206"/>
@@ -467,20 +472,14 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="e0n-V5-uUe"/>
                                                         <constraint firstAttribute="height" constant="40" id="o7R-Zu-I4T"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwa-5N-UR8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desc" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwa-5N-UR8">
                                                     <rect key="frame" x="10" y="60" width="316" height="136"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="desc">
-                                                            <attributes>
-                                                                <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="10" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -506,15 +505,27 @@
                                     <outlet property="prefetchDataSource" destination="2Sz-He-xJz" id="sxd-Re-mX0"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qha-Wd-ZXN">
+                                <rect key="frame" x="0.0" y="657" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="h1c-l7-3mv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W1J-Do-F34" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" constant="10" id="9uc-KK-GLy"/>
-                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" id="aFT-ky-ycY"/>
-                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="top" secondItem="9wz-Ay-jfx" secondAttribute="top" id="cnW-xr-Adk"/>
+                            <constraint firstItem="9wz-Ay-jfx" firstAttribute="trailing" secondItem="Qha-Wd-ZXN" secondAttribute="trailing" id="Sq4-Tk-jep"/>
+                            <constraint firstItem="Qha-Wd-ZXN" firstAttribute="bottom" secondItem="9wz-Ay-jfx" secondAttribute="bottom" id="UqV-R2-WOS"/>
+                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" constant="10" id="aFT-ky-ycY"/>
+                            <constraint firstItem="vfo-y0-TgZ" firstAttribute="top" secondItem="9wz-Ay-jfx" secondAttribute="top" constant="10" id="cnW-xr-Adk"/>
                             <constraint firstItem="9wz-Ay-jfx" firstAttribute="trailing" secondItem="W1J-Do-F34" secondAttribute="trailing" constant="10" id="oIS-wq-FNv"/>
                             <constraint firstItem="W1J-Do-F34" firstAttribute="top" secondItem="vfo-y0-TgZ" secondAttribute="bottom" constant="20" id="oj9-h7-rLP"/>
-                            <constraint firstAttribute="trailing" secondItem="vfo-y0-TgZ" secondAttribute="trailing" id="uyJ-vA-Myr"/>
+                            <constraint firstItem="Qha-Wd-ZXN" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" id="sv6-VH-pg0"/>
+                            <constraint firstAttribute="trailing" secondItem="vfo-y0-TgZ" secondAttribute="trailing" constant="10" id="uyJ-vA-Myr"/>
                             <constraint firstItem="9wz-Ay-jfx" firstAttribute="bottom" secondItem="W1J-Do-F34" secondAttribute="bottom" constant="10" id="ybw-oJ-AGe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9wz-Ay-jfx"/>
@@ -522,12 +533,17 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" title="HopeLine" id="Leb-pp-iSq"/>
+                    <navigationItem key="navigationItem" title="HopeLine" largeTitleDisplayMode="always" id="Leb-pp-iSq">
+                        <barButtonItem key="backBarButtonItem" title=" " id="9dg-A9-phd"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="W1J-Do-F34" id="X5b-uT-Vv7"/>
+                        <outlet property="connectionInfo" destination="Qha-Wd-ZXN" id="DMf-TW-Rlv"/>
                         <outlet property="header" destination="vfo-y0-TgZ" id="NxI-OL-lnD"/>
                         <outlet property="headerView" destination="vfo-y0-TgZ" id="QCe-7d-Qmv"/>
+                        <outlet property="loadingInfo" destination="d37-2Q-aV2" id="bV1-Em-Ugv"/>
                         <outlet property="talkToMentorView" destination="vfo-y0-TgZ" id="Whf-Ll-9Xh"/>
+                        <outlet property="talktoMentorButton" destination="NT9-wl-qKK" id="gHb-6j-CvU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDi-sq-xha" userLabel="First Responder" sceneMemberID="firstResponder"/>

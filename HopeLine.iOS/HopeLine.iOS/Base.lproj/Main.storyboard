@@ -413,10 +413,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfo-y0-TgZ">
-                                <rect key="frame" x="0.0" y="74" width="414" height="132"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="142"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT9-wl-qKK" customClass="PrimaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="82" width="394" height="40"/>
+                                        <rect key="frame" x="40" y="82" width="334" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="obv-dW-waI"/>
                                         </constraints>
@@ -437,19 +437,19 @@
                                 <constraints>
                                     <constraint firstItem="ylX-0E-3EY" firstAttribute="top" secondItem="vfo-y0-TgZ" secondAttribute="top" constant="20" id="DeX-ym-dHw"/>
                                     <constraint firstItem="NT9-wl-qKK" firstAttribute="top" secondItem="ylX-0E-3EY" secondAttribute="bottom" constant="10" id="F1A-h4-xrE"/>
-                                    <constraint firstItem="NT9-wl-qKK" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="10" id="QsR-ue-oT9"/>
+                                    <constraint firstItem="NT9-wl-qKK" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="40" id="QsR-ue-oT9"/>
                                     <constraint firstAttribute="trailing" secondItem="ylX-0E-3EY" secondAttribute="trailing" constant="8" id="cAh-Xp-nKh"/>
-                                    <constraint firstAttribute="trailing" secondItem="NT9-wl-qKK" secondAttribute="trailing" constant="10" id="cwG-zG-dJS"/>
-                                    <constraint firstAttribute="bottom" secondItem="NT9-wl-qKK" secondAttribute="bottom" constant="10" id="q6l-OM-POj"/>
+                                    <constraint firstAttribute="trailing" secondItem="NT9-wl-qKK" secondAttribute="trailing" constant="40" id="cwG-zG-dJS"/>
+                                    <constraint firstAttribute="bottom" secondItem="NT9-wl-qKK" secondAttribute="bottom" constant="20" id="q6l-OM-POj"/>
                                     <constraint firstItem="ylX-0E-3EY" firstAttribute="leading" secondItem="vfo-y0-TgZ" secondAttribute="leading" constant="8" id="zV5-1t-4Vo"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Do-F34">
-                                <rect key="frame" x="10" y="206" width="394" height="481"/>
+                            <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Do-F34">
+                                <rect key="frame" x="10" y="216" width="394" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oCg-KC-Tcf">
-                                    <size key="itemSize" width="336" height="206"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="336" height="253"/>
+                                    <size key="headerReferenceSize" width="50" height="14"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
@@ -459,11 +459,11 @@
                                     <color key="tintColor" red="0.0" green="0.091982096122084273" blue="0.44243847150259064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </imageView>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="tH8-jh-GfW" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="29" y="0.0" width="336" height="206"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="homeCell" id="tH8-jh-GfW" customClass="HomeCell" customModule="HopeLine_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="14" width="336" height="253"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="206"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="253"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDq-jo-fyb">
@@ -476,10 +476,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desc" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwa-5N-UR8">
-                                                    <rect key="frame" x="10" y="60" width="316" height="136"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwa-5N-UR8">
+                                                    <rect key="frame" x="10" y="60" width="316" height="183"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="desc">
+                                                            <attributes>
+                                                                <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -499,6 +504,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aDr-l3-ZBk">
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="14"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="2Sz-He-xJz" id="9cL-Lq-7Qd"/>
                                     <outlet property="delegate" destination="2Sz-He-xJz" id="xKo-Bo-kcG"/>

@@ -28,6 +28,10 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var talkToMentorView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.largeTitleDisplayMode  = .always
+        self.collectionView.autoresizesSubviews = true
+        
+        
         self.connectionLostImage.isHidden = true
         self.loadingInfo.startAnimating()
         self.loadingInfo.hidesWhenStopped = true
@@ -79,7 +83,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
                 let title = titles[indexPath.section]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCell
         
-                //let color = UIColor(patternImage: bgImages[Int(arc4random_uniform(UInt32(bgImages.count)))])
+//        let color = UIColor(patternImage: bgImages[Int(arc4random_uniform(UInt32(bgImages.count)))])
         let color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
         if title == titles[0] {
                 let community = communities[indexPath.row] as! Community

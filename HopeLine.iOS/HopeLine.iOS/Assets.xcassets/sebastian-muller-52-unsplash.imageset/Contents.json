@@ -2,7 +2,6 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "sebastian-muller-52-unsplash.jpg",
       "scale" : "1x"
     },
     {
@@ -11,11 +10,15 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "sebastian-muller-52-unsplash.jpg",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }

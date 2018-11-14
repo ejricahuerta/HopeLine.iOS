@@ -47,8 +47,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
- 
-    
+
     @IBAction func sentMesage(_ sender: PrimaryButton) {
         if textMessage.text?.isEmpty  == false {
             let newmsg = textMessage.text
@@ -63,7 +62,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
             })
         }
         self.chatText.text = ""
-
     }
     
     
@@ -79,20 +77,21 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    
     func didRate(isDone: Bool) {
+        self.chatHubConnection?.invoke(method: "RemoveUser", arguments: [currentUser,room,true], invocationDidComplete: { (err) in
+            if let resp = err {
+                print("Error on : \(String(describing: resp))")
+            }
+        })        
         self.navigationController?.popToRootViewController(animated: true)
 
         //self.navigationController?.popToRootViewController(animated: false)
     }
-    
     //TABLE VIEW
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = self.tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath) as! ChatCell
@@ -100,7 +99,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let message = messages.object(at: indexPath.row) as! Message
         let msgcolor = getColorFor(username : message.user!)
         cell.setUp(name: message.user!, msg: message.message!,color: msgcolor)
-        
         return cell
     }
     
@@ -157,6 +155,9 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.chatHubConnection?.on(method: "ReceiveMessage", callback: { args, typeConverter in
             self.didGetMessage(args: args, converter: typeConverter)
+            self.tableView.reloadData()
+            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
         })
         
         self.chatHubConnection?.on(method: "Room", callback: { args, typeConverter in
@@ -175,22 +176,20 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         })
         
         self.chatHubConnection?.on(method: "Load", callback: { args, typeConverter in
-            self.didGetMessage(args: args, converter: typeConverter)
+            self.didGetMessage( args: args, converter: typeConverter)
+            self.tableView.reloadData()
+            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
         })
 
     }
-    
-    
+
     //Get Data and reload Table
     private func didGetMessage(args :[Any?], converter: TypeConverter) {
         let user = (try! converter.convertFromWireType(obj: args[0], targetType: String.self))!
         let message = (try! converter.convertFromWireType(obj: args[1], targetType: String.self))!
         let newMessage = Message(user: user, message: message)
         self.messages.add(newMessage)
-        self.tableView.reloadData()
-        let indexPath = IndexPath(row: messages.count - 1, section: 0)
-        self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
-
     }
     
     //Request Time

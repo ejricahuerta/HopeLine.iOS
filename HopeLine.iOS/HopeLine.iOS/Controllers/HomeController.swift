@@ -11,7 +11,7 @@ import UIKit
 class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     let colors = [color1, color2, color3, color4, color5]
     @IBOutlet weak var header: UIView!
-    let bgImages = [#imageLiteral(resourceName: "lemur-760502-unsplash"),#imageLiteral(resourceName: "nick-tree-726418-unsplash"),#imageLiteral(resourceName: "chuttersnap-648746-unsplash"),#imageLiteral(resourceName: "cesar-couto-420982-unsplash"),#imageLiteral(resourceName: "malte-wingen-1074787-unsplash"),#imageLiteral(resourceName: "john-westrock-657181-unsplash")]
+    let bgImages = [#imageLiteral(resourceName: "lemur-760502-unsplash"),#imageLiteral(resourceName: "nick-tree-726418-unsplash"),#imageLiteral(resourceName: "chuttersnap-648746-unsplash"),#imageLiteral(resourceName: "cesar-couto-420982-unsplash"),#imageLiteral(resourceName: "malte-wingen-1074787-unsplash"),#imageLiteral(resourceName: "john-westrock-657181-unsplash"),#imageLiteral(resourceName: "nick-tree-726418-unsplash"),#imageLiteral(resourceName: "alex-eckermann-1098322-unsplash"),#imageLiteral(resourceName: "pawel-czerwinski-1056851-unsplash"),#imageLiteral(resourceName: "isak-combrinck-1141670-unsplash")]
     let titles = ["Communities", "Resources"]
     var communities = NSMutableArray()
     var resources = NSMutableArray()

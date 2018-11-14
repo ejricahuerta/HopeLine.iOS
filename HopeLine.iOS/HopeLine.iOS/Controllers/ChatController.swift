@@ -20,7 +20,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     var timer : Timer?
     var counter = 0
     var notif : String?
-
+    
     var alert  : UIAlertController?
     
     @IBOutlet weak var chatText: PrimaryText!
@@ -141,6 +141,9 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                 case ChatConnection.Error.rawValue:
                     self.alert = UIAlertController(title: nil, message: "Error while Matching Mentor", preferredStyle: UIAlertControllerStyle.alert)
                     self.alert?.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: { (act) in
+                       if self.timer != nil {
+                           self.timer?.invalidate()
+                        }
                         self.navigationController?.popToRootViewController(animated: true)
                     }))
                     self.present(self.alert!, animated: true, completion: nil)
@@ -148,14 +151,36 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                 case ChatConnection.MatchingMentor.rawValue:
                     self.alert = UIAlertController(title: nil, message: "Matching Mentor", preferredStyle: UIAlertControllerStyle.alert)
                     self.alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (act) in
+                        if self.timer != nil {
+                            self.timer?.invalidate()
+                        }
                         self.navigationController?.popToRootViewController(animated: true)
                     }))
                     self.present(self.alert!, animated: true, completion: nil)
+                    var counter = 0
+                    
+                    self.timer  = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+                        if counter == 10 {
+                            self.alert?.message = "Retrying..."
+             
+                            counter = 0
+                        }
+                        if counter == 20 {
+                           timer.invalidate()
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                        else {
+                            counter += 1
+
+                        }
+                        print("Counter : \(counter)")
+                    })
+
                     break
                 default:
                     break
             }
-            
+    
         })
         
         self.chatHubConnection?.on(method: "ReceiveMessage", callback: { args, typeConverter in
@@ -220,7 +245,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
             return mentorcolor
         }
     }
-    
     
     //keyboard
     @objc func keyboardWillShow(notification: NSNotification) {

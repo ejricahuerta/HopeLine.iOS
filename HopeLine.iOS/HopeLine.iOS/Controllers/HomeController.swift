@@ -16,46 +16,41 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     var communities = NSMutableArray()
     var resources = NSMutableArray()
     var datafetcher : DataFetcher?
+    var timer : Timer?
+    var isReloading  = false
     
-
+    @IBOutlet weak var loadingInfo: UIActivityIndicatorView!
+    @IBOutlet weak var connectionLostImage: UIImageView!
     @IBOutlet weak var talktoMentorButton: PrimaryButton!
     @IBOutlet weak var connectionInfo: UILabel!
-    @IBOutlet weak var loadingInfo: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var talkToMentorView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.connectionLostImage.isHidden = true
         self.loadingInfo.startAnimating()
         self.loadingInfo.hidesWhenStopped = true
         //headerView.layer.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "sebastian-muller-52-unsplash")).cgColor
         headerView.layer.cornerRadius = 8
+        headerView.layer.addBorder(edge: UIRectEdge.bottom, color: primarybg, thickness: 1)
         datafetcher = DataFetcher()
-        
-        for title in titles {
-            datafetcher?.GetData(forAction: title, handler: { (response) in
-                switch response {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    DispatchQueue.main.async {
-                        self.tabBarController?.tabBar.items?.forEach({ (item) in
-                            item.isEnabled = false
-                        })
-                        self.talktoMentorButton.isEnabled = false
-                        self.connectionInfo.backgroundColor = UIColor.red
-                        self.connectionInfo.text = "Unable to Connect to HopeLine."
-                        self.loadingInfo.stopAnimating()
-
-                    }
-
-                case .success(let data):
-                    self.loadingInfo.isHidden = true
-                    self.populateList(forlist: title ,data: data  as! [NSDictionary])
-                }
-            })
-        }
+        Load()
     }
 
+    @IBAction func reloadData(_ sender: UIBarButtonItem) {
+        self.isReloading = true
+        self.timer?.invalidate()
+        self.connectionInfo.isHidden = false
+        self.connectionInfo.text = "Reconnecting..."
+        self.connectionInfo.backgroundColor = UIColor.lightGray
+        self.connectionLostImage.isHidden = true
+        self.loadingInfo.startAnimating()
+        self.loadingInfo.isHidden = false
+        self.Load()
+        self.isReloading = false
+    }
+    
     @IBAction func homeButtonTapped(_ sender: PrimaryButton) {
         self.tabBarController?.selectedIndex = 2
     }
@@ -67,24 +62,6 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
      func numberOfSections(in collectionView: UICollectionView) -> Int {
         return titles.count
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        //1
-//        switch kind {
-//        //2
-//        case UICollectionElementKindSectionHeader:
-//            //3
-//            var headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-//                                                                             withReuseIdentifier: "homeHeader",
-//                                                                             for: indexPath)
-//            headerView = titles[(indexPath as NSIndexPath).section]
-//            return headerView
-//        default:
-//            //4
-//            assert(false, "Unexpected element kind")
-//        }
-//    }
-
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var row = 0
@@ -149,55 +126,58 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         }
 
     }
+    func Load()
+    {
+        for title in titles {
+            datafetcher?.GetData(forAction: title, handler: { (response) in
+                switch response {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    DispatchQueue.main.async {
+                        self.tabBarController?.tabBar.items?.forEach({ (item) in
+                            item.isEnabled = false
+                        })
+                        if self.communities.count == 0 && self.resources.count == 0 {
+                            self.connectionLostImage.isHidden = false
+                        }
+                        self.talktoMentorButton.isEnabled = false
+                        self.connectionInfo.backgroundColor = UIColor.red
+                        self.connectionInfo.text = "Unable to Connect to HopeLine."
+                        self.loadingInfo.stopAnimating()
+                    }
+                    
+                case .success(let data):
+
+                    DispatchQueue.main.async {
+                        self.loadingInfo.isHidden = true
+                        self.connectionLostImage.isHidden = true
+                        self.talktoMentorButton.isEnabled = true
+                        self.connectionInfo.backgroundColor = UIColor.green
+                        self.connectionInfo.text = "Connected to HopeLine."
+                        var counter = 0
+                        self.timer  = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+                            if counter == 5   || self.isReloading {
+                                self.connectionInfo.isHidden = true
+                                timer.invalidate()
+
+                            }
+                            else {
+                                counter += 1
+                            }
+                            print("Counter : \(counter)")
+                        })
+                        self.loadingInfo.stopAnimating()
+                        self.tabBarController?.tabBar.items?.forEach({ (item) in
+                            item.isEnabled = true
+                        })
+                        counter = 0
+                    }
+                    self.populateList(forlist: title ,data: data  as! [NSDictionary])
+          
+                }
+            })
+        }
+
+    }
 }
 
-
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return titles.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        var row = 0
-//        if section == 0 {
-//            row =  communities.count
-//        }
-//
-//        if section == 1 {
-//            row =  resources.count
-//        }
-//        return row
-//    }
-
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let title = titles[indexPath.section]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeCell
-//
-//        let color = colors[Int(arc4random_uniform(UInt32(colors.count)))]
-//        if title == titles[0] {
-//            let community = communities[indexPath.row] as! Community
-//            cell.setUp(title: community.name!, desc: community.desc!, color : color)
-//        }
-//        else {
-//            let resource = resources[indexPath.row] as! Resource
-//            cell.setUp(title: resource.name!, desc: resource.desc!, color: color)
-//            }
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return titles[section]
-//    }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 0 {
-//            let community = communities.object(at: indexPath.row) as! Community
-//            let url = URL(string: community.url!)
-//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-//        }
-//        else {
-//            let resource = resources.object(at: indexPath.row) as! Resource
-//            let url = URL(string: resource.url!)
-//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-//        }
-//    }
-//

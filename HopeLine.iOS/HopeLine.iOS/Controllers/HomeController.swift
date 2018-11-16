@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate ,UITabBarControllerDelegate{
     let colors = [color1, color2, color3, color4, color5]
     @IBOutlet weak var header: UIView!
     let bgImages = [#imageLiteral(resourceName: "lemur-760502-unsplash"),#imageLiteral(resourceName: "nick-tree-726418-unsplash"),#imageLiteral(resourceName: "chuttersnap-648746-unsplash"),#imageLiteral(resourceName: "cesar-couto-420982-unsplash"),#imageLiteral(resourceName: "malte-wingen-1074787-unsplash"),#imageLiteral(resourceName: "john-westrock-657181-unsplash"),#imageLiteral(resourceName: "nick-tree-726418-unsplash"),#imageLiteral(resourceName: "alex-eckermann-1098322-unsplash"),#imageLiteral(resourceName: "pawel-czerwinski-1056851-unsplash"),#imageLiteral(resourceName: "isak-combrinck-1141670-unsplash")]
@@ -58,10 +58,6 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func homeButtonTapped(_ sender: PrimaryButton) {
         self.tabBarController?.selectedIndex = 2
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-    }
     
      func numberOfSections(in collectionView: UICollectionView) -> Int {
         return titles.count
@@ -110,7 +106,9 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        self.timer?.invalidate()
+    }
     
     func populateList(forlist : String ,data : [NSDictionary]){
         for item in data {
@@ -149,9 +147,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
                         self.connectionInfo.text = "Unable to Connect to HopeLine."
                         self.loadingInfo.stopAnimating()
                     }
-                    
                 case .success(let data):
-
                     DispatchQueue.main.async {
                         self.loadingInfo.isHidden = true
                         self.connectionLostImage.isHidden = true

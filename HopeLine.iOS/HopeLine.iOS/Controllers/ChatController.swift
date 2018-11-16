@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSource, HubConnectionDelegate , ViewDismiss{
+class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSource, HubConnectionDelegate , ViewDismiss , UITextFieldDelegate {
     
     
-    
+    private var offset : CGFloat = 0
+    private var keyboardVisibleHeight : CGFloat = 0
     var messages = NSMutableArray()
     var chatHubConnection: HubConnection?
     var room : String  = ""
@@ -30,44 +31,35 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.tabBar.isHidden = true
         print("CURRENT USER: \(currentUser!)")
         //table
         self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
         //signalr
         self.registerMethods()
         
-  
-        //timer = Timer.init(timeInterval: 0.5, target: self, selector: #selector(connectionRequest), userInfo: nil, repeats: true)
+        //keyboard
+
+        
+        
         self.chatHubConnection?.invoke(method: "RequestToTalk", arguments: [currentUser], invocationDidComplete: { err in
             if let resp = err {
                 print("Error...\(String(describing: resp))")
             }
         })
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-
-    @IBAction func sentMesage(_ sender: PrimaryButton) {
-        if textMessage.text?.isEmpty  == false {
-            let newmsg = textMessage.text
-            print(" USER : \(String(describing: currentUser))")
-            print(" MESSAGE : \(String(describing: newmsg))")
-            print(" ROOM : \(room)")
-            
-            chatHubConnection?.invoke(method:"SendMessage", arguments: [currentUser!,newmsg!, room], invocationDidComplete: { (err) in
-                if let resperr = err {
-                    print("Error on sending ... :\(String(describing: resperr.localizedDescription)) ")
-                }
-            })
-        }
-        self.chatText.text = ""
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,16 +69,13 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    func didRate(isDone: Bool) {
-        self.chatHubConnection?.invoke(method: "RemoveUser", arguments: [currentUser,room,true], invocationDidComplete: { (err) in
-            if let resp = err {
-                print("Error on : \(String(describing: resp))")
-            }
-        })        
-        self.navigationController?.popToRootViewController(animated: true)
-
-        //self.navigationController?.popToRootViewController(animated: false)
+    @IBAction func sentMesage(_ sender: PrimaryButton) {
+        self.sentAMessage()
     }
+    
+
+    
+    
     //TABLE VIEW
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,11 +90,21 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         cell.setUp(name: message.user!, msg: message.message!,color: msgcolor)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.chatText.endEditing(true)
+    }
     
+    
+    //TextField
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //self.resignFirstResponder()
+        self.sentAMessage()
+        return true
+    }
     
     
     //SignalR Swift
- 
+
     func connectionDidOpen(hubConnection: HubConnection!) {
         
     }
@@ -141,11 +140,10 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                 case ChatConnection.Error.rawValue:
                     self.alert = UIAlertController(title: nil, message: "Error while Matching Mentor", preferredStyle: UIAlertControllerStyle.alert)
                     self.alert?.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: { (act) in
-                       if self.timer != nil {
-                           self.timer?.invalidate()
-                        }
+                        self.timer?.invalidate()
                         self.navigationController?.popToRootViewController(animated: true)
                     }))
+                    
                     self.present(self.alert!, animated: true, completion: nil)
                     break
                 case ChatConnection.MatchingMentor.rawValue:
@@ -154,7 +152,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                         if self.timer != nil {
                             self.timer?.invalidate()
                         }
-                        self.navigationController?.popToRootViewController(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
                     }))
                     self.present(self.alert!, animated: true, completion: nil)
                     var counter = 0
@@ -162,17 +160,16 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                     self.timer  = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
                         if counter == 10 {
                             self.alert?.message = "Retrying..."
-             
-                            counter = 0
                         }
                         if counter == 20 {
-                           timer.invalidate()
-                            self.navigationController?.popToRootViewController(animated: true)
-                        }
-                        else {
-                            counter += 1
+                            timer.invalidate()
+                            self.alert?.dismiss(animated: true, completion: {
+                                self.navigationController?.popToRootViewController(animated: true)
+                            })
 
                         }
+                        counter += 1
+                        
                         print("Counter : \(counter)")
                     })
 
@@ -192,6 +189,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.chatHubConnection?.on(method: "Room", callback: { args, typeConverter in
             self.room = (try! typeConverter.convertFromWireType(obj: args[0], targetType: String.self))!
+            self.timer?.invalidate()
             self.alert?.dismiss(animated: true, completion: nil)
             self.sendButton.isHidden = false
             self.chatText.isHidden = false
@@ -206,11 +204,11 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.chatHubConnection?.on(method: "Load", callback: { args, typeConverter in
             self.didGetMessage( args: args, converter: typeConverter)
+            self.timer?.invalidate()
             self.tableView.reloadData()
             let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
             self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
         })
-
     }
 
     //Get Data and reload Table
@@ -233,6 +231,8 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         print("Attempting to Connect to a Mentor - attempt: \(counter)")
     }
     
+    
+    //setting color for user
     func getColorFor(username : String?) -> UIColor{
         print(username!)
         if username! == currentUser! {
@@ -246,21 +246,54 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    //keyboard
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
+    //setting uialert
+    func setUpAlert(title: String?, msg : String?)  {
+        
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
+//    //keyboard
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y == 0{
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+//        }
+//    }
+//
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y != 0{
+//                self.view.frame.origin.y += keyboardSize.height
+//            }
+//        }
+//    }
+//
+    
+    func sentAMessage() {
+        if textMessage.text?.isEmpty  == false {
+            let newmsg = textMessage.text
+            print(" USER : \(String(describing: currentUser))")
+            print(" MESSAGE : \(String(describing: newmsg))")
+            print(" ROOM : \(room)")
+            
+            chatHubConnection?.invoke(method:"SendMessage", arguments: [currentUser!,newmsg!, room], invocationDidComplete: { (err) in
+                if let resperr = err {
+                    print("Error on sending ... :\(String(describing: resperr.localizedDescription)) ")
+                }
+            })
         }
+        self.chatText.text = ""
+    }
+    
+    func didRate(isDone: Bool) {
+        self.chatHubConnection?.invoke(method: "RemoveUser", arguments: [currentUser,room,true], invocationDidComplete: { (err) in
+            if let resp = err {
+                print("Error on : \(String(describing: resp))")
+            }
+        })
+        self.navigationController?.popToRootViewController(animated: true)
+        
+        //self.navigationController?.popToRootViewController(animated: false)
     }
 }
 

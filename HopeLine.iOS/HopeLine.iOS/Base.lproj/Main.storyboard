@@ -163,7 +163,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EhD-GE-Ae0" id="k5z-F1-I7F"/>
+                                </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFN-9O-C5m">
                                 <rect key="frame" x="0.0" y="64" width="414" height="562"/>
@@ -229,7 +232,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WzB-D6-Edi" firstAttribute="bottom" secondItem="bDU-EX-kG7" secondAttribute="bottom" constant="11" id="0qc-gT-QNS"/>
+                            <constraint firstItem="WzB-D6-Edi" firstAttribute="bottom" secondItem="bDU-EX-kG7" secondAttribute="bottom" constant="11" id="0qc-gT-QNS" customClass="KeyboardLayoutConstraint" customModule="HopeLine_iOS" customModuleProvider="target"/>
                             <constraint firstItem="WzB-D6-Edi" firstAttribute="trailing" secondItem="uFN-9O-C5m" secondAttribute="trailing" id="4mN-bw-hvX"/>
                             <constraint firstItem="bDU-EX-kG7" firstAttribute="leading" secondItem="gC9-iA-e9b" secondAttribute="trailing" constant="10" id="7L9-9g-eCP"/>
                             <constraint firstItem="bDU-EX-kG7" firstAttribute="top" secondItem="uFN-9O-C5m" secondAttribute="bottom" constant="10" id="Des-CM-B62"/>
@@ -238,7 +241,7 @@
                             <constraint firstItem="gC9-iA-e9b" firstAttribute="top" secondItem="uFN-9O-C5m" secondAttribute="bottom" constant="10" id="Kni-vF-xTY"/>
                             <constraint firstItem="uFN-9O-C5m" firstAttribute="leading" secondItem="WzB-D6-Edi" secondAttribute="leading" id="PI9-nF-aer"/>
                             <constraint firstItem="uFN-9O-C5m" firstAttribute="top" secondItem="WzB-D6-Edi" secondAttribute="top" id="hEs-X5-UO2"/>
-                            <constraint firstItem="WzB-D6-Edi" firstAttribute="bottom" secondItem="gC9-iA-e9b" secondAttribute="bottom" constant="11" id="k9w-Pj-C79"/>
+                            <constraint firstItem="WzB-D6-Edi" firstAttribute="bottom" secondItem="gC9-iA-e9b" secondAttribute="bottom" constant="11" id="k9w-Pj-C79" customClass="KeyboardLayoutConstraint" customModule="HopeLine_iOS" customModuleProvider="target"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WzB-D6-Edi"/>
                     </view>

@@ -39,27 +39,20 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         //signalr
         self.registerMethods()
-        
-        //keyboard
-
-        
-        
         self.chatHubConnection?.invoke(method: "RequestToTalk", arguments: [currentUser], invocationDidComplete: { err in
             if let resp = err {
                 print("Error...\(String(describing: resp))")
             }
         })
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+//        let tap : UIGestureRecognizer = UIGestureRecognizer(target: self, action: #selector(endTextEdit))
+//        self.tableView.addGestureRecognizer(tap)
+        
     }
     
+
     override func viewDidDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,8 +65,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     @IBAction func sentMesage(_ sender: PrimaryButton) {
         self.sentAMessage()
     }
-    
-
     
     
     //TABLE VIEW
@@ -90,18 +81,17 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         cell.setUp(name: message.user!, msg: message.message!,color: msgcolor)
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         self.chatText.endEditing(true)
+        return nil
     }
-    
     
     //TextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //self.resignFirstResponder()
         self.sentAMessage()
         return true
     }
-    
+
     
     //SignalR Swift
 
@@ -230,8 +220,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         counter += 1
         print("Attempting to Connect to a Mentor - attempt: \(counter)")
     }
-    
-    
+
     //setting color for user
     func getColorFor(username : String?) -> UIColor{
         print(username!)
@@ -251,24 +240,10 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
     }
     
-//    //keyboard
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y == 0{
-//                self.view.frame.origin.y -= keyboardSize.height
-//            }
-//        }
-//    }
-//
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y != 0{
-//                self.view.frame.origin.y += keyboardSize.height
-//            }
-//        }
-//    }
-//
-    
+    @objc func endTextEdit(){
+        self.chatText.endEditing(true)
+    }
+
     func sentAMessage() {
         if textMessage.text?.isEmpty  == false {
             let newmsg = textMessage.text
@@ -278,6 +253,8 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
             
             chatHubConnection?.invoke(method:"SendMessage", arguments: [currentUser!,newmsg!, room], invocationDidComplete: { (err) in
                 if let resperr = err {
+                    
+                    //fixme : change to an alert or custom toast
                     print("Error on sending ... :\(String(describing: resperr.localizedDescription)) ")
                 }
             })

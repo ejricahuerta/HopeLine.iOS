@@ -7,20 +7,36 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class MapController: UIViewController {
-
+class MapController: UIViewController, CLLocationManagerDelegate{
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let initLocation =  CLLocation(latitude: 43.7714, longitude: -79.4988) // SENECA
+    var radius : CLLocationDistance = 1000 // 100KM
+    var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        mapCenter(location: initLocation)
 
-        // Do any additional setup after loading the view.
+
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //set the center
+    func mapCenter(location : CLLocation){
+        let coorRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
+        mapView.setRegion(coorRegion, animated: true)
+    }
 
     /*
     // MARK: - Navigation

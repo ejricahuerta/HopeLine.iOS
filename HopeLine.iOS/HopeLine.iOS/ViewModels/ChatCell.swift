@@ -26,17 +26,20 @@ class ChatCell: UITableViewCell {
     }
     
     func setUp(name : String , msg : String, color : UIColor){
-        msgBox.layer.masksToBounds = true
-        msgBox.layer.addBorder(edge: UIRectEdge.left, color: color, thickness: 5)
         msgBox.text = msg
         userName.textColor = color
-        userName.text = name
+        msgBox.layer.addBorder(edge: UIRectEdge.left, color: color, thickness: 5)
 
-
-
-
-        
-    }
+        if name.contains("Guest") {
+            userName.text = "You"
+        }
+        else if name.contains("system") {
+            userName.text = "Sys"
+        }
+        else {
+            userName.text = "Mentor"
+        }
+       }
 
 }
 

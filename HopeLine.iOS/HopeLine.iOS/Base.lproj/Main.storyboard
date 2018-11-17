@@ -21,7 +21,7 @@
             <objects>
                 <viewController id="EHD-Mv-W0p" customClass="MapController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uft-Ae-KA0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I6u-EK-Ovk">
@@ -128,7 +128,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pr1-32-9oH" firstAttribute="top" secondItem="Ipq-Bm-EmU" secondAttribute="top" constant="50" id="6om-du-aXh"/>
                             <constraint firstItem="JgZ-4I-957" firstAttribute="top" secondItem="pr1-32-9oH" secondAttribute="bottom" constant="70" id="7IE-ax-XPK"/>
@@ -249,6 +249,7 @@
                     <navigationItem key="navigationItem" title="Chat" largeTitleDisplayMode="never" id="zzi-6M-hXP">
                         <barButtonItem key="backBarButtonItem" title=" " id="GVT-La-xwx"/>
                         <barButtonItem key="rightBarButtonItem" title="End" id="uAD-5d-CbK">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="EFA-dd-LAk" kind="presentation" identifier="rateSegue" modalPresentationStyle="overFullScreen" id="SaS-RS-32S"/>
                             </connections>
@@ -314,7 +315,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JeY-Lz-4Wy" firstAttribute="leading" secondItem="czF-rx-nq2" secondAttribute="leading" constant="20" id="2RM-SS-Kdc"/>
                             <constraint firstItem="lKz-oW-TuH" firstAttribute="top" secondItem="xjQ-PG-OTE" secondAttribute="bottom" constant="20" id="BhE-eQ-obV"/>
@@ -337,11 +338,13 @@
             <objects>
                 <tabBarController hidesBottomBarWhenPushed="YES" id="SeO-hW-qRL" customClass="MainController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="rH7-1H-zkE"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zvj-7E-8gi">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" id="zvj-7E-8gi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.0" green="0.55754128886010368" blue="0.39496449891959001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.46608841420000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="1nL-9J-DkE" kind="relationship" relationship="viewControllers" id="biy-VC-Wwa"/>
@@ -358,12 +361,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1nL-9J-DkE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" landscapeImage="home" largeContentSizeImage="home" selectedImage="home" springLoaded="YES" id="SdO-Yy-tqQ">
-                        <color key="badgeColor" red="0.80571903089999997" green="1" blue="0.90927225830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YXh-R5-RPK">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.46608841420000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.46608841420000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -385,6 +393,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G7l-qg-DYd">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.46608841420000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -400,7 +412,7 @@
             <objects>
                 <viewController id="2Sz-He-xJz" customClass="HomeController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZS-WA-61R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfo-y0-TgZ">
@@ -437,7 +449,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W1J-Do-F34">
                                 <rect key="frame" x="10" y="216" width="394" height="471"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oCg-KC-Tcf">
                                     <size key="itemSize" width="336" height="253"/>
                                     <size key="headerReferenceSize" width="50" height="14"/>
@@ -515,11 +527,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5EH-rZ-wPG">
-                                <rect key="frame" x="189" y="349.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="189" y="325" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.10546382695351877" blue="0.50728626943005184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="W1J-Do-F34" firstAttribute="leading" secondItem="9wz-Ay-jfx" secondAttribute="leading" constant="10" id="9uc-KK-GLy"/>
                             <constraint firstItem="9wz-Ay-jfx" firstAttribute="trailing" secondItem="Qha-Wd-ZXN" secondAttribute="trailing" id="Sq4-Tk-jep"/>
@@ -542,7 +554,7 @@
                     <navigationItem key="navigationItem" title="HopeLine" largeTitleDisplayMode="always" id="Leb-pp-iSq">
                         <barButtonItem key="backBarButtonItem" title=" " id="9dg-A9-phd"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="25r-8w-5qd">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="reloadData:" destination="2Sz-He-xJz" id="zFf-G2-9d2"/>
                             </connections>
@@ -567,11 +579,18 @@
         <scene sceneID="wn5-b2-yaE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DNQ-CF-EbG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Talk to Mentor" image="convo" id="Mei-rp-9Rw"/>
+                    <tabBarItem key="tabBarItem" title="Talk to Mentor" image="convo" id="Mei-rp-9Rw">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uNu-40-erN">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.46608841420000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.46608841420000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

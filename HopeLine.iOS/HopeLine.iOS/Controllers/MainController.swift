@@ -13,7 +13,7 @@ class MainController: UITabBarController {
     let nameService  = NameGeneratorService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.tabBar.backgroundColor  = primarybg
         
         
         // Do any additional setup after loading the view.

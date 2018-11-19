@@ -22,7 +22,9 @@ class RateController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func backToChatTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func imgTapped(_ sender: UIButton) {
         self.dismiss(animated: true) {
             self.dismissDelegate?.didRate(isDone: true)
@@ -33,7 +35,4 @@ class RateController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
-
-
 }

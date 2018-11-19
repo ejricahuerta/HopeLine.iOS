@@ -22,11 +22,7 @@ class MapController: UIViewController, CLLocationManagerDelegate{
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         mapCenter(location: initLocation)
-
-
     }
-
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

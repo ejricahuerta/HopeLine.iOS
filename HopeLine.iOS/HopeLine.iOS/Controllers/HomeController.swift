@@ -31,7 +31,6 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         self.navigationItem.largeTitleDisplayMode  = .always
         self.collectionView.autoresizesSubviews = true
         
-        
         self.connectionLostImage.isHidden = true
         self.loadingInfo.startAnimating()
         self.loadingInfo.hidesWhenStopped = true
@@ -126,8 +125,9 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-
     }
+    
+    
     func Load()
     {
         for title in titles {
@@ -159,7 +159,6 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
                             if counter == 5   || self.isReloading {
                                 self.connectionInfo.isHidden = true
                                 timer.invalidate()
-
                             }
                             else {
                                 counter += 1
@@ -173,11 +172,11 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
                         counter = 0
                     }
                     self.populateList(forlist: title ,data: data  as! [NSDictionary])
-          
                 }
             })
         }
 
     }
+    
 }
 

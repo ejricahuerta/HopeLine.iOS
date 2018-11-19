@@ -44,10 +44,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                 print("Error...\(String(describing: resp))")
             }
         })
-        
-//        let tap : UIGestureRecognizer = UIGestureRecognizer(target: self, action: #selector(endTextEdit))
-//        self.tableView.addGestureRecognizer(tap)
-        
     }
     
 
@@ -91,10 +87,17 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         self.sentAMessage()
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 2000
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
 
     
-    //SignalR Swift
-
+    //SignalR Swift delegate
     func connectionDidOpen(hubConnection: HubConnection!) {
         
     }

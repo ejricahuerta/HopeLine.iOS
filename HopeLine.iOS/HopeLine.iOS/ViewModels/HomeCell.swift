@@ -22,7 +22,7 @@ class HomeCell: UICollectionViewCell {
         descLabel.text = desc
 
         self.backgroundColor = color
-        self.layer.cornerRadius = 8
+        self.layer.cornerRadius = 5
         
         self.layer.shadowColor = UIColor.lightGray.cgColor
         self.layer.shadowOffset = CGSize(width:0,height: 2.0)

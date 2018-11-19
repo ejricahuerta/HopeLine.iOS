@@ -14,7 +14,7 @@ class PrimaryButton: UIButton {
         super.draw(rect)
         self.layer.borderWidth = 5
         self.layer.borderColor = primarybg.cgColor
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 5
         self.layer.backgroundColor = primarybg.cgColor
         self.setTitleColor(primarytxt, for: .normal)
     }

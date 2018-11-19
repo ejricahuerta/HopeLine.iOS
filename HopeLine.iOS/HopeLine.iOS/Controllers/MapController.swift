@@ -10,38 +10,58 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapController: UIViewController, CLLocationManagerDelegate{
+class MapController: UIViewController{
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+    var alert : UIAlertController?
     
+    @IBOutlet weak var notifLabel: UILabel!
     let initLocation =  CLLocation(latitude: 43.7714, longitude: -79.4988) // SENECA
+    
     var radius : CLLocationDistance = 1000 // 100KM
-    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        mapCenter(location: initLocation)
+        
+        if !CLLocationManager.locationServicesEnabled() {
+            self.alert = UIAlertController(title: "Location Access", message: "Allow HopeLine to use your location?", preferredStyle: UIAlertControllerStyle.alert)
+            self.alert?.addAction(UIAlertAction(title: "Enable", style: UIAlertActionStyle.default, handler: { (action) in
+                self.notifLabel.isHidden = true
+                self.mapView.isHidden = false
+            }))
+            self.alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (action) in
+                self.mapView.isHidden = true
+            }))
+            self.present(self.alert!, animated: true, completion: nil)
+        }
+        else {
+            self.notifLabel.isHidden = true
+            self.mapView.isHidden = false
+        }
+        //mapCenter(location: initLocation)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    //set the center
-    func mapCenter(location : CLLocation){
-        let coorRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
-        mapView.setRegion(coorRegion, animated: true)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    //set the center
+//    func mapCenter(location : CLLocation){
+//        let coorRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius)
+//        mapView.setRegion(coorRegion, animated: true)
+//    }
 
 }
+extension MapController : CLLocationManagerDelegate
+{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
+    
+}
+

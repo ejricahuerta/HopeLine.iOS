@@ -24,16 +24,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I6u-EK-Ovk">
+                            <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I6u-EK-Ovk">
                                 <rect key="frame" x="0.0" y="120" width="414" height="467"/>
                                 <connections>
                                     <outlet property="delegate" destination="EHD-Mv-W0p" id="lag-ye-an5"/>
                                 </connections>
                             </mapView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-o9-U10">
-                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXG-Cc-PEC">
                                 <rect key="frame" x="348" y="607" width="46" height="30"/>
                                 <constraints>
@@ -41,11 +37,30 @@
                                 </constraints>
                                 <state key="normal" title="Clear"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCy-f9-BCe">
+                                <rect key="frame" x="0.0" y="662" width="414" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ErI-EF-IB8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.38335348165658512" blue="0.12986656058575929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-o9-U10">
+                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EHD-Mv-W0p" id="Qyd-Qx-f6C"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DCy-f9-BCe" firstAttribute="leading" secondItem="9rK-AC-Vfe" secondAttribute="leading" id="3S3-gS-9at"/>
                             <constraint firstItem="IqZ-o9-U10" firstAttribute="top" secondItem="9rK-AC-Vfe" secondAttribute="top" id="RP0-h7-TkV"/>
                             <constraint firstItem="IqZ-o9-U10" firstAttribute="leading" secondItem="9rK-AC-Vfe" secondAttribute="leading" id="TVK-cw-uXx"/>
+                            <constraint firstItem="9rK-AC-Vfe" firstAttribute="trailing" secondItem="DCy-f9-BCe" secondAttribute="trailing" id="U81-y4-uoH"/>
+                            <constraint firstItem="DCy-f9-BCe" firstAttribute="bottom" secondItem="9rK-AC-Vfe" secondAttribute="bottom" id="Uow-IZ-LnT"/>
                             <constraint firstItem="9rK-AC-Vfe" firstAttribute="trailing" secondItem="ZXG-Cc-PEC" secondAttribute="trailing" constant="20" id="aWy-Wd-ylE"/>
                             <constraint firstItem="9rK-AC-Vfe" firstAttribute="bottom" secondItem="I6u-EK-Ovk" secondAttribute="bottom" constant="100" id="hVa-t3-f1D"/>
                             <constraint firstItem="9rK-AC-Vfe" firstAttribute="trailing" secondItem="I6u-EK-Ovk" secondAttribute="trailing" id="lsI-W5-3eb"/>
@@ -60,6 +75,8 @@
                     <navigationItem key="navigationItem" title="Map" id="jUy-KO-wZ9"/>
                     <connections>
                         <outlet property="mapView" destination="I6u-EK-Ovk" id="VhZ-HN-YLM"/>
+                        <outlet property="notifLabel" destination="DCy-f9-BCe" id="GGJ-NN-9GU"/>
+                        <outlet property="searchBar" destination="IqZ-o9-U10" id="kLz-1X-OCf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAn-nV-pKz" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -83,6 +83,79 @@
             </objects>
             <point key="canvasLocation" x="1198.5507246376812" y="-644.83695652173913"/>
         </scene>
+        <!--Call Detail Controller-->
+        <scene sceneID="rRX-eB-68J">
+            <objects>
+                <viewController id="CdB-Ob-LhR" customClass="CallDetailController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NTR-Sk-N7k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-N9-Jum">
+                                <rect key="frame" x="20" y="74" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4go-yD-UhR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-yB-nM2" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
+                                <rect key="frame" x="30" y="174" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mUJ-rc-GHn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Call"/>
+                                <connections>
+                                    <action selector="callTapped:" destination="CdB-Ob-LhR" eventType="touchUpInside" id="sp1-nT-HMW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-tH-X8c" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
+                                <rect key="frame" x="30" y="244" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fot-g0-jEp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="TTY"/>
+                                <connections>
+                                    <action selector="callTapped:" destination="CdB-Ob-LhR" eventType="touchUpInside" id="xxz-9Y-Bcu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBl-fq-IQb">
+                                <rect key="frame" x="30" y="145" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rBl-fq-IQb" firstAttribute="leading" secondItem="2BR-Hv-3sw" secondAttribute="leading" constant="30" id="8np-i5-3TH"/>
+                            <constraint firstItem="CUC-yB-nM2" firstAttribute="top" secondItem="rBl-fq-IQb" secondAttribute="bottom" constant="8" id="F4a-kP-Fnu"/>
+                            <constraint firstItem="2BR-Hv-3sw" firstAttribute="trailing" secondItem="1G5-tH-X8c" secondAttribute="trailing" constant="30" id="NWf-80-dwu"/>
+                            <constraint firstItem="1G5-tH-X8c" firstAttribute="top" secondItem="CUC-yB-nM2" secondAttribute="bottom" constant="20" id="PrF-bb-Q6e"/>
+                            <constraint firstItem="1G5-tH-X8c" firstAttribute="leading" secondItem="2BR-Hv-3sw" secondAttribute="leading" constant="30" id="ZiO-vU-yVj"/>
+                            <constraint firstItem="XXv-N9-Jum" firstAttribute="top" secondItem="2BR-Hv-3sw" secondAttribute="top" constant="10" id="cll-Ch-x4k"/>
+                            <constraint firstItem="2BR-Hv-3sw" firstAttribute="trailing" secondItem="rBl-fq-IQb" secondAttribute="trailing" constant="30" id="dQt-mb-03J"/>
+                            <constraint firstItem="CUC-yB-nM2" firstAttribute="leading" secondItem="2BR-Hv-3sw" secondAttribute="leading" constant="30" id="gYS-EW-SPT"/>
+                            <constraint firstItem="2BR-Hv-3sw" firstAttribute="trailing" secondItem="CUC-yB-nM2" secondAttribute="trailing" constant="30" id="jTN-bf-KFp"/>
+                            <constraint firstItem="CUC-yB-nM2" firstAttribute="top" secondItem="XXv-N9-Jum" secondAttribute="bottom" constant="50" id="nfj-07-A4h"/>
+                            <constraint firstItem="2BR-Hv-3sw" firstAttribute="trailing" secondItem="XXv-N9-Jum" secondAttribute="trailing" constant="20" id="rvQ-tJ-AoL"/>
+                            <constraint firstItem="XXv-N9-Jum" firstAttribute="leading" secondItem="2BR-Hv-3sw" secondAttribute="leading" constant="20" id="tyD-jg-hBZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2BR-Hv-3sw"/>
+                    </view>
+                    <connections>
+                        <outlet property="callButton" destination="CUC-yB-nM2" id="1y3-vg-LH8"/>
+                        <outlet property="titleLabel" destination="XXv-N9-Jum" id="mRg-VY-YUP"/>
+                        <outlet property="ttyCallBtn" destination="1G5-tH-X8c" id="QQp-0W-RHM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZf-7b-zSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="401" y="862"/>
+        </scene>
         <!--Call-->
         <scene sceneID="EPj-mh-uMh">
             <objects>
@@ -99,7 +172,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9N-Vm-ce2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-562" y="861"/>
+            <point key="canvasLocation" x="270" y="1526"/>
+        </scene>
+        <!--Call Hotline-->
+        <scene sceneID="0lA-TB-5WQ">
+            <objects>
+                <viewController id="TzU-7b-5zR" customClass="TemporaryController" customModule="HopeLine_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a6b-QQ-rSK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crisis lines - suicide - depression - telephone support lines - non-crisis mental health services" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-bp-MOv">
+                                <rect key="frame" x="20" y="69" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2LA-I3-eQ9"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="DwF-gW-s5G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Goz-GR-SNO" customClass="SecondaryButton" customModule="HopeLine_iOS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="637" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="U0L-0c-Mdh"/>
+                                    <constraint firstAttribute="height" constant="30" id="yPh-pL-wZI"/>
+                                </constraints>
+                                <state key="normal" title="Click here for more list"/>
+                                <connections>
+                                    <action selector="moreTapped:" destination="TzU-7b-5zR" eventType="touchUpInside" id="u4m-6G-mm9"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkG-vr-fmP">
+                                <rect key="frame" x="10" y="129" width="394" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="callCell" textLabel="PQD-iM-ALz" detailTextLabel="BCH-VR-El3" rowHeight="104" style="IBUITableViewCellStyleSubtitle" id="gW0-mC-tbz">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="104"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gW0-mC-tbz" id="tAq-i4-bzY">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="103.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PQD-iM-ALz">
+                                                    <rect key="frame" x="15" y="32" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BCH-VR-El3">
+                                                    <rect key="frame" x="14.999999999999996" y="55.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="CdB-Ob-LhR" kind="show" identifier="callDetailSegue" id="fY8-mq-9uD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TzU-7b-5zR" id="xpI-ga-X0q"/>
+                                    <outlet property="delegate" destination="TzU-7b-5zR" id="WnP-sp-Koc"/>
+                                    <outlet property="prefetchDataSource" destination="TzU-7b-5zR" id="cie-zf-uHm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zEn-iL-Z4M" firstAttribute="trailing" secondItem="gkG-vr-fmP" secondAttribute="trailing" constant="10" id="2Bo-k9-Wfn"/>
+                            <constraint firstItem="Goz-GR-SNO" firstAttribute="top" secondItem="gkG-vr-fmP" secondAttribute="bottom" id="8zD-cA-Eae"/>
+                            <constraint firstItem="zEn-iL-Z4M" firstAttribute="bottom" secondItem="Goz-GR-SNO" secondAttribute="bottom" constant="20" id="Pzf-df-kiy"/>
+                            <constraint firstItem="gkG-vr-fmP" firstAttribute="top" secondItem="aN8-bp-MOv" secondAttribute="bottom" constant="10" id="S8A-B6-h6E"/>
+                            <constraint firstItem="zEn-iL-Z4M" firstAttribute="trailing" secondItem="aN8-bp-MOv" secondAttribute="trailing" constant="20" id="SwE-gD-7Pf"/>
+                            <constraint firstItem="gkG-vr-fmP" firstAttribute="leading" secondItem="zEn-iL-Z4M" secondAttribute="leading" constant="10" id="TEW-aw-FXd"/>
+                            <constraint firstItem="aN8-bp-MOv" firstAttribute="top" secondItem="zEn-iL-Z4M" secondAttribute="top" constant="5" id="byw-TK-qNm"/>
+                            <constraint firstItem="aN8-bp-MOv" firstAttribute="leading" secondItem="zEn-iL-Z4M" secondAttribute="leading" constant="20" id="fI0-6M-mVr"/>
+                            <constraint firstItem="Goz-GR-SNO" firstAttribute="leading" secondItem="zEn-iL-Z4M" secondAttribute="leading" constant="20" id="fdz-qW-bW3"/>
+                            <constraint firstItem="zEn-iL-Z4M" firstAttribute="trailing" secondItem="Goz-GR-SNO" secondAttribute="trailing" constant="20" id="lq6-6R-Eij"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zEn-iL-Z4M"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Call Hotline" largeTitleDisplayMode="never" id="p1H-xi-axp">
+                        <barButtonItem key="backBarButtonItem" title=" " id="c8J-p1-2GZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="gkG-vr-fmP" id="3ha-0n-uvY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHO-1a-BWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-584.05797101449275" y="861.68478260869574"/>
         </scene>
         <!--Talk To Mentor-->
         <scene sceneID="p6f-cz-UTA">
@@ -141,17 +308,30 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IsH-3y-Sgm" kind="show" identifier="callSegue" id="Pjy-eA-sfp"/>
+                                    <segue destination="TzU-7b-5zR" kind="show" identifier="callSegue" id="EXH-op-9Bg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mentor Unavailable. Please try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iN-6X-9lg">
+                                <rect key="frame" x="0.0" y="657" width="414" height="30"/>
+                                <color key="backgroundColor" red="0.43116889359999999" green="0.70800686219999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="efY-Hz-Zpx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pr1-32-9oH" firstAttribute="top" secondItem="Ipq-Bm-EmU" secondAttribute="top" constant="50" id="6om-du-aXh"/>
                             <constraint firstItem="JgZ-4I-957" firstAttribute="top" secondItem="pr1-32-9oH" secondAttribute="bottom" constant="70" id="7IE-ax-XPK"/>
                             <constraint firstItem="Ipq-Bm-EmU" firstAttribute="trailing" secondItem="JgZ-4I-957" secondAttribute="trailing" constant="50" id="7gR-XG-bfD"/>
+                            <constraint firstItem="6iN-6X-9lg" firstAttribute="leading" secondItem="Ipq-Bm-EmU" secondAttribute="leading" id="ECt-Ge-hBh"/>
                             <constraint firstItem="SXE-cp-2a7" firstAttribute="top" secondItem="pr1-32-9oH" secondAttribute="bottom" constant="10" id="KnT-yN-pef"/>
                             <constraint firstItem="pr1-32-9oH" firstAttribute="leading" secondItem="Ipq-Bm-EmU" secondAttribute="leading" constant="20" id="MEo-lh-mk3"/>
+                            <constraint firstItem="Ipq-Bm-EmU" firstAttribute="trailing" secondItem="6iN-6X-9lg" secondAttribute="trailing" id="Ooc-5T-2Ze"/>
+                            <constraint firstItem="6iN-6X-9lg" firstAttribute="bottom" secondItem="Ipq-Bm-EmU" secondAttribute="bottom" id="Tw9-XF-xLs"/>
                             <constraint firstItem="SXE-cp-2a7" firstAttribute="leading" secondItem="Ipq-Bm-EmU" secondAttribute="leading" constant="50" id="api-Qb-s8Y"/>
                             <constraint firstItem="Ipq-Bm-EmU" firstAttribute="trailing" secondItem="pr1-32-9oH" secondAttribute="trailing" constant="20" id="gVF-gX-LqH"/>
                             <constraint firstItem="Ipq-Bm-EmU" firstAttribute="trailing" secondItem="SXE-cp-2a7" secondAttribute="trailing" constant="50" id="l6G-70-Gy6"/>
@@ -163,6 +343,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="SL3-HJ-q8p"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="notif" destination="6iN-6X-9lg" id="sAe-Di-3yX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cT-ud-hQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,9 +8,13 @@
 
 import UIKit
 
+
+protocol MentorDelegate {
+   func didNotFindMentor() -> Void
+}
+
 class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSource, HubConnectionDelegate , ViewDismiss , UITextFieldDelegate {
-    
-    
+
     private var offset : CGFloat = 0
     private var keyboardVisibleHeight : CGFloat = 0
     var messages = NSMutableArray()
@@ -21,7 +25,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     var timer : Timer?
     var counter = 0
     var notif : String?
-    
+    var mentordelegate : MentorDelegate?
     var alert  : UIAlertController?
     
     @IBOutlet weak var chatText: PrimaryText!
@@ -31,7 +35,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tabBarController?.tabBar.isHidden = true
         print("CURRENT USER: \(currentUser!)")
         //table
@@ -46,7 +49,6 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
         })
     }
     
-
     override func viewDidDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -157,6 +159,7 @@ class ChatController: UIViewController , UITableViewDelegate, UITableViewDataSou
                         if counter == 20 {
                             timer.invalidate()
                             self.alert?.dismiss(animated: true, completion: {
+                                self.mentordelegate?.didNotFindMentor()
                                 self.navigationController?.popToRootViewController(animated: true)
                             })
 

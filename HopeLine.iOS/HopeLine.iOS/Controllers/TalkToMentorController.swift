@@ -8,14 +8,17 @@
 
 import UIKit
 
-class TalkToMentorController: UIViewController , HubConnectionDelegate{
+class TalkToMentorController: UIViewController , HubConnectionDelegate, MentorDelegate{
 
+    @IBOutlet weak var notif: UILabel!
+    
+    var timer : Timer?
     var user : String?
     
     var chatHubConnection : HubConnection?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.notif.isHidden = true
         navigationController?.navigationBar.prefersLargeTitles = true
         self.tabBarController?.tabBarItem.badgeValue = "1"
         
@@ -37,13 +40,31 @@ class TalkToMentorController: UIViewController , HubConnectionDelegate{
             let view = segue.destination as! ChatController
             view.chatHubConnection = self.chatHubConnection
             view.currentUser = user
+            view.mentordelegate = self
         }
+        else {
+            let _ = segue.destination as! TemporaryController
+        }
+        
+    }
+    func didNotFindMentor() {
+        var counter = 0
+        self.notif.isHidden = false
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+            if counter < 10 {
+                counter += 1
+            }
+            else {
+                self.notif.isHidden = true
+                self.timer?.invalidate()
+                
+            }
+        })
     }
     
     
-    
     func connectionDidOpen(hubConnection: HubConnection!) {
-        
+        //FIXME
     }
     
     func connectionDidFailToOpen(error: Error) {
@@ -52,7 +73,7 @@ class TalkToMentorController: UIViewController , HubConnectionDelegate{
     }
     
     func connectionDidClose(error: Error?) {
-        
+             //FIXME
     }
     
 }

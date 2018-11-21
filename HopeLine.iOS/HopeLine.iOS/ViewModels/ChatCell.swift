@@ -29,7 +29,7 @@ class ChatCell: UITableViewCell {
         msgBox.text = msg
         userName.textColor = color
         msgBox.layer.addBorder(edge: UIRectEdge.left, color: color, thickness: 5)
-
+        msgBox.padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         if name.contains("Guest") {
             userName.text = "You"
         }

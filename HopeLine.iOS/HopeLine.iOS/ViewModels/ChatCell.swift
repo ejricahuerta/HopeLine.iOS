@@ -33,13 +33,12 @@ class ChatCell: UITableViewCell {
         if name.contains("Guest") {
             userName.text = "You"
         }
-        else if name.contains("system") {
+        else if name.contains("HopeLine") {
             userName.text = "Sys"
         }
         else {
             userName.text = "Mentor"
         }
        }
-
 }
 

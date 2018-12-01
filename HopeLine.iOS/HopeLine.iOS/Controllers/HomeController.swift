@@ -30,7 +30,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode  = .always
         self.collectionView.autoresizesSubviews = true
-        
+        self.connectionInfo.layer.cornerRadius = 10
         self.connectionLostImage.isHidden = true
         self.loadingInfo.startAnimating()
         self.loadingInfo.hidesWhenStopped = true
